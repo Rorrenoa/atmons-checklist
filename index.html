@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATMons – Perfekter Start Checkliste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08080f;
+    --surface: #111119;
+    --surface2: #191922;
+    --surface3: #22222e;
+    --border: #1e1e2e;
+    --border-done: rgba(52, 211, 153, 0.2);
+    --text: #c4c4d4;
+    --text-dim: #6b6b80;
+    --text-done: #3a3a4a;
+    --heading: #ededf0;
+    --accent: #8b5cf6;
+    --accent2: #a78bfa;
+    --accent-soft: rgba(139, 92, 246, 0.12);
+    --green: #34d399;
+    --green-dim: rgba(52, 211, 153, 0.08);
+    --amber: #fbbf24;
+    --blue: #60a5fa;
+    --pink: #f472b6;
+    --orange: #fb923c;
+    --detail-bg: rgba(139, 92, 246, 0.04);
+    --detail-border: rgba(139, 92, 246, 0.2);
+    --font-display: 'Chakra Petch', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 12px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+  .header-icon {
+    font-size: 32px;
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
+  }
+  .header h1 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: 0.5px;
+  }
+  .header p {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  /* Progress */
+  .progress-wrap { margin: 16px 0 14px; }
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .progress-count { color: var(--text-dim); }
+  .progress-pct { font-weight: 700; color: var(--accent2); font-family: var(--font-display); }
+  .progress-pct.done { color: var(--green); }
+  .progress-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--surface2);
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #7c3aed, var(--accent2));
+    transition: width 0.4s ease;
+  }
+  .progress-fill.done {
+    background: linear-gradient(90deg, var(--green), #22d3ee);
+  }
+
+  /* Path Filter */
+  .path-filter {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .path-filter::-webkit-scrollbar { display: none; }
+  .path-btn {
+    flex: 1;
+    min-width: fit-content;
+    padding: 7px 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dim);
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .path-btn:hover { color: var(--text); }
+  .path-btn.active {
+    background: var(--accent-soft);
+    color: var(--accent2);
+  }
+  .path-btn .path-count {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-left: 4px;
+  }
+
+  /* Search */
+  .search-wrap {
+    position: relative;
+    margin-bottom: 14px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 10px 14px 10px 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 13px;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .search-input::placeholder { color: var(--text-dim); }
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+    font-size: 14px;
+    pointer-events: none;
+  }
+  .search-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    display: none;
+  }
+  .search-clear.show { display: block; }
+  .search-clear:hover { color: var(--text); }
+
+  /* Info boxes */
+  .info-box {
+    margin-bottom: 16px;
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .tier-box {
+    background: rgba(96, 165, 250, 0.04);
+    border: 1px solid rgba(96, 165, 250, 0.12);
+  }
+  .tier-box h3 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--blue);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tier-box .tier-row {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.9;
+  }
+  .tier-box .tier-label {
+    color: #a3a3a3;
+    font-weight: 600;
+  }
+  .info-link {
+    font-size: 11px;
+    color: var(--accent2);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 2px 0;
+  }
+  .info-link:hover { color: var(--accent); text-decoration: underline; }
+
+  /* Part Divider */
+  .part-divider {
+    margin: 18px 0 10px;
+    padding-left: 2px;
+  }
+  .part-divider .part-label {
+    font-family: var(--font-display);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+  }
+  .part-divider .part-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--heading);
+    font-weight: 700;
+    display: block;
+    margin-top: 2px;
+  }
+  .part-divider.pokemon .part-label { color: var(--pink); }
+  .part-divider.tech .part-label { color: var(--blue); }
+  .part-divider.endgame .part-label { color: var(--amber); }
+
+  /* Phase */
+  .phase {
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .phase.done {
+    background: var(--green-dim);
+    border-color: var(--border-done);
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    text-align: left;
+    gap: 10px;
+    font-family: var(--font-body);
+  }
+  .phase-icon { font-size: 18px; flex-shrink: 0; }
+  .phase-info { flex: 1; min-width: 0; }
+  .phase-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--heading);
+    display: block;
+  }
+  .phase.done .phase-title { color: var(--green); }
+  .phase-desc {
+    font-size: 11px;
+    color: var(--text-dim);
+    display: block;
+    margin-top: 2px;
+  }
+  .phase-badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-dim);
+    background: var(--surface2);
+    padding: 2px 8px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+  }
+  .phase.done .phase-badge {
+    color: var(--green);
+    background: rgba(52, 211, 153, 0.1);
+  }
+  .phase-arrow {
+    font-size: 11px;
+    color: #444;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .phase-arrow.shut { transform: rotate(-90deg); }
+
+  .phase-items { padding: 0 6px 6px; }
+
+  /* Item row */
+  .item-row { margin-bottom: 1px; }
+  .item-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+  }
+  .item-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    min-height: 34px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding-top: 7px;
+  }
+  .checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: 2px solid #2a2a3a;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--bg);
+    font-weight: 700;
+    transition: all 0.15s;
+  }
+  .checkbox.on {
+    border-color: var(--green);
+    background: var(--green);
+  }
+
+  .item-text-btn {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 7px 8px 7px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text);
+    font-family: var(--font-body);
+    border-radius: 5px;
+    transition: background 0.1s;
+  }
+  .item-text-btn:hover { background: rgba(255,255,255,0.02); }
+
+  .item-label {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #bbb;
+    flex: 1;
+    transition: color 0.2s, text-decoration 0.2s;
+  }
+  .item-label.on {
+    color: var(--text-done);
+    text-decoration: line-through;
+  }
+  .item-label mark {
+    background: rgba(251, 191, 36, 0.18);
+    color: var(--amber);
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  .item-expand {
+    font-size: 10px;
+    color: #555;
+    margin-top: 4px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .item-expand.open { transform: rotate(180deg); }
+
+  /* Detail panel */
+  .item-detail {
+    margin: 0 8px 8px 36px;
+    padding: 10px 14px;
+    background: var(--detail-bg);
+    border-radius: 8px;
+    border-left: 2px solid var(--detail-border);
+    font-size: 12px;
+    line-height: 1.75;
+    color: #8a8a9e;
+    animation: slideDown 0.15s ease;
+  }
+  .item-detail strong { color: var(--text); font-weight: 600; }
+  .item-detail em { color: var(--amber); font-style: normal; font-weight: 600; }
+  .item-detail code {
+    background: var(--surface2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--accent2);
+    font-family: 'Consolas', monospace;
+  }
+  .item-guide-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 6px;
+    color: var(--accent2);
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .item-guide-btn:hover {
+    background: rgba(139, 92, 246, 0.18);
+    border-color: var(--accent);
+    color: var(--heading);
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .empty-state-icon { font-size: 32px; margin-bottom: 8px; opacity: 0.4; }
+
+  /* Reset */
+  .reset-wrap { text-align: center; margin-top: 20px; }
+  .reset-btn {
+    padding: 6px 18px;
+    font-size: 11px;
+    font-family: var(--font-body);
+    color: var(--text-dim);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover {
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 10px;
+    color: #333;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 100;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 12px;
+    overflow-y: auto;
+    animation: fadeIn 0.15s ease;
+  }
+  .modal-overlay.open { display: flex; }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 680px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin: auto;
+    animation: modalSlide 0.2s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  }
+  @keyframes modalSlide {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-icon {
+    font-size: 22px;
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
+  }
+  .modal-title {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--heading);
+    flex: 1;
+  }
+  .modal-close {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 6px;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: #ef4444; }
+
+  .modal-body {
+    padding: 20px 24px 24px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .modal-body h3 {
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--accent2);
+    margin: 18px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-body h3:first-child { margin-top: 0; }
+  .modal-body p { margin-bottom: 10px; color: #b0b0c0; }
+  .modal-body ul, .modal-body ol {
+    margin: 6px 0 12px 20px;
+    color: #b0b0c0;
+  }
+  .modal-body li { margin-bottom: 4px; }
+  .modal-body strong { color: var(--heading); font-weight: 600; }
+  .modal-body em { color: var(--amber); font-style: normal; font-weight: 600; }
+  .modal-body code {
+    background: var(--surface3);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--accent2);
+    font-family: 'Consolas', monospace;
+  }
+  .modal-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px;
+    font-size: 12px;
+  }
+  .modal-body th, .modal-body td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-body th {
+    font-family: var(--font-display);
+    color: var(--accent2);
+    font-weight: 600;
+    background: var(--surface2);
+  }
+  .modal-body td { color: #b0b0c0; }
+  .modal-body .warn {
+    background: rgba(251, 191, 36, 0.08);
+    border-left: 3px solid var(--amber);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 10px 0;
+    color: #d4d4e0;
+  }
+  .modal-body .info {
+    background: rgba(96, 165, 250, 0.06);
+    border-left: 3px solid var(--blue);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 10px 0;
+    color: #d4d4e0;
+  }
+  .modal-body a {
+    color: var(--accent2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+  }
+  .modal-body a:hover { color: var(--heading); }
+  .modal-body .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .modal-body .links a {
+    display: inline-block;
+    padding: 5px 10px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 6px;
+    font-size: 11px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    border-bottom: none;
+  }
+  .modal-body .links a:hover {
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--heading);
+  }
+
+  @media (max-width: 480px) {
+    .header h1 { font-size: 18px; }
+    .phase-title { font-size: 13px; }
+    .item-label { font-size: 12px; }
+    .item-detail { margin-left: 28px; font-size: 11px; }
+    .modal-body { padding: 16px 18px 20px; font-size: 12px; }
+    .modal-header { padding: 14px 16px; }
+    .modal-title { font-size: 14px; }
+    .path-btn { font-size: 11px; padding: 6px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="app"></div>
+<div class="modal-overlay" id="modal-overlay" onclick="closeGuideFromOverlay(event)">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+/* ============================================================
+   PHASES — Hauptinhalte der Checkliste
+   Pfade: base | pokemon | tech | endgame
+   guide: Verweist auf GUIDES[key] für große Erklärungen
+   ============================================================ */
+const PHASES = [
+  /* ============== TEIL A — GRUNDLAGEN ============== */
+  {
+    id: "p1", title: "Phase 1: Vor dem Spielstart", icon: "⚙️", path: "base",
+    desc: "Einstellungen · Controls · Performance",
+    items: [
+      { id: "1a", text: "RAM zuweisen: 8–10 GB in CurseForge", detail: "CurseForge → Einstellungen (Zahnrad unten links) → Minecraft → Java Settings → Memory Slider auf <strong>8192–10240 MB</strong>. Das Pack hat <strong>~216 Mods</strong>, weniger als 8 GB führt zu Abstürzen. Mehr als 12 GB kann Garbage-Collection-Probleme verursachen." },
+      { id: "1b", text: "FTB Ultimine aktivieren (Vein Mining)", detail: "ATMons nutzt <strong>FTB Ultimine</strong>, nicht Vein Miner. Standard-Taste <code>~</code> (Grave) gedrückt halten während du abbaust – alle verbundenen gleichen Blöcke werden mit abgebaut. Shape im FTB-Menü einstellbar. Keybind unter <em>Einstellungen → Steuerung → FTB Ultimine</em> anpassbar." },
+      { id: "1c", text: "Pokémon-Controls lernen", detail: "<strong>R</strong> = Pokémon senden/rufen · <strong>M</strong> = Party-Menü (Stats, Moves, Held Items) · Held Items per <strong>Drag &amp; Drop</strong> im Party-Menü · Mit <strong>Cobblenav</strong> (eigener Keybind) siehst du Spawn-Gebiete und Details der Pokémon um dich herum." },
+      { id: "1d", text: "EMI-Basics: U = Verwendungen, Rechtsklick = Rezept", detail: "<strong>EMI</strong> ist die Suchleiste rechts im Inventar – dein wichtigstes Werkzeug bei 200+ Mods! Hover über ein Item: <strong>U</strong> zeigt Verwendungen, <strong>Rechtsklick</strong> zeigt Rezept. <em>ATMons hat KEINE EMI-Hidings</em> – alles ist sichtbar." },
+      { id: "1e", text: "JourneyMap: Minimap + M für Fullmap", detail: "<strong>J</strong> öffnet JourneyMap-Einstellungen · <strong>M</strong> = Fullmap (Vorsicht: kollidiert mit Cobblemon-Party – im Zweifel Keybind ändern) · Rechtsklick auf der Karte = Waypoint setzen." },
+      { id: "1f", text: "FTB Essentials Befehle: /sethome, /back, /spawn", detail: "<code>/sethome</code> = Position speichern · <code>/home</code> = zurück teleportieren · <code>/back</code> = letzter Todespunkt (rettet Items!) · <code>/spawn</code> = Weltspawn. Dimensionsübergreifend und kostenlos in ATMons." },
+      { id: "1g", text: "Render Distance auf 8–12 falls Lag", detail: "<strong>Sodium</strong> und <strong>Iris</strong> sind bereits dabei und sorgen für gute FPS. Falls trotzdem Lag: Render Distance reduzieren, Fancy Leaves → Fast, Partikel → Minimal, Smooth Lighting → Minimum." },
+    ],
+  },
+  {
+    id: "p2", title: "Phase 2: Erste Stunde – Survival-Basis", icon: "🌅", path: "base",
+    desc: "Quest Book · Starter · Holz · Werkzeuge",
+    items: [
+      { id: "2a", text: "FTB Quest Book öffnen", detail: "Button <strong>oben links</strong> im Inventar. Das Quest Book ist dein <strong>roter Faden</strong> durch ATMons – es kennt die Mod-Progression, gibt Belohnungen und führt dich strukturiert bis zum ATM Star." },
+      { id: "2b", text: "'Welcome' + 'Getting Started' Questline starten", detail: "Die ersten Chapter heißen <strong>Welcome</strong>, <strong>Intro</strong> und <strong>Getting Started</strong>. Sie geben dir grundlegende Items, Cobblepedia und erklären die wichtigsten Keybinds." },
+      { id: "2c", text: "Starter-Pokémon wählen (M-Taste)", detail: "Alle Starter der <strong>Gen 1–9</strong> verfügbar. Starter sind in der Wildnis extrem selten – wähle weise. <em>ACHTUNG:</em> ATMons hat <code>replaceAnimalSpawn=true</code> – viele Vanilla-Tiere (Kühe, Schweine, Hühner) werden durch Pokémon ersetzt! Dein Starter ist oft die einzige zuverlässige Fleisch-Quelle in den ersten Minuten." },
+      { id: "2d", text: "Holz sammeln (FTB Ultimine hilft!)", detail: "<code>~</code> halten + Stamm schlagen = kompletter Baum. Sammle mind. 2 Stacks Holz." },
+      { id: "2e", text: "Werkbank → Holz-Spitzhacke → Cobblestone", detail: "Standard Minecraft Start. Holz → Planken → Werkbank → Holz-Spitzhacke → erste Cobble-Blöcke." },
+      { id: "2f", text: "Stein-Werkzeuge craften (Pickaxe, Axt, Schwert)", detail: "Die Stein-Spitzhacke schaltet bereits überraschend viele ATMons-Erze frei – siehe Mining-Tier Guide." },
+      { id: "2g", text: "Crafting Table on a Stick → Curio-Slot", detail: "In EMI suchen. Im Curio-Slot (links neben Rüstung) hast du jederzeit eine Werkbank per Rechtsklick dabei. <em>Bonus in ATMons:</em> Crafting-on-a-Stick wird per kubejs mit normalen Crafting Tables vereinheitlicht – komplett austauschbar." },
+      { id: "2h", text: "Erste Essen-Quelle sichern", detail: "<strong>KEIN Weizen</strong> – zu langsam. Erste Optionen: wildes Pokémon-Fleisch (siehe 2c), Cobblemon-Beeren von Büschen (doppelter Nutzen: Essen + Pokémon-Crafting), Farmer's Delight Wildpflanzen." },
+      { id: "2i", text: "/sethome am ersten Basispunkt", detail: "Gleich nachdem du einen passablen Spot gefunden hast: <code>/sethome</code>. Spart dir bei Tod einen langen Rückweg." },
+    ],
+  },
+  {
+    id: "p3", title: "Phase 3: Tool-Progression verstehen", icon: "⛏️", path: "base",
+    desc: "Das Fundament für alles Weitere",
+    items: [
+      { id: "3a", text: "Mining-Tier System lernen", detail: "ATMons hat ein <strong>spezifisches Mining-Tier-System</strong>, das von ATM10-Guides abweicht. Klick den Guide-Button unten für die vollständige verifizierte Tabelle.", guide: "mining-tiers" },
+      { id: "3b", text: "Stein-Pickaxe: Kohle, Eisen, Kupfer, Tin, Aluminum, Lead", detail: "Alle 6 Stein-Tier-Erze sofort verfügbar. Sammle Eisen zuerst – mind. 2 Stacks. <strong>Tin</strong> wird zu Bronze (Campfire Pot!), <strong>Aluminum/Lead</strong> für frühe Maschinen und Legierungen." },
+      { id: "3c", text: "Ofen bauen und schmelzen", detail: "8 Cobblestone = Ofen. Stelle 2–3 Öfen nebeneinander für paralleles Schmelzen, bis Mekanism Energized Smelter verfügbar ist." },
+      { id: "3d", text: "Eisen-Pickaxe craften", detail: "Schaltet <strong>Gold, Redstone, Lapis, Silver, Nickel und Diamant</strong> frei. Ohne Eisen-Pickaxe kein Fortschritt über Basis-Erze hinaus." },
+      { id: "3e", text: "Diamant-Pickaxe anvisieren", detail: "Der <em>wichtigste</em> Upgrade-Schritt: Diamant-Pickaxe schaltet <strong>Osmium, Platinum, Zinc, Uranium und Obsidian</strong> frei. <strong>Osmium = Mekanism-Basis</strong> – ohne Diamant kein Mekanism!" },
+      { id: "3f", text: "Silent Gear als ein-Tool-für-alles (Vorschau)", detail: "Silent Gear Tools <em>brechen nie endgültig</em> und können mit Repair Kits unendlich repariert werden. Siehe Phase 13 für Details." },
+      { id: "3g", text: "Silk Touch priorisieren", detail: "Silk Touch auf Pickaxe = Erze als <strong>Block</strong> statt Raw Ore abbauen. Erze als Block → Mekanism Enrichment Chamber → <strong>2× Output</strong>. Silk Touch spart also langfristig viel Material!" },
+      { id: "3h", text: "Netherite als finales Upgrade merken", detail: "Netherite-Pickaxe schaltet <strong>Allthemodium</strong> frei – nur dann in Phase 17 relevant." },
+    ],
+  },
+];
+/* Teil B/C werden in einem zweiten Script-Block hinzugefügt — siehe unten. */
+</script>
+<script>
+/* ============== TEIL B1 — POKÉMON-PFAD ============== */
+PHASES.push(
+  {
+    id: "p4", title: "Phase 4: Starter & erste Pokémon", icon: "🔴", path: "pokemon",
+    desc: "Team aufbauen · Cobblepedia · Cobblenav",
+    items: [
+      { id: "4a", text: "Starter-Team bauen", detail: "Dein Starter ist oft dein erstes Mid-Game-Pokémon. Nutze <strong>Cobblepedia</strong> (In-Game Pokédex-Buch aus Quest-Belohnung) um Stärken/Schwächen zu lernen. Mudkip-Linie ist objektiv stark (Wasser/Boden)." },
+      { id: "4b", text: "3–6 verschiedene Typen fangen", detail: "Für gute Abdeckung: Wasser, Feuer, Pflanze, Elektro, Kampf/Boden. <strong>Wilde Pokémon erst schwächen</strong> (HP runter + Status wie Schlaf/Paralyse) = deutlich höhere Fangrate." },
+      { id: "4c", text: "Cobblenav öffnen", detail: "<strong>Cobblenav</strong> zeigt dir alle Pokémon in der Umgebung mit Spawn-Biome, Level-Range und Seltenheit. Check regelmäßig ob du etwas seltenes übersehen hast." },
+      { id: "4d", text: "XP-Mechaniken verstehen", detail: "ATMons hat <em>massive</em> XP-Änderungen: <strong>Battle-XP × 2.0</strong>, <strong>Capture-XP × 20</strong> (!), <strong>Exp Share × 0.5</strong>. Fazit: Fangen levelt dein Team extrem schnell, aber passive Exp Share ist schwach → <strong>aktiv kämpfen lohnt sich deutlich mehr</strong>." },
+      { id: "4e", text: "Healing Machine nutzen", detail: "Healing Machines spawnen in Dörfern (Rechtsklick = Team heilen). Eigene können gecraftet werden (Rezept in EMI). Später mit Redstone für Party-Heil-Automation." },
+      { id: "4f", text: "PC-Box verstehen", detail: "Der PC ist deine Pokémon-Bank. Alles außerhalb der Party landet hier. Mehrere Boxen frei organisierbar – sortiere nach Typ, Einsatzzweck oder Shiny-Status." },
+      { id: "4g", text: "XP Share an schwache Team-Mitglieder", detail: "Held Item im Party-Menü per Drag & Drop zuweisen. Auch bei 0.5× Multiplier wertvoll für passives Leveln während du mit deinem Main-Mon kämpfst." },
+      { id: "4h", text: "Ersten Gym-Leader/Key-Trainer identifizieren", detail: "Die <strong>Trainer Card</strong> (siehe Phase 6) zeigt dir den nächsten Key-Trainer. Trainer Card ist <em>Voraussetzung für Trainer-Spawning</em> – besorge sie früh." },
+    ],
+  },
+  {
+    id: "p5", title: "Phase 5: Aprikokos & Pokéball-Produktion", icon: "🎾", path: "pokemon",
+    desc: "ACHTUNG: Pokébälle sind in ATMons anders!",
+    items: [
+      { id: "5a", text: "Pokéball-Produktion ist komplett anders!", detail: "<strong>WICHTIG:</strong> Die Standard-Cobblemon-Pokéball-Rezepte sind in ATMons <em>komplett entfernt</em>. Pokébälle werden über <strong>Create Sequenced Assembly</strong> produziert (Mod <code>createmonballsoverhaul</code>). Klick den Guide für die vollständige Anleitung.", guide: "pokeball-create" },
+      { id: "5b", text: "Aprikokos sammeln (8 Farben)", detail: "Aprikoko-Bäume spawnen in verschiedenen Biomen. Farben: <strong>White, Yellow, Pink, Red, Green, Black, Blue, Brown</strong>. Jede Farbe = anderer Pokéball-Typ. Baum-Generierungs-Chance ist auf 10% konfiguriert, also selten!" },
+      { id: "5c", text: "Aprikoko-Setzlinge nachpflanzen", detail: "Sobald du einen Baum gefunden hast: Setzlinge sichern und anpflanzen. Später via <strong>Pylons Mod</strong> automatisch harvestbar – siehe Phase 18." },
+      { id: "5d", text: "Loot-Truhen nach Ball-Teilen durchsuchen", detail: "In POI-Strukturen (Dörfer, Dungeons) droppen per Loot-Table: <strong>Blank Ball Lid</strong> (Gewicht 70), farbige Lids (je 5), <strong>Copper/Iron/Brass Mechanism</strong>. Durchsuche jede Loot-Kiste die du findest!" },
+      { id: "5e", text: "Create-Minimum aufbauen (siehe Tech-Pfad)", detail: "Du brauchst mindestens <strong>Andesite Alloy, Mechanical Press, Encased Fan, Deployer</strong> und <strong>Mechanical Drill</strong> oder eine Rotation-Quelle. Siehe Phase 10 im Tech-Pfad." },
+      { id: "5f", text: "Sequenced Assembly Line bauen", detail: "Eine Depot-Kette mit Conveyor + Deployern + Press. Der Guide-Button oben erklärt Schritt für Schritt." },
+      { id: "5g", text: "Ersten Pokéball produzieren", detail: "Basis-Pokéball (rot/weiß) ist der einfachste Einstieg. Aufwändiger aber deutlich besser: Great Ball, Ultra Ball." },
+      { id: "5h", text: "Spezialbälle nach Bedarf", detail: "Jede Aprikoko-Farbe + Material-Kombi = andere Ball-Art (Fast, Level, Lure, Heavy, Love, Friend, Moon, Competition, Dusk, Premier, Net, Dive, Nest, Repeat, Timer, Luxury, Cherish). Rezepte in EMI / via <code>createmonballsoverhaul</code>." },
+      { id: "5i", text: "Master Ball: NICHT craftbar!", detail: "<em>Das Standard-Master-Ball-Rezept ist per kubejs entfernt.</em> Master Balls kommen nur aus <strong>Raid Dens, Battle Tower, Quest-Belohnungen</strong> oder Endgame-Loot. Der ATM Star benötigt 2 davon – früh anfangen zu sammeln!" },
+      { id: "5j", text: "ATMons-exklusive Bälle", detail: "Die Coremod fügt 4 exklusive Bälle hinzu: <strong>Allthemodium Ball, Vibranium Ball, Unobtainium Ball, Soul Lava Ball</strong>. Voraussetzung: entsprechende Metalle. Endgame-Tier Fangraten." },
+    ],
+  },
+  {
+    id: "p6", title: "Phase 6: Trainer-System & Level-Cap", icon: "🎖️", path: "pokemon",
+    desc: "Pflicht verstehen: so funktioniert RCT in ATMons",
+    items: [
+      { id: "6a", text: "Trainer Card beschaffen (PFLICHT!)", detail: "Die <strong>Trainer Card</strong> ist <em>zwingend</em> erforderlich damit Trainer überhaupt spawnen (<code>spawningRequiresTrainerCard=true</code>). Rezept in EMI prüfen oder Quest-Belohnung. Ohne Card siehst du <strong>keine Trainer</strong>.", guide: "level-cap" },
+      { id: "6b", text: "Trainer Card im Inventar behalten", detail: "Muss im Inventar sein – nicht nur in einer Kiste. Viele Spieler übersehen das und wundern sich warum keine Trainer spawnen." },
+      { id: "6c", text: "Trainer-Serie wählen", detail: "Spieler starten in der Serie <code>empty</code> und müssen eine Serie über das <strong>Trainer Card Menü</strong> wählen (z.B. Radical Red, BDSP, Johto). Serie bestimmt Trainer-Pool und Progression." },
+      { id: "6d", text: "Level-Cap verstehen (Start: 15)", detail: "Start-Level-Cap ist <strong>15</strong>. Pokémon am/über Cap bekommen <em>keine XP</em>. Cap ist <strong>relativ 0</strong> = steigt exakt auf das Level des nächsten Key-Trainers. Trainer verweigern Kampf wenn du Pokémon <em>über</em> Cap dabei hast." },
+      { id: "6e", text: "Key-Trainer besiegen → Cap erhöhen", detail: "Key-Trainer haben <strong>farbige Namen</strong>. Jeder besiegte Key-Trainer hebt den Cap um exakt die Level-Differenz. Die Trainer Card zeigt den nächsten Key-Trainer und leuchtet wenn einer in der Nähe ist." },
+      { id: "6f", text: "Max. 5 Trainer gleichzeitig", detail: "Konfiguriert auf <strong>maxTrainersPerPlayer=5</strong> (Standard wäre 12). Spawn-Chance 85%, Interval 180 Ticks (9 Sek). Lebt sich überschaubarer an – keine Trainer-Überflutung." },
+      { id: "6g", text: "Force Battle beachten", detail: "Bei <strong>60 Ticks Blickkontakt</strong> (3 Sekunden) und max. <strong>8 Blöcken Entfernung</strong> erzwingt der Trainer einen Kampf. Nicht guten Key-Trainer in einer schwachen Phase anschauen!" },
+      { id: "6h", text: "Erste Serie komplettieren → Freeroam", detail: "<strong>Freeroam-Modus</strong> (= freies Mischen von Pokémon aus allen Serien) ist <em>erst freigeschaltet</em> nachdem du mindestens eine Serie komplett durchgespielt hast. Bis dahin bist du an deine Serie gebunden." },
+      { id: "6i", text: "Trainer Spawner Block craften", detail: "Wenn natürliches Spawning zu langsam ist: <strong>Trainer Spawner</strong> Block beschwört gezielt Key-Trainer. Manche benötigen Signature-Items (Quest Book erklärt welche). Rezept in EMI." },
+    ],
+  },
+  {
+    id: "p7", title: "Phase 7: Pokémon vertiefen", icon: "🥚", path: "pokemon",
+    desc: "Zucht · Fossilien · Mega-Evolution",
+    items: [
+      { id: "7a", text: "Pasture bauen", detail: "Der <strong>Pasture Block</strong> ist der Zucht/Lager-Block für Cobblemon. Rezept in EMI. Bis zu 16 Pokémon gleichzeitig, kompatible Pärchen produzieren Eier." },
+      { id: "7b", text: "Zucht aktivieren", detail: "2 kompatible Pokémon in denselben Pasture = Eier. <strong>Breeding-Cooldown: 12000 Ticks (10 Min)</strong> zwischen Zucht-Versuchen. <em>Tipp:</em> Link Cable an ein Elternteil geben = gilt als Tausch = <strong>erhöhte Shiny-Chance</strong>!" },
+      { id: "7c", text: "Ei-Brutzeit verstehen", detail: "Ei-Brutzeit = <strong>6000 Ticks × Pokémon-Level</strong>. Flamebody/Magma Armor Pokémon in der Nähe = schnelleres Brüten (wie in Vanilla Pokémon)." },
+      { id: "7d", text: "Redstone-Block unter Pasture = stoppt Eier", detail: "Wenn du kein neues Ei willst (z.B. beim Shiny-Breeding ohne Ditto-Reset): Redstone-Block direkt unter den Pasture = Ei-Produktion pausiert." },
+      { id: "7e", text: "Cobblemon Campfire Pot craften", detail: "Rezept: <strong>5 Bronze Ingots + 1 Glasscheibe + 2 Aprikokos</strong>. Auf Campfire setzen. <em>Achtung:</em> Campfire Pot ist per kubejs als <code>c:relocation_not_supported</code> markiert – kann <strong>nicht mit Packing Tape</strong> verschoben werden." },
+      { id: "7f", text: "Pokémon-Medizin kochen", detail: "Mit dem Campfire Pot craftest du <strong>Revive, Heal Powder, EXP Candy XS, Rare Candy</strong> usw. Rezepte in EMI. Der Pot hat einen <strong>Item Handler</strong> – vollständig automatisierbar!" },
+      { id: "7g", text: "Pokémon-Fossilien finden", detail: "Fossilien-Pokémon aus Strukturen: <strong>Prehistoric Birch Tree, Dripstone Oasis, Moss Caves</strong>. Fossil-Teile mit Archaeology-Brush freilegen. Assembler-Maschine baut aus Fragmenten komplette Pokémon zusammen." },
+      { id: "7h", text: "Mega Evolution (Mega Showdown Mod)", detail: "Ausgewählte Pokémon können mit <strong>Mega Stone</strong> (Held Item) im Kampf Mega-Evolvieren. Gen 6+ Mechanik. Mega Stones droppen aus Dungeons, Raid Dens oder sind Quest-Belohnungen." },
+      { id: "7i", text: "Riding & Flying (mit Stamina!)", detail: "Manche Pokémon können geritten/geflogen werden. <em>ACHTUNG:</em> ATMons hat <code>infiniteRideStamina=false</code> – <strong>Stamina ist endlich</strong>. Außerdem <code>inFlightDismounting=false</code> = du kannst mitten im Flug nicht absteigen." },
+      { id: "7j", text: "Cobbleworkers nutzen", detail: "<strong>Cobbleworkers Mod:</strong> Pokémon automatisieren Arbeit. Miltank = Milch, Combee = Honig, Bounsweet = Beeren etc. Früher Einstieg in Pokémon-basierte Automation." },
+    ],
+  },
+  {
+    id: "p8", title: "Phase 8: Gyms & Fortschritt", icon: "🏆", path: "pokemon",
+    desc: "Radical Gym Structures · Battle Tower · PokéTokens",
+    items: [
+      { id: "8a", text: "Gyms in der Welt finden", detail: "Mod <strong>Radical Gyms Structures (RGS)</strong> spawnt physische Gym-Gebäude in der Welt. Nature's Compass / Explorer's Compass nutzen um sie zu finden." },
+      { id: "8b", text: "Gym-Map-Items von Cartographer", detail: "Cartographer-Villager verkaufen <strong>Gym-Maps</strong> die direkt zum nächsten Gym führen. Günstiger als wildes Erkunden." },
+      { id: "8c", text: "Battle Tower besuchen", detail: "Mod <strong>Cobblemon Battle Tower</strong>: Strukturierte Kampf-Challenge mit 10+ Floors. Belohnungen: Seltene Items, Rare Candy, <strong>Master Ball-Chance</strong>!" },
+      { id: "8d", text: "Raid Dens finden und kämpfen", detail: "Mod <strong>Cobblemon Raid Dens</strong>: Spawnende Raid-Strukturen mit stärkeren Pokémon. Droppen seltene Items und gelegentlich Master Balls." },
+      { id: "8e", text: "PokéTokens sammeln", detail: "ATMons-Währung, erhältlich durch: <strong>Pokémon releasen, Trainer besiegen, Villager-Handel</strong>. Zum Einkaufen bei speziellen Villagern (PokéMart-Typ)." },
+      { id: "8f", text: "Legendary-Info: NICHT wild spawn!", detail: "<em>Wichtig:</em> ATMons hat <strong>alle Legendary- und Paradox-Pokémon</strong> (100+) aus Wild-Spawns per kubejs deaktiviert (<code>server_scripts/Tweaks/disable_mons.js</code>). Sie kommen <strong>nur</strong> aus Battle Tower, Raid Dens, Quests oder Events." },
+      { id: "8g", text: "Pokédex vervollständigen (Catch 'Em All)", detail: "FTB-Quest-Chapter <strong>'Catch Em All'</strong> belohnt Pokédex-Fortschritt. Type-basierte Quests (18 Typen) und Species-Quests (z.B. Ditto) geben starke Items." },
+    ],
+  },
+);
+
+/* ============== TEIL B2 — TECH-PFAD ============== */
+PHASES.push(
+  {
+    id: "p9", title: "Phase 9: Essen & QoL-Mods", icon: "🍲", path: "tech",
+    desc: "Farmer's Delight · Cooking for Blockheads · Storage",
+    items: [
+      { id: "9a", text: "Farmer's Delight Cooking Pot bauen", detail: "Rezept in EMI (Eisenbarren in Kessel-Form). Auf <strong>Campfire oder Hitzequelle</strong> stellen. Zutaten rein, warten, Mahlzeit raus. <em>Das wichtigste Essen-Item im ganzen Pack.</em>" },
+      { id: "9b", text: "Nourishment-Mahlzeiten kochen", detail: "<strong>Plated Meals</strong> (auf Tellern serviert) geben den <strong>Nourishment-Buff</strong>: solange aktiv verlierst du <em>keinen Hunger</em> durch Sprinten, Springen oder Kämpfen! Hält 1–5 Minuten je nach Gericht. Eines der stärksten Early-Game-QoL-Features." },
+      { id: "9c", text: "Beef Stew, Chicken Soup, Mixed Salad", detail: "Starter-Rezepte: <strong>Beef Stew</strong> (Rohes Rindfleisch + Karotte + Kartoffel + Schüssel, im Cooking Pot) · <strong>Chicken Soup</strong> (Rohes Huhn + Karotte + Gemüse + Schüssel) · <strong>Mixed Salad</strong> (direkt in Werkbank). Alle Rezepte in EMI prüfen!" },
+      { id: "9d", text: "Everlasting Beef von Miltank", detail: "<strong>Miltank droppt Everlasting Beef</strong> – ATMons-exklusiv, unendlich wiederverwendbar. Löst dein Essen-Problem dauerhaft. Miltank spawnt in Plains/Savanna." },
+      { id: "9e", text: "Cooking for Blockheads: Kitchen bauen", detail: "Mod <strong>Cooking for Blockheads</strong> ist dabei: Kitchen-Counter + Oven + Fridge nebeneinander = voll-automatisierte Küche. Rezept-Buch zeigt was aus deinen gelagerten Zutaten machbar ist." },
+      { id: "9f", text: "Easy Villagers für Villager-Farming", detail: "Mod <strong>Easy Villagers</strong>: Villager mit Rechtsklick einsammeln und als Block platzieren. Ideal für Trader-Hall ohne KI-Schmerzen. Cartographer, Librarian, Farmer auf Knopfdruck." },
+      { id: "9g", text: "Sophisticated Storage für Kisten", detail: "Ersetzt 4–5 Vanilla-Kisten pro Upgrade-Stufe. <strong>Upgrades</strong>: Stack, Filter, Auto-Pickup, Void, Compacting. Rezept in EMI." },
+      { id: "9h", text: "Sophisticated Backpacks tragen", detail: "Portable Inventar-Erweiterung mit den gleichen Upgrade-Slots wie Storage. <strong>Pickup Upgrade</strong> sammelt automatisch in den Rucksack." },
+    ],
+  },
+  {
+    id: "p10", title: "Phase 10: Create-Basics", icon: "⚙️", path: "tech",
+    desc: "Pflicht für Pokéball-Produktion!",
+    items: [
+      { id: "10a", text: "Andesite Alloy craften", detail: "<strong>Andesite Alloy</strong> = Basis-Ressource für fast alles in Create. Rezept: Andesit + Eisennugget + Zinknugget (EMI prüfen). Früh ein Lager anlegen." },
+      { id: "10b", text: "Rotation-Quelle bauen", detail: "Optionen: <strong>Water Wheel</strong> (Wasser), <strong>Windmill</strong> (mit Sails + Bearing), <strong>Steam Engine</strong> (später). Wasserräder sind Early-Game am einfachsten." },
+      { id: "10c", text: "Mechanical Press", detail: "Presst Bleche (Iron/Gold/Brass Sheets) – Voraussetzung für viele Rezepte inkl. Pokéball-Produktion." },
+      { id: "10d", text: "Encased Fan", detail: "Mit <strong>Wasser darunter</strong> = Washing · <strong>Feuer darunter</strong> = Smelting · <strong>Soul Fire</strong> = Haunting. Wasch-Modus wichtig für manche Ore-Processing-Routen." },
+      { id: "10e", text: "Deployer", detail: "Platziert Items auf ein Ziel – Kernstück der Sequenced Assembly. Lässt sich wie ein Spieler-Rechtsklick steuern." },
+      { id: "10f", text: "Mechanical Crafter (Endgame-Vorbereitung)", detail: "Große Crafting-Grids für komplexe Rezepte. <strong>Der ATM Star wird in einem 9×9 Mechanical Crafter Array gecraftet</strong> – also früh Erfahrung damit sammeln." },
+      { id: "10g", text: "Sequenced Assembly Line aufbauen", detail: "Dies ist der Kern der <strong>Pokéball-Produktion</strong> – siehe Phase 5 und den Pokéball-Guide." },
+    ],
+  },
+  {
+    id: "p11", title: "Phase 11: Mekanism starten", icon: "⚡", path: "tech",
+    desc: "Braucht: Osmium + Eisen + Redstone + Kohle",
+    items: [
+      { id: "11a", text: "Heat Generator bauen", detail: "Einfachster Mekanism-Generator. Rezept: Eisen, Osmium, Planken, Ofen, Kupfer (EMI). Betrieb: Kohle/Holzkohle intern <strong>oder</strong> neben Lava platzieren für passive Wärme." },
+      { id: "11b", text: "Metallurgic Infuser → Stahl", detail: "Kohle/Holzkohle in Infusions-Slot = Carbon. Eisenbarren rein → Enriched Iron → nochmal durch = <strong>Steel</strong>. Steel ist Basis für ALLE weiteren Mekanism-Maschinen und Kabel." },
+      { id: "11c", text: "Kohle/Redstone VORHER enrichen", detail: "<strong>EINER DER WICHTIGSTEN TIPPS:</strong> Führe Kohle/Redstone ZUERST durch eine <em>Enrichment Chamber</em> – Enriched Coal/Redstone liefert <strong>8× mehr Infuse Units</strong>! Spart enorm Material." },
+      { id: "11d", text: "Basic Universal Cables verlegen", detail: "Übertragen FE/EU zwischen Maschinen. <em>Profi-Tipp:</em> Maschinen direkt nebeneinander platzieren = automatischer Item-Transfer ohne Pipes!" },
+      { id: "11e", text: "Enrichment Chamber = 2× Erz", detail: "<strong>Die wichtigste Maschine.</strong> Ore-Block → 2× Dust → im Smelter = 2 Ingots statt 1. Verdoppelt sofort deinen Erz-Output. Skaliert später mit höheren Mekanism-Tiers." },
+      { id: "11f", text: "Energized Smelter aufstellen", detail: "Schneller als der Ofen, mit Upgrade-Slots (Speed + Energy). Direkt neben Enrichment Chamber = automatischer Transfer." },
+      { id: "11g", text: "ATMons Ore-Processing-Pipeline verstehen", detail: "Das Mekanism-Ore-Processing ist per kubejs <strong>custom angepasst</strong>: Washing → Injecting → Crushing → Enriching Pipeline mit pack-spezifischen Outputs (z.B. 5 Uraninite statt Standard). Der Guide erklärt die ATMons-Variante.", guide: "mekanism-ore" },
+      { id: "11h", text: "Wind Generators über Y=100", detail: "Stahl + Osmium (EMI). <strong>Kostenlose Energie</strong>, je höher desto mehr Output. Turm bauen, 4–6 Generatoren oben drauf = stabile Grundversorgung." },
+      { id: "11i", text: "Platinum Ore Hammer als Low-Tech-2×", detail: "Falls du noch kein Mekanism hast: <strong>Platinum Ore Hammer</strong> (Rezept EMI) verdoppelt Raw Ore → 2× Dust per Rechtsklick. Einfachste Erz-Verdopplung ohne Strom!" },
+    ],
+  },
+  {
+    id: "p12", title: "Phase 12: Strom-Speicher & Transport", icon: "🔋", path: "tech",
+    desc: "Powah · Flux Networks · Player Transmitter",
+    items: [
+      { id: "12a", text: "Powah Energy Cells", detail: "<strong>Powah</strong> hat die besten early-to-mid Energy-Cells: Basic → Hardened → Blazing → Niotic → Spirited → Nitro. Kapazitäten skalieren massiv." },
+      { id: "12b", text: "Powah Furnator / Magmator / Thermo", detail: "Erste Powah-Generatoren: <strong>Furnator</strong> (Brennstoff), <strong>Magmator</strong> (Lava), <strong>Thermo</strong> (Hitzedifferenz), <strong>Solar Panels</strong> (Tageslicht). Kombinierbar für stabile Versorgung." },
+      { id: "12c", text: "Player Transmitter (drahtlos!)", detail: "<strong>Powah Player Transmitter</strong> + Blank Binding Card: Rechtsklick lädt dich selbst! Danach wird <em>alles getragene Equipment</em> (Jetpack, Free Runners, Tools) drahtlos geladen – dimensionsübergreifend." },
+      { id: "12d", text: "Flux Networks alternative", detail: "Mod <strong>Flux Networks</strong>: Drahtlose Energie-Verteilung zwischen Flux Points und Plugs. Ersetzt viele Kabel. Später sehr mächtig." },
+      { id: "12e", text: "Extreme Reactors / Nuclear als Skalierung", detail: "<strong>Extreme Reactors</strong> Mod ist dabei für mittlere/späte Spielphase. Größerer Reaktor = mehr Output. Für richtig großes Endgame: Mekanism Induction Matrix + Fission Reactor." },
+    ],
+  },
+  {
+    id: "p13", title: "Phase 13: Silent Gear Tools", icon: "⚔️", path: "tech",
+    desc: "Ein Tool fürs ganze Spiel",
+    items: [
+      { id: "13a", text: "Silent Gear Basics verstehen", detail: "Tools aus <strong>austauschbaren Teilen</strong>: Template Board (Blaupause) + Kopf (Mining Level!) + Stab + Bindung. <em>Brechen nie endgültig</em> – immer reparierbar. Du brauchst nur EIN Tool, das du upgradest." },
+      { id: "13b", text: "Template Board craften", detail: "Planken + Stöcke (EMI). Das Template Board ist die <strong>Blaupause</strong> für alle Teile. Einmal craften, dann immer wieder benutzen." },
+      { id: "13c", text: "Erste Silent Gear Pickaxe bauen", detail: "Pickaxe Head Template in der Werkbank mit Material-Ingots füllen → Kopf. Mit Stab und Bindung zusammenfügen → deine erste SG-Pickaxe. Starte mit Diamant-Kopf für Diamant-Tier-Mining." },
+      { id: "13d", text: "Repair Kit craften und benutzen", detail: "Rezept in EMI. Repair Kit mit Kopf-Material füllen (z.B. Diamanten) → Kit + Tool in Werkbank = repariert. <strong>Unendlich wiederholbar!</strong>" },
+      { id: "13e", text: "Teile tauschen ohne Enchant-Verlust", detail: "<em>Killer-Feature:</em> Tool + neues Teil in Werkbank = Teil getauscht, <strong>Verzauberungen bleiben erhalten</strong>. Upgrade-Pfad: Diamant → Netherite → Allthemodium ohne alle Enchants neu zu erstellen." },
+      { id: "13f", text: "Sinew von Pokémon sammeln", detail: "Silent Gear Bindung braucht Sinew. In ATMons droppt es von: <strong>Wooloo, Dubwool, Mareep, Flaaffy, Ampharos, Lechonk, Oinkologne, Tauros, Bouffalant</strong>. Sofort wenn du eines siehst: fangen oder KO schlagen." },
+      { id: "13g", text: "Material-Upgrade-Pfad planen", detail: "Diamant → Netherite → Allthemodium → Vibranium → Unobtainium. Jedes Upgrade behält Enchants und verbessert Mining-Level, Speed, Durability." },
+    ],
+  },
+  {
+    id: "p14", title: "Phase 14: Mobilität", icon: "🚀", path: "tech",
+    desc: "Jetpack · Free Runners · Waystones · Tempad",
+    items: [
+      { id: "14a", text: "Iron Jetpacks Wooden-Tier", detail: "Günstigster Jetpack (Mod <strong>Iron Jetpacks</strong>). Braucht FE-Laden. <strong>Space</strong> = hoch, <strong>Sneak</strong> = schweben, <strong>V</strong> = Hover-Modus. Player Transmitter lädt drahtlos!" },
+      { id: "14b", text: "Free Runners (Mekanism)", detail: "Curio-Slot-Item: <strong>Kein Fallschaden + 1-Block Step-Assist</strong>. Rezept: Basic Control Circuit + Eisen + Energy Tablet. Perfekte Jetpack-Ergänzung." },
+      { id: "14c", text: "Totem of Undying immer in Off-Hand", detail: "Von Evokers (Raids) oder Dungeon-Loot. Rettet einmalig vor Tod – IMMER in der Off-Hand tragen, besonders bei gefährlichen Aktionen (Nether, Deep Dark, The Other)." },
+      { id: "14d", text: "Waystones vor jeder Expedition", detail: "Vor Nether / Deep Dark / The Other: <strong>Waystone am Eingang platzieren</strong>. Bei Tod → von anderem Waystone dorthin teleportieren. Lebensretter!" },
+      { id: "14e", text: "Tempad nutzen", detail: "Mod <strong>Tempad</strong>: Portable Teleporter zu gespeicherten Locations. Braucht Energie. Locations können benannt und organisiert werden. Quasi ein erweiterter Waystone für die Hand." },
+      { id: "14f", text: "Elytra (End-Game Vorbereitung)", detail: "Elytra aus dem End, kombinierbar mit Jetpack (<strong>Caelus</strong> Mod ist dabei – Elytra im Curio-Slot). Mega-Boost sobald End erreicht." },
+    ],
+  },
+  {
+    id: "p15", title: "Phase 15: AE2 Grundlagen", icon: "💾", path: "tech",
+    desc: "ME-System aufbauen · Storage & Automation",
+    items: [
+      { id: "15a", text: "Meteorite Compass craften", detail: "Eisen + Certus Quartz. Zeigt zum nächsten Meteoriten. Meteorit = <strong>große Krater</strong> in der Oberwelt mit einer Sky Stone Chest im Zentrum." },
+      { id: "15b", text: "4 Inscriber Presses finden", detail: "Im Meteorit-Zentrum liegt eine <strong>Sky Stone Chest</strong> mit den 4 einzigartigen Inscriber Presses: <em>Calculation, Engineering, Logic, Silicon</em>. Unverzichtbar für AE2 – ohne sie kein Inscriber!" },
+      { id: "15c", text: "Certus Quartz Farm mit Budding Blocks", detail: "Budding Certus Blocks wachsen Kristalle nach. <strong>Crystal Growth Accelerators</strong> daneben beschleunigen. Fortune erhöht Ausbeute beim Ernten. Früh anlegen – Certus ist dauerhaft knapp." },
+      { id: "15d", text: "Inscriber → Printed Circuits", detail: "Presses + Materialien + Silizium (aus Sand über Quartz Grindstone) = Printed Circuits. Die werden zu <strong>Logic/Calculation/Engineering Processors</strong>. Basis für alle AE2-Geräte." },
+      { id: "15e", text: "ME-Controller + Drive + Storage Cells", detail: "Setup: Energy Acceptor (Strom rein) → ME Controller → ME Glass Cable → ME Drive mit 4k/16k/64k Storage Cells → ME Crafting Terminal. Fertig – alle Items zentral durchsuchbar!" },
+      { id: "15f", text: "ME Crafting Terminal benutzen", detail: "Erweiterte Werkbank + Item-Such + Auto-Fetch aus dem Netzwerk. Ersetzt quasi das komplette Inventar-Management." },
+      { id: "15g", text: "Import/Export Bus für Automation", detail: "<strong>Import Bus</strong> am Maschinen-Output = Items automatisch ins ME-System. <strong>Export Bus</strong> am Input = ME → Maschine. Damit wird jeder Prozess vollautomatisch." },
+      { id: "15h", text: "Applied Mekanistics Integration", detail: "Mod <strong>Applied Mekanistics</strong>: Direkte Integration zwischen AE2 und Mekanism. Mekanism-Chemicals können im ME-System gespeichert werden. Extrem mächtig fürs Late-Game." },
+    ],
+  },
+);
+
+/* ============== TEIL C — MITTELSPIEL & ENDGAME ============== */
+PHASES.push(
+  {
+    id: "p16", title: "Phase 16: Mystical Agriculture", icon: "🌱", path: "endgame",
+    desc: "Jede Ressource als Pflanze",
+    items: [
+      { id: "16a", text: "Prosperity & Inferium beschaffen", detail: "<strong>Prosperity Shard</strong> und <strong>Inferium Essence</strong> sind die Basis-Ressourcen. Prosperity Ore mit Diamant-Spitzhacke abbaubar. Inferium aus Mob-Kills oder Ore. Ohne beide geht nichts." },
+      { id: "16b", text: "Infusion Altar + Pedestals bauen", detail: "<strong>Infusion Altar</strong> + 8× <strong>Infusion Pedestals</strong> im Kreis. Hier werden höhere Essence-Tiers, Samen und Equipment gefertigt. Früh bauen – spart später unzählige Crafts." },
+      { id: "16c", text: "Essence-Tiers hochleveln", detail: "4 Inferium → 1 Prudentium → 1 Tertium → 1 Imperium → 1 Supremium → 1 Insanium (Mystical Agradditions). Samen und Equipment höherer Tiers brauchen die entsprechende Essence." },
+      { id: "16d", text: "Ressourcen-Samen craften", detail: "Z.B. <strong>Iron Seed</strong> = Crafting Seed + Inferium Essence + Eisen-Materialien (EMI). Wachsen wie Weizen → droppen Essenz → zurück zu Eisen. <em>Eine Farm = unbegrenzte Ressource.</em>" },
+      { id: "16e", text: "Growth Accelerators unter Farmland", detail: "<strong>Growth Accelerators</strong> (Inferium bis Supremium Tier) unter dem Farmland = schnelleres Wachstum. Mehrere stapeln möglich. Für Diamond/Netherite-Farmen quasi Pflicht." },
+    ],
+  },
+  {
+    id: "p17", title: "Phase 17: Nether & Allthemodium", icon: "🔥", path: "endgame",
+    desc: "Netherite schaltet Allthemodium frei",
+    items: [
+      { id: "17a", text: "Nether-Portal bauen", detail: "10+ Obsidian im Portal-Rahmen + Feuerzeug. Der Nether hat: <strong>Ancient Debris, Nether Quartz, Glowstone, Vibranium Ore</strong> (später), Cobblemon Nether-Mons." },
+      { id: "17b", text: "Ancient Debris farmen (Y 8–22)", detail: "Am häufigsten bei <strong>Y=15</strong>. Methoden: <em>Bed-Mining</em> (Betten explodieren im Nether – gefährlich aber effizient!), TNT-Mining, oder FTB Ultimine Tunnel-Mode." },
+      { id: "17c", text: "Netherite Ingots herstellen", detail: "4 Netherite Scrap (Debris im Ofen) + 4 Gold = 1 Netherite Ingot. Tools am <strong>Smithing Table</strong>: Diamant-Tool + Netherite Upgrade Template + Ingot. Upgrade Template aus Bastions." },
+      { id: "17d", text: "Allthemodium Ore finden", detail: "2 Spots: <strong>Deep Dark Biome</strong> in der Overworld (unter Y -40, leuchtet!) oder <strong>Mining Dimension Deepslate Layer</strong> (Y 65–129). Braucht Netherite-Pickaxe." },
+      { id: "17e", text: "Mining Dimension freischalten", detail: "Allthemodium Nuggets → <strong>Teleport Pad</strong> craften (EMI) → in der Overworld platzieren → draufsteigen. Die Mining Dim hat <strong>37+ Erze, keine feindlichen Mobs</strong> und ist die beste Farming-Location." },
+      { id: "17f", text: "Allthemodium Book beschaffen", detail: "Quest-Belohnung oder Rezept. Erklärt alle Allthemodium-Dimensionen: <strong>Mining Dim, The Other, The Beyond</strong>. Pflichtlektüre für Endgame-Progression." },
+    ],
+  },
+  {
+    id: "p18", title: "Phase 18: Pokéball-Produktion automatisieren", icon: "🤖", path: "endgame",
+    desc: "Pylons · Create · ME-System",
+    items: [
+      { id: "18a", text: "Pylons Mod für Apricorn-Farm", detail: "Die <strong>Pylons Mod</strong> definiert per kubejs automatisches Harvesting für alle 8 Aprikoko-Sorten (<code>data/pylons/recipe/harvesting/cobblemon/</code>). Pylon + Aprikoko-Baum = automatische Produktion." },
+      { id: "18b", text: "8-Farben-Aprikoko-Farm anlegen", detail: "Ein Baum jeder Farbe (White, Yellow, Pink, Red, Green, Black, Blue, Brown) + je ein Pylon. Output in einer gemeinsamen Kiste sammeln." },
+      { id: "18c", text: "Create Sequenced Assembly vollautomatisieren", detail: "Depot-Ketten + Deployer + Press → vollautomatische Ball-Produktion. Eingang: Apricorns aus der Pylon-Farm. Ausgang: fertige Pokébälle in ME-System." },
+      { id: "18d", text: "Ball-Teile über ME sortieren", detail: "Blank Ball Lids, farbige Lids, Mechanisms: alle aus Loot → Import Bus in ME → Export Bus → Create Assembly Line. Voll-automatisch sobald einmal konfiguriert." },
+      { id: "18e", text: "Ball-Lager als ME-Auto-Storage", detail: "Storage Bus an einer Sophisticated Storage Kiste = dein Pokéball-Lager ist Teil des ME-Netzwerks. Jeder Ball-Typ auf einen Blick abrufbar." },
+    ],
+  },
+  {
+    id: "p19", title: "Phase 19: Power-Ups & Magic", icon: "✨", path: "endgame",
+    desc: "Fortune 5 · Flying Potion · Ars Spells",
+    items: [
+      { id: "19a", text: "EvilCraft Enchantment Extractor", detail: "<strong>EvilCraft</strong> Enchantment Extractor zieht Verzauberungen von Items auf Bücher. Kombiniere im Amboss: Fortune 3 + 3 = 4, 4 + 4 = <strong>Fortune 5</strong>. Massiv mehr Drops!" },
+      { id: "19b", text: "Apotheosis Flying Potion Chain", detail: "<strong>Apotheosis</strong> erlaubt Potion-Chaining: <em>Slow Falling → Levitation → Flying Potion</em>. Auf 30 Min verlängern, kombinieren → <strong>permanenter Creative-Flug Toggle</strong>. Jetpack wird überflüssig." },
+      { id: "19c", text: "Ars Nouveau Spells", detail: "<strong>Ars Nouveau</strong>: Glyphen lernen und zu eigenen Spells kombinieren. AOE-Damage, Projektile, Heilung, Teleport, Mining. Skaliert mit Source Pool. Addons wie <em>Ars Elemental, Ars Additions, Ars Elemancy</em> erweitern das System massiv." },
+      { id: "19d", text: "Apothic Enchanting Tiers", detail: "<strong>Apothic Enchanting</strong>: Erweiterte Bücherregal-Tiers (Sculk, Stone, Pedestals). Ermöglicht Enchants <em>weit über</em> Vanilla-Level 30. Key für High-Tier Silent Gear Builds." },
+      { id: "19e", text: "Relics & Artifacts durchsuchen", detail: "Mods <strong>Relics</strong> und <strong>Artifacts</strong>: starke Curio-Items aus Dungeon-Loot und Chests. Dauerhaft Dungeons looten lohnt sich – manche Items sind game-changing (Flug-Ringe, Damage-Boosts)." },
+      { id: "19f", text: "Forbidden Arcanus Hephaestus Forge", detail: "<strong>Forbidden Arcanus</strong>: Die Hephaestus Forge ist eine mehrstufige Upgrade-Struktur. <em>Tier 5 wird für den ATM Star gebraucht</em> – siehe Phase 22." },
+      { id: "19g", text: "Curio-Slot-Setup optimieren", detail: "Nutze alle Curio-Slots: Ring, Ring, Necklace, Belt, Charm, Cape, Back. Kombinationen aus Relics/Artifacts/Mekanism/Caelus können dich fast unverwundbar machen." },
+    ],
+  },
+  {
+    id: "p20", title: "Phase 20: Die 3 Alloy-Routen", icon: "🔨", path: "endgame",
+    desc: "Vibranium-Allthemodium, Unobtainium-Allthemodium, Unobtainium-Vibranium",
+    items: [
+      { id: "20a", text: "Alloy-System verstehen", detail: "Für den ATM Star brauchst du alle 3 Super-Alloys. Jedes wird über einen <em>anderen</em> Mod-Pfad produziert – ATMons spezifisch konfiguriert. Klick Guide für die vollständige Rezept-Liste.", guide: "alloys" },
+      { id: "20b", text: "Vibranium Ore sammeln (Nether Y 64–127)", detail: "<strong>Vibranium</strong> nur mit Netherite-Pickaxe. Spawnt im Nether zwischen Y 64–127. Nature's Compass hilft beim Finden." },
+      { id: "20c", text: "Unobtainium im The Other", detail: "<strong>Unobtainium</strong> nur im <em>The Other</em> Dimension (via Teleport Pad aus Allthemodium Nuggets). EXTREM gefährlich – Endgame-Equipment + Totem Pflicht!" },
+      { id: "20d", text: "Piglich Hearts für Powah-Route", detail: "Route 1 (<strong>Vibranium-Allthemodium</strong>) braucht <em>Piglich Hearts</em>. Piglichs spawnen in <strong>Bastion-Strukturen</strong> im Nether. Sehr gefährlich – in Gruppen bekämpfen." },
+      { id: "20e", text: "Ars Nouveau Enchanting Apparatus bauen", detail: "Route 2 (<strong>Unobtainium-Allthemodium</strong>) läuft über Ars Nouveau Enchanting Apparatus mit <em>10.000 Source Cost</em>. Benötigt große Source Pools + Sourcelinks rundherum." },
+      { id: "20f", text: "Industrial Foregoing Dissolution Chamber", detail: "Route 3 (<strong>Unobtainium-Vibranium</strong>) läuft über die <strong>Industrial Foregoing Dissolution Chamber</strong> mit Pink Slime + Soul Lava als Katalysator." },
+    ],
+  },
+  {
+    id: "p21", title: "Phase 21: Fremde Dimensionen", icon: "🌌", path: "endgame",
+    desc: "The Other · Deeper & Darker · Eternal Starlight · Aether",
+    items: [
+      { id: "21a", text: "The Other (Allthemodium)", detail: "Über <strong>Teleport Pad aus Allthemodium Nuggets</strong> erreichbar. Schwebende Inseln, Piglich, <strong>Unobtainium Ore</strong>, Ancient Grass. Extrem gefährlich." },
+      { id: "21b", text: "The Beyond (Allthemodium)", detail: "Noch tiefere Dimension – über Vibranium-Teleport-Pads. Ultra-gefährlich, extrem seltene Materialien. Nur mit vollem Endgame-Gear." },
+      { id: "21c", text: "Deeper and Darker", detail: "Mod <strong>Deeper and Darker</strong>: Verbessertes Deep Dark mit eigener Dimension. Quelle für <strong>Warden-Materialien</strong>, Echo-Shards und Sculk-Zeug." },
+      { id: "21d", text: "Eternal Starlight", detail: "Mod <strong>Eternal Starlight</strong>: Ätherische Dimension mit eigenen Biomen, Mobs und Bossen. Eigene Fortschritts-Quest-Line im Questbook. Magisch, nicht Tech-lastig." },
+      { id: "21e", text: "Aether (Himmelsdimension)", detail: "Mod <strong>Aether</strong>: Klassische Himmelsdimension mit schwebenden Inseln, Moas (flugfähige Mounts), Skyroot-Bäumen. Optional aber sehr lohnend für Mobilität und Early Flight." },
+      { id: "21f", text: "Undergarden & Bumblezone", detail: "<strong>Undergarden</strong>: Unterirdische Dimension mit eigenen Mobs/Erzen. <strong>Bumblezone</strong>: Riesen-Bienen-Dimension mit Pollen-Mechaniken. Beide liefern einzigartige Ressourcen für Quests." },
+    ],
+  },
+  {
+    id: "p22", title: "Phase 22: ATM Star Endgame", icon: "🌟", path: "endgame",
+    desc: "Das ultimative Ziel",
+    items: [
+      { id: "22a", text: "ATM Star Rezept verstehen", detail: "Der ATM Star wird im <strong>Create Mechanical Crafter</strong> (9×9 Pattern) gecraftet. Benötigt <em>Unobtainium-Allthemodium Block, 2× Master Ball, 2× Nether Star Block</em> + viele Custom-Items aus dem gesamten Pack. Klick Guide für alle Sub-Quests.", guide: "atm-star" },
+      { id: "22b", text: "2 Master Balls beschaffen!", detail: "<em>KRITISCH:</em> ATMons verlangt <strong>2 Master Balls</strong>. Das Standard-Rezept ist entfernt. Quellen: <strong>Raid Dens, Battle Tower, Quest-Belohnungen, Endgame-Loot</strong>. Früh anfangen zu sammeln!" },
+      { id: "22c", text: "Forbidden Arcanus Rune Setup", detail: "Sub-Quest 1 des ATM Stars: 4× Rune Block, Quantum Injector, 5× Arcane Crystal Block bauen. Belohnung: Obsidian Dust, Steel Ingots, Souls." },
+      { id: "22d", text: "Hephaestus Forge Tier 5", detail: "Sub-Quest 2: <strong>Hephaestus Forge Tier 5</strong> mit Quantum Injector, 8× Darkstone Pedestals, komplexer Bauplattform. Belohnung: Souls, Arcane Crystal Dust, XP Bucket." },
+      { id: "22e", text: "Enchantment Table Setup", detail: "Sub-Quest 3: Enchantment Table + Quantum Injector + 4× Soul Lantern + 8× Darkstone Pedestal. Belohnung: Experience Essence, Lapis, Writable Book." },
+      { id: "22f", text: "Weitere ATM Star Sub-Quests", detail: "<strong>9 Sub-Quests insgesamt</strong> aus verschiedenen Mods (Building Tips, Juste Dire Things, etc.). Das Quest Book trackt alles – einfach Schritt für Schritt abarbeiten." },
+      { id: "22g", text: "ATM Star craften!", detail: "Alle Sub-Quests fertig + alle Materialien im Mechanical Crafter (9×9). Belohnung: <strong>50× ATM Star Shard + 1× Patrick Star</strong> (Easter Egg) + 50 XP-Level. <em>Herzlichen Glückwunsch – du hast ATMons gemeistert.</em>" },
+    ],
+  },
+);
+</script>
+
+<script>
+/* ============================================================
+   GUIDES — Große, modale Erklär-Panels für komplexe Themen
+   ============================================================ */
+const GUIDES = {
+  "mining-tiers": {
+    icon: "⛏️",
+    title: "Mining-Tier System (verifiziert)",
+    content: `
+      <p>ATMons hat ein <strong>spezifisches Mining-Tier-System</strong>, das von Standard-ATM10-Guides abweicht. Die kubejs-Skripte überschreiben die Tier-Tags <em>nicht aktiv</em> – stattdessen ergeben sich die Tiers aus der Kombination der enthaltenen Mods (AllTheOres, Mekanism, Allthemodium). Die folgende Tabelle ist <em>im Spiel verifiziert</em>.</p>
+
+      <h3>Tier-Tabelle</h3>
+      <table>
+        <tr><th>Pickaxe</th><th>Erze</th></tr>
+        <tr><td><strong>Holz</strong></td><td>Nur Vanilla (Stein, Kohle-Stein)</td></tr>
+        <tr><td><strong>Stein</strong></td><td>Kohle, Eisen, Kupfer, Tin, Aluminum, Lead</td></tr>
+        <tr><td><strong>Eisen</strong></td><td>Gold, Redstone, Lapis, Silver, Nickel, Diamant</td></tr>
+        <tr><td><strong>Diamant</strong></td><td>Platinum, Osmium, Zinc, Uranium, Obsidian</td></tr>
+        <tr><td><strong>Netherite</strong></td><td>Allthemodium, Vibranium</td></tr>
+        <tr><td><strong>Allthemodium</strong></td><td>Unobtainium</td></tr>
+      </table>
+
+      <h3>Warum ist das so wichtig?</h3>
+      <p>Die meisten Online-Guides für ATM10 zeigen <em>falsche</em> Tier-Zuordnungen für ATMons, weil ATMons sein eigenes Modpack mit eigener Mod-Kombination ist. Wer nach ATM10-Reihenfolge progresst, wundert sich warum Osmium mit Eisen-Pickaxe nicht klappt.</p>
+
+      <div class="warn"><strong>Wichtig:</strong> <em>Osmium braucht Diamant-Pickaxe!</em> Das heißt: Mekanism ist <strong>Mid-Game</strong> in ATMons, nicht Early-Game wie in vielen ATM-Packs.</div>
+
+      <h3>Konsequenzen für deine Progression</h3>
+      <ul>
+        <li><strong>Holz → Stein</strong> so schnell wie möglich (Stein schaltet 6 Erze frei)</li>
+        <li><strong>Stein → Eisen</strong> für Gold/Redstone/Lapis/Diamant</li>
+        <li><strong>Eisen → Diamant</strong> ist der <em>wichtigste</em> Schritt – schaltet Osmium frei</li>
+        <li><strong>Silent Gear Tools</strong> behalten ihre Enchants bei Material-Wechsel – ideal für diesen Upgrade-Pfad</li>
+        <li><strong>Silk Touch</strong> früh besorgen: Erz-Block → Mekanism Enrichment → 2× Output</li>
+      </ul>
+
+      <h3>Ore Distribution (Mining Dimension)</h3>
+      <table>
+        <tr><th>Erz</th><th>Max Y</th><th>Min Y</th></tr>
+        <tr><td>Coal / Iron / Copper</td><td>247</td><td>65</td></tr>
+        <tr><td>Aluminum</td><td>247</td><td>-62</td></tr>
+        <tr><td>Redstone</td><td>205</td><td>65</td></tr>
+        <tr><td>Tin</td><td>181</td><td>-62</td></tr>
+        <tr><td>Diamond</td><td>174</td><td>93</td></tr>
+        <tr><td>Uranium</td><td>157</td><td>-62</td></tr>
+        <tr><td>Gold</td><td>155</td><td>65</td></tr>
+        <tr><td>Allthemodium</td><td>128</td><td>65</td></tr>
+        <tr><td>Zinc</td><td>128</td><td>-62</td></tr>
+        <tr><td>Osmium / Nickel</td><td>64</td><td>-62</td></tr>
+        <tr><td>Platinum / Lead / Silver</td><td>34</td><td>-62</td></tr>
+      </table>
+      <p class="info">Die Mining Dimension hat keine feindlichen Mobs und ist die beste Farm-Location für alle diese Erze.</p>
+    `
+  },
+
+  "pokeball-create": {
+    icon: "🎾",
+    title: "Pokéball-Produktion via Create",
+    content: `
+      <div class="warn"><strong>ATMons entfernt alle Standard-Pokéball-Rezepte per kubejs!</strong> Die Cobblemon-Vanilla-Methode (4 Aprikokos + 1 Kupfer) funktioniert <em>nicht</em>. Bälle werden ausschließlich über Create Sequenced Assembly produziert (Mod <code>createmonballsoverhaul</code>).</div>
+
+      <h3>Die 3 Zutaten-Kategorien</h3>
+      <ol>
+        <li><strong>Ball-Lid</strong> (Oberseite) – farbig, aus Aprikokos ODER aus Loot-Truhen</li>
+        <li><strong>Ball-Base</strong> (Unterseite) – weiß, Basis für jeden Ball</li>
+        <li><strong>Ball-Mechanism</strong> (Innenleben) – <em>Copper</em> → <em>Iron</em> → <em>Brass</em> für bessere Fangraten</li>
+      </ol>
+
+      <h3>Quellen für Ball-Teile</h3>
+      <p><strong>Loot-Truhen (POI-Strukturen)</strong> droppen Ball-Teile mit folgender Gewichtung (<code>data/cobblemon/loot_table/sets/any_common_pokeball.json</code>):</p>
+      <ul>
+        <li>Blank Ball Lid: Gewicht <strong>70</strong> (häufigstes Drop)</li>
+        <li>Kompletter Poké Ball: Gewicht 40</li>
+        <li>Copper Ball Mechanism: Gewicht 30</li>
+        <li>Iron Ball Mechanism: Gewicht 15</li>
+        <li>Brass Ball Mechanism: Gewicht 7</li>
+        <li>Farbige Lids (Red/Green/Blue/Yellow/White/Black/Pink): je Gewicht 5</li>
+      </ul>
+      <p class="info">Jede Loot-Kiste in Dörfern, Dungeons und Strukturen durchsuchen – das ist deine wichtigste Ball-Teil-Quelle am Anfang!</p>
+
+      <h3>Ball-Teile selber bauen (Create)</h3>
+      <p>Die Basis-Route verwendet Apricorns + Create-Maschinen:</p>
+      <ol>
+        <li><strong>Aprikoko-Hälften</strong> herstellen: Apricorn + Mechanical Saw oder Deployer mit Axt</li>
+        <li><strong>Apricorn-Bits</strong> durch weitere Verarbeitung</li>
+        <li>Im <strong>Mechanical Press</strong> zu Ball-Lid pressen</li>
+        <li>Zusammensetzen mit Base + Mechanism über <strong>Sequenced Assembly</strong> (Depot + Conveyor + Deployer-Kette)</li>
+      </ol>
+
+      <h3>Sequenced Assembly Setup</h3>
+      <p>Ein typisches Setup:</p>
+      <ul>
+        <li>1× <strong>Depot</strong> am Start mit dem Input-Item</li>
+        <li>Mehrere <strong>Conveyor Belts</strong> die das Item durch die Station tragen</li>
+        <li>Jeder Deployer hält ein anderes Zutaten-Item und klickt es auf das laufende Werkstück</li>
+        <li>Am Ende: <strong>Mechanical Press</strong> finalisiert das Produkt</li>
+        <li>Ausgabe-Depot mit Chute in deine Storage-Kiste</li>
+      </ul>
+
+      <div class="warn"><strong>Master Ball:</strong> Das Master-Ball-Rezept ist <em>komplett entfernt</em> (<code>server_scripts/mods/Cobblemon/Recipes.js</code>). Master Balls kommen nur aus <strong>Raid Dens, Battle Tower, Quests</strong> oder seltenem Loot. Plane das für den ATM Star ein – du brauchst 2 Stück!</div>
+
+      <h3>ATMons-exklusive Bälle (Coremod)</h3>
+      <ul>
+        <li><strong>Allthemodium Ball</strong> – Basis Allthemodium</li>
+        <li><strong>Vibranium Ball</strong> – Basis Vibranium</li>
+        <li><strong>Unobtainium Ball</strong> – Basis Unobtainium</li>
+        <li><strong>Soul Lava Ball</strong> – Basis Soul Lava</li>
+      </ul>
+      <p>Alle 4 haben extrem hohe Fangraten und sind Endgame-Tier. Sie werden ebenfalls über Create-Routen gefertigt.</p>
+
+      <div class="links">
+        <a href="https://wiki.cobblemon.com/" target="_blank" rel="noopener">Cobblemon Wiki</a>
+        <a href="https://create.fandom.com/wiki/Sequenced_Assembly" target="_blank" rel="noopener">Create: Sequenced Assembly</a>
+      </div>
+    `
+  },
+
+  "level-cap": {
+    icon: "🎖️",
+    title: "Level-Cap & Trainer-System (RCT)",
+    content: `
+      <p>ATMons nutzt <strong>Radical Cobblemon Trainers (RCT)</strong> mit einer speziell konfigurierten Level-Cap-Mechanik. Die Config liegt in <code>config/rctmod-server.toml</code>.</p>
+
+      <h3>Die wichtigsten Konfig-Werte</h3>
+      <table>
+        <tr><th>Parameter</th><th>Wert</th><th>Bedeutung</th></tr>
+        <tr><td>initialLevelCap</td><td><strong>15</strong></td><td>Start-Cap – so hoch darf dein höchstes Pokémon sein</td></tr>
+        <tr><td>relativeLevelCap</td><td><strong>0</strong></td><td>Cap = exakt auf Key-Trainer-Level (kein Puffer)</td></tr>
+        <tr><td>spawningRequiresTrainerCard</td><td><strong>true</strong></td><td>Ohne Trainer Card spawnen <em>keine</em> Trainer!</td></tr>
+        <tr><td>maxTrainersPerPlayer</td><td><strong>5</strong></td><td>Reduziert von Vanilla 12 – weniger Überforderung</td></tr>
+        <tr><td>globalSpawnChance</td><td>0.85</td><td>85% Spawn-Chance pro Versuch</td></tr>
+        <tr><td>spawnInterval</td><td>180 Ticks</td><td>Alle 9 Sekunden Spawn-Versuch</td></tr>
+        <tr><td>Force-Battle Blickkontakt</td><td>60 Ticks / 8 Blöcke</td><td>3 Sek Blickkontakt ≤ 8 Blöcke = erzwungener Kampf</td></tr>
+      </table>
+
+      <h3>Wie das Cap wächst</h3>
+      <p>Mit <code>relativeLevelCap=0</code> gilt: Nach einem Key-Trainer-Sieg steigt dein Cap auf das <em>exakte</em> Level des höchsten Pokémons dieses Trainers. Kein Puffer, kein Overshoot.</p>
+      <p>Beispiel: Cap ist 15, du besiegst einen Key-Trainer mit 18er Pokémon → neues Cap ist <strong>18</strong>.</p>
+
+      <div class="warn">Pokémon <em>über</em> dem Cap bekommen <strong>0 XP</strong>. Außerdem verweigern Trainer den Kampf, wenn du Pokémon über Cap in der Party hast. Du musst sie rausrotieren.</div>
+
+      <h3>Das Serien-System</h3>
+      <p>Spieler starten in der Serie <code>empty</code>. Über das <strong>Trainer Card Menü</strong> wählst du eine Serie (z.B. <em>Radical Red</em>, <em>BDSP</em>, <em>Johto</em>). Jede Serie hat ihren eigenen Trainer-Pool und ihre eigene Progression.</p>
+
+      <h3>Freeroam – erst nach erster Serie!</h3>
+      <p class="info">Der <strong>Freeroam-Modus</strong> (wo du Pokémon aus verschiedenen Serien mischen kannst) ist <em>gesperrt</em>, bis du mindestens eine Serie komplett durchgespielt hast. Das ist Absicht – der Autor will dass du einmal eine strukturierte Progression erlebst.</p>
+
+      <h3>Trainer Spawner Block</h3>
+      <p>Wenn dir natürliches Spawning zu langsam ist: der <strong>Trainer Spawner Block</strong> (Rezept in EMI) beschwört Trainer gezielt. Manche brauchen Signature-Items als Input (das Quest Book erklärt welche).</p>
+
+      <h3>Praktische Tipps</h3>
+      <ul>
+        <li><strong>Trainer Card IMMER im Inventar</strong> – die häufigste Frustration bei neuen Spielern</li>
+        <li>Ein Pokémon auf Cap-Level halten → spawnt stärkere Trainer</li>
+        <li>Force-Battle beachten: schwache Phase = nicht in die Augen des Key-Trainers schauen</li>
+        <li>Team rotieren statt nur eines maxen – du brauchst Level-Cap-fähige Kämpfer in mehreren Typen</li>
+      </ul>
+
+      <div class="links">
+        <a href="https://srcmc.gitlab.io/rct/docs/0.13/" target="_blank" rel="noopener">Radical Cobblemon Trainers Docs</a>
+      </div>
+    `
+  },
+
+  "mekanism-ore": {
+    icon: "⚙️",
+    title: "Mekanism Ore-Processing in ATMons",
+    content: `
+      <p>ATMons hat die Mekanism-Ore-Processing-Pipeline per kubejs angepasst (<code>server_scripts/mods/Mekanism/ore_processing.js</code>). Die Outputs unterscheiden sich stellenweise von Vanilla-Mekanism.</p>
+
+      <h3>Die 5 Mekanism-Tiers</h3>
+      <p>Mekanism-Ore-Processing wird stufenweise ausgebaut. Jede Stufe <em>verdoppelt</em> den Output gegenüber der vorigen:</p>
+      <table>
+        <tr><th>Tier</th><th>Output / Erz-Block</th><th>Maschinen</th></tr>
+        <tr><td>Basic (Smelter)</td><td>1× Ingot</td><td>Ofen</td></tr>
+        <tr><td>2× (Enrichment)</td><td>2× Ingot</td><td>Enrichment Chamber → Smelter</td></tr>
+        <tr><td>3× (Purification)</td><td>3× Ingot</td><td>Purification Chamber → Crusher → Smelter</td></tr>
+        <tr><td>4× (Injection)</td><td>4× Ingot</td><td>Chemical Injection Chamber → Purification → Crusher → Smelter</td></tr>
+        <tr><td>5× (Dissolution)</td><td>5× Ingot</td><td>Chemical Dissolution Chamber → Washer → Crystallizer → Injection → Purification → Crusher → Smelter</td></tr>
+      </table>
+
+      <h3>ATMons-spezifische Pipeline-Anpassungen</h3>
+      <p>Per kubejs wurden AllTheOres-Materialien in die Pipeline integriert:</p>
+      <ul>
+        <li><strong>Washing → Injecting → Crushing → Enriching</strong> Pipeline für AllTheOres-Erze</li>
+        <li>Pack-spezifische Outputs, z.B. <strong>5 Uraninite aus Uranium-Dissolution</strong> statt Standard-Mekanism-Mengen</li>
+        <li>AllTheOres Dust/Crystal/Shard werden über die Standard-Mekanism-Maschinen verarbeitet</li>
+      </ul>
+
+      <h3>Einstiegs-Setup (2× Tier)</h3>
+      <ol>
+        <li><strong>Heat Generator</strong> oder Wind Generator als Energie</li>
+        <li><strong>Metallurgic Infuser</strong> + Enriched Coal (durch Enrichment Chamber) → <strong>Steel</strong></li>
+        <li><strong>Enrichment Chamber</strong>: Erz-Block rein → 2× Dust raus</li>
+        <li><strong>Energized Smelter</strong>: Dust → Ingot</li>
+        <li>Direkte Platzierung (Chamber neben Smelter) = automatischer Transfer ohne Pipes</li>
+      </ol>
+
+      <h3>Silk Touch + Enrichment = perfekte Kombi</h3>
+      <div class="info"><strong>Silk Touch Pickaxe</strong> → Erz als <em>Block</em> abbauen → Block in Enrichment Chamber → 2× Dust → 2× Ingot. Ohne Silk Touch hast du Raw Ore → Chamber gibt weniger Output. <em>Silk Touch ist ein Multiplier für deinen gesamten Erz-Ertrag.</em></div>
+
+      <h3>Kohle/Redstone zuerst enrichen!</h3>
+      <p class="warn">Der wichtigste Early-Game-Tipp: <strong>Kohle und Redstone zuerst durch die Enrichment Chamber</strong>, bevor du sie im Metallurgic Infuser nutzt. Enriched Coal/Redstone gibt <strong>8× mehr Infuse Units</strong> – das spart enorm Material beim Steel-Herstellen.</p>
+
+      <h3>Fortgeschritten: Chemical Dissolution Chamber (5× Tier)</h3>
+      <p>Für das 5×-Tier brauchst du viele Maschinen und Chemicals (Hydrogen Chloride, Sulfuric Acid, Water, Oxygen). Fangen aber erst an, wenn deine Basis stabil läuft – das ist Late-Game Setup.</p>
+
+      <div class="links">
+        <a href="https://wiki.aidancbrady.com/wiki/Ore_Processing" target="_blank" rel="noopener">Mekanism Wiki: Ore Processing</a>
+      </div>
+    `
+  },
+
+  "alloys": {
+    icon: "🔨",
+    title: "Die 3 Super-Alloy-Routen",
+    content: `
+      <p>ATMons erfordert drei Legierungen für den ATM Star, und jede läuft über einen <em>anderen</em> Mod-Pfad. Die Rezepte sind per kubejs in <code>server_scripts/modpack/atm_alloys.js</code> definiert.</p>
+
+      <h3>Übersicht</h3>
+      <table>
+        <tr><th>Alloy</th><th>Route</th><th>Key-Ingredient</th></tr>
+        <tr><td>Vibranium-Allthemodium</td><td>Powah Energizing</td><td>1 Mrd. FE + Piglich Hearts</td></tr>
+        <tr><td>Unobtainium-Allthemodium</td><td>Ars Nouveau Apparatus</td><td>10.000 Source Cost</td></tr>
+        <tr><td>Unobtainium-Vibranium</td><td>Industrial Foregoing Dissolution</td><td>Pink Slime + Soul Lava</td></tr>
+      </table>
+
+      <h3>Route 1: Vibranium-Allthemodium via Powah</h3>
+      <p>Die Powah-Route nutzt den <strong>Powah Energizing Orb</strong>:</p>
+      <ol>
+        <li>Multi-Block Energizing-Struktur bauen (Orb + mehrere Energizing Rods)</li>
+        <li>Rohmaterialien auf die Rods legen (Vibranium-Ingot, Allthemodium-Ingot)</li>
+        <li>Piglich Hearts als Katalysator hinzu</li>
+        <li>Ca. <strong>1 Milliarde FE</strong> einspeisen</li>
+        <li>Output: Vibranium-Allthemodium Alloy</li>
+      </ol>
+      <p class="warn"><strong>Piglich Hearts</strong> droppen von <em>Piglichs</em> – rare Bastion-Mobs im Nether. Sehr gefährlich, aber der einzige Weg. Mindestens in voller Diamant/Netherite-Rüstung angehen.</p>
+
+      <h3>Route 2: Unobtainium-Allthemodium via Ars Nouveau</h3>
+      <ol>
+        <li><strong>Enchanting Apparatus</strong> bauen (Ars Nouveau Kern-Block)</li>
+        <li>Rundum <strong>Arcane Pedestals</strong> mit den Input-Items bestücken</li>
+        <li>Große <strong>Source Pool</strong> Infrastruktur nötig – mehrere Sourcelinks / Source Jars</li>
+        <li><strong>10.000 Source Cost</strong> für den Craft</li>
+        <li>Output: Unobtainium-Allthemodium Alloy</li>
+      </ol>
+      <p class="info">Source sammelt sich passiv über Mana Berries, Wilden Magic-Crops, Sourcelinks in passenden Biomen. Für Endgame-Mengen brauchst du eine richtige <strong>Source-Farm</strong>.</p>
+
+      <h3>Route 3: Unobtainium-Vibranium via Industrial Foregoing</h3>
+      <ol>
+        <li><strong>Dissolution Chamber</strong> (Industrial Foregoing) bauen</li>
+        <li>Energie und Chemicals einspeisen</li>
+        <li>Input: Unobtainium + Vibranium + <strong>Pink Slime</strong> + <strong>Soul Lava</strong></li>
+        <li>Output: Unobtainium-Vibranium Alloy</li>
+      </ol>
+      <p><strong>Pink Slime</strong> wird über die Mob Slaughter Factory / Industrial Foregoing Pink Slime Farm produziert. <strong>Soul Lava</strong> kommt aus speziellen Strukturen oder als Quest-Belohnung.</p>
+
+      <h3>Welche Route zuerst?</h3>
+      <p>Empfehlung:</p>
+      <ol>
+        <li><strong>Powah-Route zuerst</strong> – Powah ist meist schon für Strom-Infrastruktur aufgebaut, die Extension zum Energizing-Setup ist klein</li>
+        <li>Dann <strong>Industrial Foregoing</strong> – Pink Slime Farm ist eigenständiges Projekt, skaliert gut</li>
+        <li>Zum Schluss <strong>Ars Nouveau</strong> – braucht die meiste eigenständige Infrastruktur</li>
+      </ol>
+
+      <p class="info">Parallel kannst du alle 3 Mods schon früher aufbauen, weil jeder für sich mächtige Features liefert (Ars für Spells, IF für Automation, Powah für Strom).</p>
+    `
+  },
+
+  "atm-star": {
+    icon: "🌟",
+    title: "ATM Star Endgame-Checkliste",
+    content: `
+      <p>Der <strong>ATM Star</strong> ist das ultimative Ziel von ATMons. Er wird im <strong>Create Mechanical Crafter</strong> (9×9 Pattern) aus Materialien dutzender Mods gefertigt. Das Rezept ist in <code>server_scripts/modpack/atm_star.js</code> definiert.</p>
+
+      <h3>Hauptmaterialien</h3>
+      <ul>
+        <li>1× <strong>Unobtainium-Allthemodium Block</strong></li>
+        <li>2× <strong>Master Ball</strong> ⚠️ <em>nicht craftbar – nur aus Raids/Battle Tower/Quests!</em></li>
+        <li>2× <strong>Nether Star Block</strong> (aus 9 Nether Stars = mind. 9 Wither-Kills)</li>
+        <li>Zahlreiche Custom-Items aus den Sub-Quests</li>
+      </ul>
+      <p>Außerdem gibt es eine Alternativ-Variante aus 9× <strong>ATM Star Shards</strong>.</p>
+
+      <h3>Die 9 Sub-Quests (FTB Questbook)</h3>
+      <p>Chapter <code>achapter_2r_6the_atm_star</code>, <code>order_index: 4</code>. Das Questbook trackt jeden Sub-Quest-Fortschritt automatisch.</p>
+
+      <h3>Sub-Quest 1: Forbidden Arcanus Rune Setup</h3>
+      <ul>
+        <li>4× Rune Block</li>
+        <li>Quantum Injector</li>
+        <li>5× Arcane Crystal Block</li>
+      </ul>
+      <p><strong>Belohnung:</strong> 10× Obsidian Dust, 5× Steel Ingot, 5× Souls</p>
+
+      <h3>Sub-Quest 2: Hephaestus Forge Tier 5</h3>
+      <p>Die Hephaestus Forge ist die zentrale Endgame-Struktur in Forbidden Arcanus. Tier 5 ist die höchste Ausbau-Stufe.</p>
+      <ul>
+        <li>Quantum Injector</li>
+        <li>Hephaestus Forge Core</li>
+        <li>8× Darkstone Pedestal</li>
+        <li>Komplexe mehrstufige Baustruktur (siehe Forbidden Arcanus Patchouli)</li>
+      </ul>
+      <p><strong>Belohnung:</strong> 10× Souls, 20× Arcane Crystal Dust, 1× XP Bucket</p>
+
+      <h3>Sub-Quest 3: Enchantment Table Setup</h3>
+      <ul>
+        <li>Quantum Injector</li>
+        <li>Enchantment Table</li>
+        <li>4× Soul Lantern</li>
+        <li>8× Darkstone Pedestal</li>
+      </ul>
+      <p><strong>Belohnung:</strong> 16× Experience Essence, 64× Lapis Lazuli, 1× Writable Book, XP-Level</p>
+
+      <h3>Sub-Quest 4–9</h3>
+      <p>Weitere Sub-Quests aus verschiedenen Mods: Building Tips, Juste Dire Things, Pokémon-Meilensteine, etc. Das Questbook zeigt den exakten Stand – einfach Schritt für Schritt abarbeiten.</p>
+
+      <h3>Critical Path für den ATM Star</h3>
+      <ol>
+        <li><strong>Alle 3 Super-Alloys herstellen</strong> (siehe Alloy-Guide) → Unobtainium-Allthemodium Block</li>
+        <li><strong>Master Balls sammeln</strong> – das ist oft der längste Flaschenhals. Sobald du erste Master Balls siehst, grinden!</li>
+        <li><strong>Nether Stars farmen</strong> – Wither-Farm aufbauen oder zumindest 18× Wither-Skulls sammeln</li>
+        <li><strong>Forbidden Arcanus Hephaestus Forge</strong> aufbauen (Tier 1 → 2 → 3 → 4 → 5)</li>
+        <li><strong>Alle Sub-Quests</strong> im Questbook abhaken</li>
+        <li>Materialien im <strong>9×9 Mechanical Crafter</strong> platzieren → craften</li>
+      </ol>
+
+      <h3>Belohnung</h3>
+      <div class="info">
+        <strong>50× ATM Star Shard</strong> + <strong>1× Patrick Star</strong> (Easter-Egg-Item) + 50 XP-Level
+      </div>
+      <p>Der ATM Star selbst ist ein Status-Symbol – in ATMons <em>nicht duplizierbar</em> aus eigenen Shards (anders als Standard-ATM-Packs!). Jede Kopie braucht alle Materialien frisch.</p>
+
+      <div class="warn"><strong>Tipp:</strong> Starte das Master-Ball-Hunting schon im frühen Mid-Game – das ist fast immer der Flaschenhals. Jede Raid Den und jeder Battle Tower Run ist ein möglicher Master Ball.</div>
+
+      <div class="links">
+        <a href="https://www.curseforge.com/minecraft/modpacks/all-the-mons" target="_blank" rel="noopener">ATMons auf CurseForge</a>
+        <a href="https://discord.gg/3paFjuRfz9" target="_blank" rel="noopener">ATMons Discord</a>
+      </div>
+    `
+  },
+};
+</script>
+
+<script>
+/* ============================================================
+   STATE & RENDERING
+   ============================================================ */
+const PATHS = [
+  { id: "all",     label: "Alles",    icon: "📋" },
+  { id: "base",    label: "Basis",    icon: "⚙️" },
+  { id: "pokemon", label: "Pokémon",  icon: "🔴" },
+  { id: "tech",    label: "Tech",     icon: "⚡" },
+  { id: "endgame", label: "Endgame",  icon: "🌟" },
+];
+
+let state = {
+  checked: {},
+  collapsed: {},
+  expanded: {},
+  path: "all",
+  search: "",
+  openGuide: null,
+};
+
+function load() {
+  try {
+    const raw = localStorage.getItem('atmons-checklist-v2');
+    if (raw) {
+      const d = JSON.parse(raw);
+      state.checked = d.c || {};
+      state.collapsed = d.o || {};
+      state.path = d.p || "all";
+    } else {
+      // Migration von v1
+      const v1 = localStorage.getItem('atmons-checklist');
+      if (v1) {
+        const d = JSON.parse(v1);
+        state.checked = d.c || {};
+        state.collapsed = d.o || {};
+      }
+    }
+  } catch(e) {}
+}
+
+function save() {
+  try {
+    localStorage.setItem('atmons-checklist-v2', JSON.stringify({
+      c: state.checked,
+      o: state.collapsed,
+      p: state.path,
+    }));
+  } catch(e) {}
+}
+
+function matchesSearch(item, query) {
+  if (!query) return true;
+  const q = query.toLowerCase();
+  const text = (item.text || "").toLowerCase();
+  const detail = (item.detail || "").toLowerCase();
+  return text.includes(q) || detail.includes(q);
+}
+
+function highlightText(text, query) {
+  if (!query) return text;
+  const q = query.trim();
+  if (!q) return text;
+  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`(${escaped})`, 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+function filteredPhases() {
+  return PHASES
+    .filter(p => state.path === "all" || p.path === state.path)
+    .map(p => ({
+      ...p,
+      items: p.items.filter(i => matchesSearch(i, state.search))
+    }))
+    .filter(p => p.items.length > 0);
+}
+
+function getPathStats(pathId) {
+  let tot = 0, dn = 0;
+  PHASES.forEach(p => {
+    if (pathId !== "all" && p.path !== pathId) return;
+    p.items.forEach(i => {
+      tot++;
+      if (state.checked[i.id]) dn++;
+    });
+  });
+  return { tot, dn, pc: tot ? Math.round(dn / tot * 100) : 0 };
+}
+
+function getPhaseStats(phase) {
+  const visible = phase.items;
+  const tot = visible.length;
+  const dn = visible.filter(i => state.checked[i.id]).length;
+  const allTot = PHASES.find(p => p.id === phase.id).items.length;
+  const allDn = PHASES.find(p => p.id === phase.id).items.filter(i => state.checked[i.id]).length;
+  return { tot, dn, full: allDn === allTot, allTot, allDn };
+}
+
+/* Map a phase.id to the label of Teil A/B1/B2/C for section dividers */
+function partForPhase(phase) {
+  const n = parseInt(phase.id.replace('p', ''), 10);
+  if (n <= 3)  return { key: "base",    label: "Teil A",  title: "Grundlagen" };
+  if (n <= 8)  return { key: "pokemon", label: "Teil B1", title: "Pokémon-Pfad" };
+  if (n <= 15) return { key: "tech",    label: "Teil B2", title: "Tech-Pfad" };
+  return { key: "endgame", label: "Teil C", title: "Mittelspiel & Endgame" };
+}
+
+function render() {
+  const app = document.getElementById('app');
+  const phases = filteredPhases();
+  const overall = getPathStats("all");
+  const current = getPathStats(state.path);
+  const pathInfo = PATHS.find(p => p.id === state.path);
+
+  // Header
+  let html = `
+    <div class="header">
+      <span class="header-icon">📋</span>
+      <div>
+        <h1>ATMons – Perfekter Start</h1>
+        <p>Verifiziert aus der lokalen Instanz · Pokémon + Tech parallel · Klicke Items für Details</p>
+      </div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-labels">
+        <span class="progress-count">${overall.dn}/${overall.tot} insgesamt${state.path !== "all" ? ` · ${current.dn}/${current.tot} in ${pathInfo.label}` : ""}</span>
+        <span class="progress-pct ${overall.pc===100?'done':''}">${overall.pc}%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill ${overall.pc===100?'done':''}" style="width:${overall.pc}%"></div>
+      </div>
+    </div>
+  `;
+
+  // Path Filter
+  html += `<div class="path-filter">`;
+  PATHS.forEach(p => {
+    const s = getPathStats(p.id);
+    html += `
+      <button class="path-btn ${state.path === p.id ? 'active' : ''}" onclick="setPath('${p.id}')">
+        ${p.icon} ${p.label}<span class="path-count">${s.dn}/${s.tot}</span>
+      </button>
+    `;
+  });
+  html += `</div>`;
+
+  // Search
+  html += `
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" id="search-input"
+        placeholder="Suchen nach Item, Mod, Begriff..."
+        value="${state.search.replace(/"/g, '&quot;')}"
+        oninput="setSearch(this.value)">
+      <button class="search-clear ${state.search ? 'show' : ''}" onclick="clearSearch()">✕</button>
+    </div>
+  `;
+
+  // Mining Tiers info box
+  if (!state.search && (state.path === "all" || state.path === "base")) {
+    html += `
+      <div class="info-box tier-box">
+        <h3>
+          <span>⛏️ Mining-Tiers (verifiziert)</span>
+          <button class="info-link" onclick="openGuide('mining-tiers')">Details →</button>
+        </h3>
+        <div class="tier-row"><span class="tier-label">Stein:</span> Kohle, Eisen, Kupfer, Tin, Aluminum, Lead</div>
+        <div class="tier-row"><span class="tier-label">Eisen:</span> Gold, Redstone, Lapis, Silver, Nickel, Diamant</div>
+        <div class="tier-row"><span class="tier-label">Diamant:</span> Platinum, Osmium, Zinc, Uranium, Obsidian</div>
+        <div class="tier-row"><span class="tier-label">Netherite:</span> Allthemodium, Vibranium</div>
+      </div>
+    `;
+  }
+
+  // Phases
+  if (phases.length === 0) {
+    html += `
+      <div class="empty-state">
+        <div class="empty-state-icon">🔍</div>
+        Keine Einträge gefunden${state.search ? ` für "${state.search}"` : ""}.
+      </div>
+    `;
+  } else {
+    let lastPart = null;
+    phases.forEach(phase => {
+      const ps = getPhaseStats(phase);
+      const shut = state.collapsed[phase.id] && !state.search;
+      const part = partForPhase(phase);
+
+      // Part divider — only when path == "all" and part changed
+      if (state.path === "all" && !state.search && (!lastPart || lastPart.label !== part.label)) {
+        html += `
+          <div class="part-divider ${part.key}">
+            <span class="part-label">${part.label}</span>
+            <span class="part-title">${part.title}</span>
+          </div>
+        `;
+        lastPart = part;
+      }
+
+      html += `
+        <div class="phase ${ps.full ? 'done' : ''}">
+          <button class="phase-header" onclick="togglePhase('${phase.id}')">
+            <span class="phase-icon">${phase.icon}</span>
+            <div class="phase-info">
+              <span class="phase-title">${phase.title}</span>
+              ${phase.desc ? `<span class="phase-desc">${phase.desc}</span>` : ''}
+            </div>
+            <span class="phase-badge">${ps.allDn}/${ps.allTot}</span>
+            <span class="phase-arrow ${shut ? 'shut' : ''}">▼</span>
+          </button>
+      `;
+
+      if (!shut) {
+        html += `<div class="phase-items">`;
+        phase.items.forEach(item => {
+          const on = state.checked[item.id];
+          const exp = state.expanded[item.id] || (!!state.search && item.detail);
+          const labelHtml = state.search ? highlightText(item.text, state.search) : item.text;
+          const detailHtml = state.search && item.detail ? highlightText(item.detail, state.search) : item.detail;
+          html += `
+            <div class="item-row">
+              <div class="item-main">
+                <button class="item-check" onclick="toggleItem('${item.id}')">
+                  <span class="checkbox ${on ? 'on' : ''}">${on ? '✓' : ''}</span>
+                </button>
+                <button class="item-text-btn" onclick="toggleExpand('${item.id}')">
+                  <span class="item-label ${on ? 'on' : ''}">${labelHtml}</span>
+                  ${item.detail ? `<span class="item-expand ${exp ? 'open' : ''}">▾</span>` : ''}
+                </button>
+              </div>
+              ${exp && item.detail ? `
+                <div class="item-detail">
+                  ${detailHtml}
+                  ${item.guide ? `<br><button class="item-guide-btn" onclick="openGuide('${item.guide}')">📖 Vollständiger Guide öffnen</button>` : ''}
+                </div>
+              ` : ''}
+            </div>
+          `;
+        });
+        html += `</div>`;
+      }
+
+      html += `</div>`;
+    });
+  }
+
+  // Reset
+  html += `
+    <div class="reset-wrap">
+      <button class="reset-btn" onclick="resetAll()">Fortschritt zurücksetzen</button>
+    </div>
+    <div class="footer">ATMons Checkliste · Daten werden lokal im Browser gespeichert</div>
+  `;
+
+  app.innerHTML = html;
+
+  // Restore focus to search input if it was focused
+  if (state.searchFocused) {
+    const input = document.getElementById('search-input');
+    if (input) {
+      input.focus();
+      const v = input.value;
+      input.setSelectionRange(v.length, v.length);
+    }
+  }
+
+  // Render modal if open
+  renderModal();
+}
+
+function renderModal() {
+  const overlay = document.getElementById('modal-overlay');
+  const modal = document.getElementById('modal');
+  if (!state.openGuide || !GUIDES[state.openGuide]) {
+    overlay.classList.remove('open');
+    modal.innerHTML = "";
+    document.body.style.overflow = "";
+    return;
+  }
+  const g = GUIDES[state.openGuide];
+  modal.innerHTML = `
+    <div class="modal-header">
+      <span class="modal-icon">${g.icon}</span>
+      <span class="modal-title">${g.title}</span>
+      <button class="modal-close" onclick="closeGuide()">×</button>
+    </div>
+    <div class="modal-body">${g.content}</div>
+  `;
+  overlay.classList.add('open');
+  document.body.style.overflow = "hidden";
+}
+
+window.toggleItem = function(id) {
+  state.checked[id] = !state.checked[id];
+  save();
+  render();
+};
+
+window.togglePhase = function(id) {
+  state.collapsed[id] = !state.collapsed[id];
+  save();
+  render();
+};
+
+window.toggleExpand = function(id) {
+  state.expanded[id] = !state.expanded[id];
+  render();
+};
+
+window.setPath = function(p) {
+  state.path = p;
+  save();
+  render();
+};
+
+window.setSearch = function(s) {
+  state.search = s;
+  state.searchFocused = true;
+  render();
+  state.searchFocused = false;
+};
+
+window.clearSearch = function() {
+  state.search = "";
+  render();
+};
+
+window.openGuide = function(id) {
+  state.openGuide = id;
+  renderModal();
+};
+
+window.closeGuide = function() {
+  state.openGuide = null;
+  renderModal();
+};
+
+window.closeGuideFromOverlay = function(e) {
+  if (e.target.id === 'modal-overlay') closeGuide();
+};
+
+window.resetAll = function() {
+  if (!confirm('Wirklich ALLES zurücksetzen? Dein gesamter Fortschritt geht verloren.')) return;
+  state.checked = {};
+  state.collapsed = {};
+  state.expanded = {};
+  save();
+  render();
+};
+
+// Keyboard: ESC to close modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && state.openGuide) closeGuide();
+});
+
+load();
+render();
+</script>
+</body>
+</html>

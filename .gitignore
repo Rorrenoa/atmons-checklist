@@ -1,0 +1,29 @@
+# Claude Code / internal docs (nicht für öffentliches Repo)
+CLAUDE.md
+.claude/
+.claude-*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Logs / temp
+*.log
+*.tmp
+*.bak
+
+# Node (falls später Tooling dazukommt)
+node_modules/
+package-lock.json
