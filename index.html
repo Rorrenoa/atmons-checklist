@@ -898,13 +898,13 @@ const PHASES = [
     desc: "Das Fundament für alles Weitere",
     items: [
       { id: "3a", text: "Mining-Tier System lernen", detail: "ATMons hat ein <strong>spezifisches Mining-Tier-System</strong>, das von ATM10-Guides abweicht. Klick den Guide-Button unten für die vollständige verifizierte Tabelle.", guide: "mining-tiers" },
-      { id: "3b", text: "Stein-Pickaxe: Kohle, Eisen, Kupfer, Tin, Aluminum, Lead", detail: "Alle 6 Stein-Tier-Erze sofort verfügbar. Sammle Eisen zuerst – mind. 2 Stacks. <strong>Tin</strong> wird zu Bronze (Campfire Pot!), <strong>Aluminum/Lead</strong> für frühe Maschinen und Legierungen." },
+      { id: "3b", text: "Stein-Pickaxe: Kohle, Eisen, Kupfer, Tin, Aluminum, Lead", detail: "Alle 6 Stein-Tier-Erze sofort verfügbar. <strong>Y-Höhen Overworld:</strong> <em>Kohle</em> Y ~95, <em>Eisen</em> Y ~-24 oder ~16 (Triangle), <em>Kupfer</em> Y ~48 (mehr in Dripstone Caves), <em>Tin</em> Y ~20, <em>Aluminum</em> Y ~60, <em>Lead</em> Y ~-16 (Deepslate). Sammle Eisen zuerst – mind. 2 Stacks. <strong>Tin</strong> wird zu Bronze (Campfire Pot!), <strong>Aluminum/Lead</strong> für frühe Maschinen. Alle Heights + Mining-Dim-Werte im Guide.", guide: "ore-heights" },
       { id: "3c", text: "Ofen bauen und schmelzen", detail: "8 Cobblestone = Ofen. Stelle 2–3 Öfen nebeneinander für paralleles Schmelzen, bis Mekanism Energized Smelter verfügbar ist." },
-      { id: "3d", text: "Eisen-Pickaxe craften", detail: "Schaltet <strong>Gold, Redstone, Lapis, Silver, Nickel und Diamant</strong> frei. Ohne Eisen-Pickaxe kein Fortschritt über Basis-Erze hinaus." },
-      { id: "3e", text: "Diamant-Pickaxe anvisieren", detail: "Der <em>wichtigste</em> Upgrade-Schritt: Diamant-Pickaxe schaltet <strong>Osmium, Platinum, Zinc, Uranium und Obsidian</strong> frei. <strong>Osmium = Mekanism-Basis</strong> – ohne Diamant kein Mekanism!" },
+      { id: "3d", text: "Eisen-Pickaxe craften → Gold, Redstone, Lapis, Silver, Nickel, Diamant", detail: "Schaltet 6 weitere Erze frei. <strong>Y-Höhen Overworld:</strong> <em>Diamant</em> Y <strong>-58</strong> (tief wie Vanilla), <em>Redstone</em> Y <strong>-58</strong> (tiefer = besser), <em>Gold</em> Y ~-16, <em>Lapis</em> Y ~0, <em>Silver</em> Y ~-16, <em>Nickel</em> Y ~0. <strong>Geheim-Tipp:</strong> Ein Strip-Mine bei <strong>Y = -16</strong> erwischt gleichzeitig Gold, Lapis, Silver, Nickel, Osmium, Iridium und Uranium. Für Diamant/Redstone noch tiefer runter.", guide: "ore-heights" },
+      { id: "3e", text: "Diamant-Pickaxe → Osmium, Platinum, Zinc, Uranium, Obsidian", detail: "Der <em>wichtigste</em> Upgrade-Schritt. <strong>Y-Höhen Overworld:</strong> <em>Osmium</em> Y ~0, <em>Platinum</em> Y ~-32 (selten, tief), <em>Zinc</em> Y ~0, <em>Uranium</em> Y <strong>-24</strong> (ATMons-Override!), <em>Obsidian</em> — Lavaseen überall. <strong>Osmium = Mekanism-Basis</strong> – ohne Diamant kein Mekanism. Ab jetzt ist Y -16 bis 0 dein Hauptstrip-Mine-Level.", guide: "ore-heights" },
       { id: "3f", text: "Silent Gear als ein-Tool-für-alles (Vorschau)", detail: "Silent Gear Tools <em>brechen nie endgültig</em> und können mit Repair Kits unendlich repariert werden. Siehe Phase 13 für Details." },
       { id: "3g", text: "Silk Touch priorisieren", detail: "Silk Touch auf Pickaxe = Erze als <strong>Block</strong> statt Raw Ore abbauen. Erze als Block → Mekanism Enrichment Chamber → <strong>2× Output</strong>. Silk Touch spart also langfristig viel Material!" },
-      { id: "3h", text: "Netherite als finales Upgrade merken", detail: "Netherite-Pickaxe schaltet <strong>Allthemodium</strong> frei – nur dann in Phase 17 relevant." },
+      { id: "3h", text: "Netherite als finales Upgrade merken", detail: "Netherite-Pickaxe schaltet <strong>Allthemodium</strong> (Deep Dark Biome) und <strong>Vibranium</strong> (Nether, Crimson/Warped Forest) frei – nur dann in Phase 17 & 20 relevant." },
     ],
   },
 ];
@@ -932,7 +932,7 @@ PHASES.push(
     desc: "ACHTUNG: Pokébälle sind in ATMons anders!",
     items: [
       { id: "5a", text: "Pokéball-Produktion ist komplett anders!", detail: "<strong>WICHTIG:</strong> Die Standard-Cobblemon-Pokéball-Rezepte sind in ATMons <em>komplett entfernt</em>. Pokébälle werden über <strong>Create Sequenced Assembly</strong> produziert (Mod <code>createmonballsoverhaul</code>). Klick den Guide für die vollständige Anleitung.", guide: "pokeball-create" },
-      { id: "5b", text: "Aprikokos sammeln (8 Farben)", detail: "Aprikoko-Bäume spawnen in verschiedenen Biomen. Farben: <strong>White, Yellow, Pink, Red, Green, Black, Blue, Brown</strong>. Jede Farbe = anderer Pokéball-Typ. Baum-Generierungs-Chance ist auf 10% konfiguriert, also selten!" },
+      { id: "5b", text: "Aprikokos sammeln (8 Farben)", detail: "Aprikoko-Bäume spawnen in verschiedenen Biomen (Default Cobblemon-Worldgen, in ATMons nicht überschrieben). Farben + typische Biome: <strong>Red</strong> (Savanna), <strong>Yellow</strong> (Desert/Sunflower Plains), <strong>Green</strong> (Jungle), <strong>Blue</strong> (Snowy Taiga/Cold Biomes), <strong>Pink</strong> (Cherry Grove), <strong>White</strong> (Plains/Forest), <strong>Black</strong> (Dark Forest), <strong>Brown</strong> (Taiga/Old Growth). Jede Farbe = anderer Pokéball-Typ. Baum-Generierungs-Chance ist auf 10% konfiguriert – also selten, jeden Baum markieren oder Setzlinge sichern!" },
       { id: "5c", text: "Aprikoko-Setzlinge nachpflanzen", detail: "Sobald du einen Baum gefunden hast: Setzlinge sichern und anpflanzen. Später via <strong>Pylons Mod</strong> automatisch harvestbar – siehe Phase 18." },
       { id: "5d", text: "Loot-Truhen nach Ball-Teilen durchsuchen", detail: "In POI-Strukturen (Dörfer, Dungeons) droppen per Loot-Table: <strong>Blank Ball Lid</strong> (Gewicht 70), farbige Lids (je 5), <strong>Copper/Iron/Brass Mechanism</strong>. Durchsuche jede Loot-Kiste die du findest!" },
       { id: "5e", text: "Create-Minimum aufbauen (siehe Tech-Pfad)", detail: "Du brauchst mindestens <strong>Andesite Alloy, Mechanical Press, Encased Fan, Deployer</strong> und <strong>Mechanical Drill</strong> oder eine Rotation-Quelle. Siehe Phase 10 im Tech-Pfad." },
@@ -968,7 +968,7 @@ PHASES.push(
       { id: "7d", text: "Redstone-Block unter Pasture = stoppt Eier", detail: "Wenn du kein neues Ei willst (z.B. beim Shiny-Breeding ohne Ditto-Reset): Redstone-Block direkt unter den Pasture = Ei-Produktion pausiert." },
       { id: "7e", text: "Cobblemon Campfire Pot craften", detail: "Rezept: <strong>5 Bronze Ingots + 1 Glasscheibe + 2 Aprikokos</strong>. Auf Campfire setzen. <em>Achtung:</em> Campfire Pot ist per kubejs als <code>c:relocation_not_supported</code> markiert – kann <strong>nicht mit Packing Tape</strong> verschoben werden." },
       { id: "7f", text: "Pokémon-Medizin kochen", detail: "Mit dem Campfire Pot craftest du <strong>Revive, Heal Powder, EXP Candy XS, Rare Candy</strong> usw. Rezepte in EMI. Der Pot hat einen <strong>Item Handler</strong> – vollständig automatisierbar!" },
-      { id: "7g", text: "Pokémon-Fossilien finden", detail: "Fossilien-Pokémon aus Strukturen: <strong>Prehistoric Birch Tree, Dripstone Oasis, Moss Caves</strong>. Fossil-Teile mit Archaeology-Brush freilegen. Assembler-Maschine baut aus Fragmenten komplette Pokémon zusammen." },
+      { id: "7g", text: "Pokémon-Fossilien finden", detail: "Fossilien-Pokémon aus Cobblemon-Strukturen in spezifischen Biomen: <strong>Prehistoric Birch Tree</strong> (Birch Forest — Aerodactyl, Anorith, Lileep), <strong>Dripstone Oasis</strong> (Dripstone Caves — Tirtouga, Archen, Shieldon, Cranidos), <strong>Moss Caves</strong> (Lush Caves — Kabuto, Omanyte, Dracozolt, Arctozolt). Fossil-Teile mit Archaeology-Brush freilegen. Assembler-Maschine baut aus Fragmenten komplette Pokémon zusammen." },
       { id: "7h", text: "Mega Evolution (Mega Showdown Mod)", detail: "Ausgewählte Pokémon können mit <strong>Mega Stone</strong> (Held Item) im Kampf Mega-Evolvieren. Gen 6+ Mechanik. Mega Stones droppen aus Dungeons, Raid Dens oder sind Quest-Belohnungen." },
       { id: "7i", text: "Riding & Flying (mit Stamina!)", detail: "Manche Pokémon können geritten/geflogen werden. <em>ACHTUNG:</em> ATMons hat <code>infiniteRideStamina=false</code> – <strong>Stamina ist endlich</strong>. Außerdem <code>inFlightDismounting=false</code> = du kannst mitten im Flug nicht absteigen." },
       { id: "7j", text: "Cobbleworkers nutzen", detail: "<strong>Cobbleworkers Mod:</strong> Pokémon automatisieren Arbeit. Miltank = Milch, Combee = Honig, Bounsweet = Beeren etc. Früher Einstieg in Pokémon-basierte Automation." },
@@ -998,7 +998,7 @@ PHASES.push(
       { id: "9a", text: "Farmer's Delight Cooking Pot bauen", detail: "Rezept in EMI (Eisenbarren in Kessel-Form). Auf <strong>Campfire oder Hitzequelle</strong> stellen. Zutaten rein, warten, Mahlzeit raus. <em>Das wichtigste Essen-Item im ganzen Pack.</em>" },
       { id: "9b", text: "Nourishment-Mahlzeiten kochen", detail: "<strong>Plated Meals</strong> (auf Tellern serviert) geben den <strong>Nourishment-Buff</strong>: solange aktiv verlierst du <em>keinen Hunger</em> durch Sprinten, Springen oder Kämpfen! Hält 1–5 Minuten je nach Gericht. Eines der stärksten Early-Game-QoL-Features." },
       { id: "9c", text: "Beef Stew, Chicken Soup, Mixed Salad", detail: "Starter-Rezepte: <strong>Beef Stew</strong> (Rohes Rindfleisch + Karotte + Kartoffel + Schüssel, im Cooking Pot) · <strong>Chicken Soup</strong> (Rohes Huhn + Karotte + Gemüse + Schüssel) · <strong>Mixed Salad</strong> (direkt in Werkbank). Alle Rezepte in EMI prüfen!" },
-      { id: "9d", text: "Everlasting Beef von Miltank", detail: "<strong>Miltank droppt Everlasting Beef</strong> – ATMons-exklusiv, unendlich wiederverwendbar. Löst dein Essen-Problem dauerhaft. Miltank spawnt in Plains/Savanna." },
+      { id: "9d", text: "Everlasting Beef von Miltank", detail: "<strong>Miltank droppt Everlasting Beef</strong> – ATMons-exklusiv, unendlich wiederverwendbar. Löst dein Essen-Problem dauerhaft. Miltank spawnt typischerweise in <strong>Plains und Savanna-Biomen</strong> (Default Cobblemon-Spawns, ersetzt teilweise Vanilla-Kühe durch <code>replaceAnimalSpawn=true</code>). Mit Cobblenav schnell finden." },
       { id: "9e", text: "Cooking for Blockheads: Kitchen bauen", detail: "Mod <strong>Cooking for Blockheads</strong> ist dabei: Kitchen-Counter + Oven + Fridge nebeneinander = voll-automatisierte Küche. Rezept-Buch zeigt was aus deinen gelagerten Zutaten machbar ist." },
       { id: "9f", text: "Easy Villagers für Villager-Farming", detail: "Mod <strong>Easy Villagers</strong>: Villager mit Rechtsklick einsammeln und als Block platzieren. Ideal für Trader-Hall ohne KI-Schmerzen. Cartographer, Librarian, Farmer auf Knopfdruck." },
       { id: "9g", text: "Sophisticated Storage für Kisten", detail: "Ersetzt 4–5 Vanilla-Kisten pro Upgrade-Stufe. <strong>Upgrades</strong>: Stack, Filter, Auto-Pickup, Void, Compacting. Rezept in EMI." },
@@ -1030,7 +1030,7 @@ PHASES.push(
       { id: "11f", text: "Energized Smelter aufstellen", detail: "Schneller als der Ofen, mit Upgrade-Slots (Speed + Energy). Direkt neben Enrichment Chamber = automatischer Transfer." },
       { id: "11g", text: "ATMons Ore-Processing-Pipeline verstehen", detail: "Das Mekanism-Ore-Processing ist per kubejs <strong>custom angepasst</strong>: Washing → Injecting → Crushing → Enriching Pipeline mit pack-spezifischen Outputs (z.B. 5 Uraninite statt Standard). Der Guide erklärt die ATMons-Variante.", guide: "mekanism-ore" },
       { id: "11h", text: "Wind Generators über Y=100", detail: "Stahl + Osmium (EMI). <strong>Kostenlose Energie</strong>, je höher desto mehr Output. Turm bauen, 4–6 Generatoren oben drauf = stabile Grundversorgung." },
-      { id: "11i", text: "Platinum Ore Hammer als Low-Tech-2×", detail: "Falls du noch kein Mekanism hast: <strong>Platinum Ore Hammer</strong> (Rezept EMI) verdoppelt Raw Ore → 2× Dust per Rechtsklick. Einfachste Erz-Verdopplung ohne Strom!" },
+      { id: "11i", text: "Platinum Ore Hammer als Low-Tech-2×", detail: "Falls du noch kein Mekanism hast: <strong>Platinum Ore Hammer</strong> (Rezept EMI) verdoppelt Raw Ore → 2× Dust per Rechtsklick. Einfachste Erz-Verdopplung ohne Strom! Platinum spawnt Overworld Y ~-32 (selten) oder Mining Dim Y -62 bis 34.", guide: "ore-heights" },
     ],
   },
   {
@@ -1053,7 +1053,7 @@ PHASES.push(
       { id: "13c", text: "Erste Silent Gear Pickaxe bauen", detail: "Pickaxe Head Template in der Werkbank mit Material-Ingots füllen → Kopf. Mit Stab und Bindung zusammenfügen → deine erste SG-Pickaxe. Starte mit Diamant-Kopf für Diamant-Tier-Mining." },
       { id: "13d", text: "Repair Kit craften und benutzen", detail: "Rezept in EMI. Repair Kit mit Kopf-Material füllen (z.B. Diamanten) → Kit + Tool in Werkbank = repariert. <strong>Unendlich wiederholbar!</strong>" },
       { id: "13e", text: "Teile tauschen ohne Enchant-Verlust", detail: "<em>Killer-Feature:</em> Tool + neues Teil in Werkbank = Teil getauscht, <strong>Verzauberungen bleiben erhalten</strong>. Upgrade-Pfad: Diamant → Netherite → Allthemodium ohne alle Enchants neu zu erstellen." },
-      { id: "13f", text: "Sinew von Pokémon sammeln", detail: "Silent Gear Bindung braucht Sinew. In ATMons droppt es von: <strong>Wooloo, Dubwool, Mareep, Flaaffy, Ampharos, Lechonk, Oinkologne, Tauros, Bouffalant</strong>. Sofort wenn du eines siehst: fangen oder KO schlagen." },
+      { id: "13f", text: "Sinew von Pokémon sammeln", detail: "Silent Gear Bindung braucht Sinew. In ATMons droppt es von: <strong>Wooloo/Dubwool</strong> (Plains, Meadow), <strong>Mareep/Flaaffy/Ampharos</strong> (Plains, Savanna), <strong>Lechonk/Oinkologne</strong> (Forest, Plains), <strong>Tauros</strong> (Plains, Savanna), <strong>Bouffalant</strong> (Plains, Savanna). Die meisten dieser Pokémon sind Plains/Savanna-Mobs — ideal in derselben Region wie Miltank zu farmen. Sofort wenn du eines siehst: fangen oder KO schlagen." },
       { id: "13g", text: "Material-Upgrade-Pfad planen", detail: "Diamant → Netherite → Allthemodium → Vibranium → Unobtainium. Jedes Upgrade behält Enchants und verbessert Mining-Level, Speed, Durability." },
     ],
   },
@@ -1073,9 +1073,9 @@ PHASES.push(
     id: "p15", title: "Phase 15: AE2 Grundlagen", icon: "💾", path: "tech",
     desc: "ME-System aufbauen · Storage & Automation",
     items: [
-      { id: "15a", text: "Meteorite Compass craften", detail: "Eisen + Certus Quartz. Zeigt zum nächsten Meteoriten. Meteorit = <strong>große Krater</strong> in der Oberwelt mit einer Sky Stone Chest im Zentrum." },
-      { id: "15b", text: "4 Inscriber Presses finden", detail: "Im Meteorit-Zentrum liegt eine <strong>Sky Stone Chest</strong> mit den 4 einzigartigen Inscriber Presses: <em>Calculation, Engineering, Logic, Silicon</em>. Unverzichtbar für AE2 – ohne sie kein Inscriber!" },
-      { id: "15c", text: "Certus Quartz Farm mit Budding Blocks", detail: "Budding Certus Blocks wachsen Kristalle nach. <strong>Crystal Growth Accelerators</strong> daneben beschleunigen. Fortune erhöht Ausbeute beim Ernten. Früh anlegen – Certus ist dauerhaft knapp." },
+      { id: "15a", text: "Meteorite Compass craften", detail: "Eisen + <strong>Certus Quartz</strong>. Certus Quartz Ore spawnt in der Overworld als normales Erz (Deepslate-Layer, Y ~-16 bis 32) <em>und</em> in den Meteoriten selbst. Der Compass zeigt zum nächsten Meteoriten. Meteorit = <strong>große Krater an der Oberfläche</strong> in der Overworld (alle Biome, aber in offenen Biomen wie Plains/Desert leichter zu sehen)." },
+      { id: "15b", text: "4 Inscriber Presses finden", detail: "Im Meteorit-Zentrum liegt eine <strong>Sky Stone Chest</strong> mit den 4 einzigartigen Inscriber Presses: <em>Calculation, Engineering, Logic, Silicon</em>. Unverzichtbar für AE2 – ohne sie kein Inscriber! Tipp: mehrere Meteoriten abklappern, Sky Stone + Schmuckstücke mitnehmen." },
+      { id: "15c", text: "Certus Quartz Farm mit Budding Blocks", detail: "Budding Certus Blocks wachsen Kristalle nach. <strong>Crystal Growth Accelerators</strong> daneben beschleunigen. Fortune erhöht Ausbeute beim Ernten. Budding Blocks werden aus Flawless Certus Quartz Crystals gecraftet (EMI). Früh anlegen – Certus ist dauerhaft knapp." },
       { id: "15d", text: "Inscriber → Printed Circuits", detail: "Presses + Materialien + Silizium (aus Sand über Quartz Grindstone) = Printed Circuits. Die werden zu <strong>Logic/Calculation/Engineering Processors</strong>. Basis für alle AE2-Geräte." },
       { id: "15e", text: "ME-Controller + Drive + Storage Cells", detail: "Setup: Energy Acceptor (Strom rein) → ME Controller → ME Glass Cable → ME Drive mit 4k/16k/64k Storage Cells → ME Crafting Terminal. Fertig – alle Items zentral durchsuchbar!" },
       { id: "15f", text: "ME Crafting Terminal benutzen", detail: "Erweiterte Werkbank + Item-Such + Auto-Fetch aus dem Netzwerk. Ersetzt quasi das komplette Inventar-Management." },
@@ -1091,7 +1091,7 @@ PHASES.push(
     id: "p16", title: "Phase 16: Mystical Agriculture", icon: "🌱", path: "endgame",
     desc: "Jede Ressource als Pflanze",
     items: [
-      { id: "16a", text: "Prosperity & Inferium beschaffen", detail: "<strong>Prosperity Shard</strong> und <strong>Inferium Essence</strong> sind die Basis-Ressourcen. Prosperity Ore mit Diamant-Spitzhacke abbaubar. Inferium aus Mob-Kills oder Ore. Ohne beide geht nichts." },
+      { id: "16a", text: "Prosperity & Inferium beschaffen", detail: "<strong>Prosperity Shard</strong> und <strong>Inferium Essence</strong> sind die Basis-Ressourcen. <em>Prosperity Ore</em> spawnt in der Overworld (Y ~ -20 bis 60) <strong>und</strong> in der Mining Dimension (Y 65-250, häufiger!). <em>Inferium Ore</em> gleich. Per kubejs werden beide in der Mining Dim zusätzlich platziert (<code>miningDim.js</code>) – die Mining Dim ist <strong>die</strong> effektivste Farm-Location. Inferium Essence droppt auch aus Mob-Kills.", guide: "ore-heights" },
       { id: "16b", text: "Infusion Altar + Pedestals bauen", detail: "<strong>Infusion Altar</strong> + 8× <strong>Infusion Pedestals</strong> im Kreis. Hier werden höhere Essence-Tiers, Samen und Equipment gefertigt. Früh bauen – spart später unzählige Crafts." },
       { id: "16c", text: "Essence-Tiers hochleveln", detail: "4 Inferium → 1 Prudentium → 1 Tertium → 1 Imperium → 1 Supremium → 1 Insanium (Mystical Agradditions). Samen und Equipment höherer Tiers brauchen die entsprechende Essence." },
       { id: "16d", text: "Ressourcen-Samen craften", detail: "Z.B. <strong>Iron Seed</strong> = Crafting Seed + Inferium Essence + Eisen-Materialien (EMI). Wachsen wie Weizen → droppen Essenz → zurück zu Eisen. <em>Eine Farm = unbegrenzte Ressource.</em>" },
@@ -1102,11 +1102,11 @@ PHASES.push(
     id: "p17", title: "Phase 17: Nether & Allthemodium", icon: "🔥", path: "endgame",
     desc: "Netherite schaltet Allthemodium frei",
     items: [
-      { id: "17a", text: "Nether-Portal bauen", detail: "10+ Obsidian im Portal-Rahmen + Feuerzeug. Der Nether hat: <strong>Ancient Debris, Nether Quartz, Glowstone, Vibranium Ore</strong> (später), Cobblemon Nether-Mons." },
-      { id: "17b", text: "Ancient Debris farmen (Y 8–22)", detail: "Am häufigsten bei <strong>Y=15</strong>. Methoden: <em>Bed-Mining</em> (Betten explodieren im Nether – gefährlich aber effizient!), TNT-Mining, oder FTB Ultimine Tunnel-Mode." },
-      { id: "17c", text: "Netherite Ingots herstellen", detail: "4 Netherite Scrap (Debris im Ofen) + 4 Gold = 1 Netherite Ingot. Tools am <strong>Smithing Table</strong>: Diamant-Tool + Netherite Upgrade Template + Ingot. Upgrade Template aus Bastions." },
-      { id: "17d", text: "Allthemodium Ore finden", detail: "2 Spots: <strong>Deep Dark Biome</strong> in der Overworld (unter Y -40, leuchtet!) oder <strong>Mining Dimension Deepslate Layer</strong> (Y 65–129). Braucht Netherite-Pickaxe." },
-      { id: "17e", text: "Mining Dimension freischalten", detail: "Allthemodium Nuggets → <strong>Teleport Pad</strong> craften (EMI) → in der Overworld platzieren → draufsteigen. Die Mining Dim hat <strong>37+ Erze, keine feindlichen Mobs</strong> und ist die beste Farming-Location." },
+      { id: "17a", text: "Nether-Portal bauen", detail: "10+ Obsidian im Portal-Rahmen + Feuerzeug. Der Nether hat: <strong>Ancient Debris</strong> (Y 8–22), <strong>Nether Quartz</strong> (Y 10–117), <strong>Glowstone</strong>, <strong>Vibranium Ore</strong> (später, <em>nur in Crimson/Warped Forest!</em>), Cobblemon Nether-Mons." },
+      { id: "17b", text: "Ancient Debris farmen (Y 8–22, am besten Y 15)", detail: "Ancient Debris spawnt im Nether zwischen <strong>Y 8 und Y 22</strong>, Peak bei <strong>Y = 15</strong>. Methoden: <em>Bed-Mining</em> (Betten explodieren im Nether – gefährlich aber effizient!), <em>TNT-Mining</em>, oder <em>FTB Ultimine Tunnel-Mode</em>. Biome egal – spawnt in allen Nether-Biomen.", guide: "ore-heights" },
+      { id: "17c", text: "Netherite Ingots herstellen", detail: "4 Netherite Scrap (Debris im Ofen) + 4 Gold = 1 Netherite Ingot. Tools am <strong>Smithing Table</strong>: Diamant-Tool + Netherite Upgrade Template + Ingot. Upgrade Template aus Bastion-Loot." },
+      { id: "17d", text: "Allthemodium Ore finden (Deep Dark Biome!)", detail: "ATMons hat Allthemodium-Spawns per kubejs biome-tag auf <strong>nur Deep Dark Biome</strong> beschränkt (verifiziert: <code>data/atm10/tags/worldgen/biome/allthemodium_spawnable.json</code>). 2 Fundorte: <strong>1)</strong> Deep Dark Biome in der Overworld (unter Y -40, Ore leuchtet blau-grün!). <strong>2)</strong> <em>Mining Dimension</em>: Y <strong>65–128</strong>, Peak ~95. In der Mining Dim ist Allthemodium <em>deutlich</em> häufiger als im Deep Dark. Braucht Netherite-Pickaxe.", guide: "ore-heights" },
+      { id: "17e", text: "Mining Dimension freischalten", detail: "Allthemodium Nuggets → <strong>Teleport Pad</strong> craften (EMI) → in der Overworld platzieren → draufsteigen. Die Mining Dim hat <strong>37+ Erze, keine feindlichen Mobs</strong> und ist die beste Farming-Location. Siehe Ore-Heights Guide für die 2 besten Strip-Mining-Levels (Y 0 für tiefe Erze, Y 95 für Allthemodium + Standard-Metalle).", guide: "ore-heights" },
       { id: "17f", text: "Allthemodium Book beschaffen", detail: "Quest-Belohnung oder Rezept. Erklärt alle Allthemodium-Dimensionen: <strong>Mining Dim, The Other, The Beyond</strong>. Pflichtlektüre für Endgame-Progression." },
     ],
   },
@@ -1139,9 +1139,9 @@ PHASES.push(
     desc: "Vibranium-Allthemodium, Unobtainium-Allthemodium, Unobtainium-Vibranium",
     items: [
       { id: "20a", text: "Alloy-System verstehen", detail: "Für den ATM Star brauchst du alle 3 Super-Alloys. Jedes wird über einen <em>anderen</em> Mod-Pfad produziert – ATMons spezifisch konfiguriert. Klick Guide für die vollständige Rezept-Liste.", guide: "alloys" },
-      { id: "20b", text: "Vibranium Ore sammeln (Nether Y 64–127)", detail: "<strong>Vibranium</strong> nur mit Netherite-Pickaxe. Spawnt im Nether zwischen Y 64–127. Nature's Compass hilft beim Finden." },
-      { id: "20c", text: "Unobtainium im The Other", detail: "<strong>Unobtainium</strong> nur im <em>The Other</em> Dimension (via Teleport Pad aus Allthemodium Nuggets). EXTREM gefährlich – Endgame-Equipment + Totem Pflicht!" },
-      { id: "20d", text: "Piglich Hearts für Powah-Route", detail: "Route 1 (<strong>Vibranium-Allthemodium</strong>) braucht <em>Piglich Hearts</em>. Piglichs spawnen in <strong>Bastion-Strukturen</strong> im Nether. Sehr gefährlich – in Gruppen bekämpfen." },
+      { id: "20b", text: "Vibranium Ore (Nether, NUR Crimson/Warped Forest!)", detail: "<strong>Vibranium</strong> nur mit Netherite-Pickaxe. ATMons hat per kubejs biome-tag verifiziert: Vibranium spawnt <em>ausschließlich</em> in <strong>Crimson Forest</strong> und <strong>Warped Forest</strong> — <em>nicht</em> in Nether Wastes, Basalt Deltas oder Soul Sand Valley! Y-Range ~64 bis ~127, optimal ~95. Nature's Compass hilft beim Finden des richtigen Biomes. Netherrack-Layer darunter komplett ignorieren.", guide: "ore-heights" },
+      { id: "20c", text: "Unobtainium (End Highlands oder The Other!)", detail: "<strong>Unobtainium</strong> braucht Allthemodium-Pickaxe. ATMons hat 2 Quellen verifiziert: <strong>1) End Highlands Biome</strong> (per kubejs biome-tag: <code>unobtainium_spawnable.json</code> – nur in End Highlands, nicht in End Midlands/Barrens!). <strong>2) The Other Dimension</strong> (via Allthemodium Teleport Pad aus Allthemodium Nuggets). Beide Optionen extrem gefährlich – Endgame-Equipment + Totem Pflicht!", guide: "ore-heights" },
+      { id: "20d", text: "Piglich Hearts für Powah-Route", detail: "Route 1 (<strong>Vibranium-Allthemodium</strong>) braucht <em>Piglich Hearts</em>. Piglichs spawnen in <strong>Bastion Remnants</strong> (alle Typen) im Nether. Sehr gefährlich – in Gruppen bekämpfen, Soul-Speed + Fire-Resistance empfohlen." },
       { id: "20e", text: "Ars Nouveau Enchanting Apparatus bauen", detail: "Route 2 (<strong>Unobtainium-Allthemodium</strong>) läuft über Ars Nouveau Enchanting Apparatus mit <em>10.000 Source Cost</em>. Benötigt große Source Pools + Sourcelinks rundherum." },
       { id: "20f", text: "Industrial Foregoing Dissolution Chamber", detail: "Route 3 (<strong>Unobtainium-Vibranium</strong>) läuft über die <strong>Industrial Foregoing Dissolution Chamber</strong> mit Pink Slime + Soul Lava als Katalysator." },
     ],
@@ -1179,6 +1179,106 @@ PHASES.push(
    GUIDES — Große, modale Erklär-Panels für komplexe Themen
    ============================================================ */
 const GUIDES = {
+  "ore-heights": {
+    icon: "📐",
+    title: "Ore-Heights Übersicht (Overworld + Mining Dim)",
+    content: `
+      <p>ATMons unterscheidet zwei grundlegende Mining-Locations: die <strong>Overworld</strong> und die <strong>Mining Dimension</strong>. Die Y-Höhen sind <em>unterschiedlich</em>, weil die Mining Dim eine eigene Worldgen-Konfiguration hat. Alle Werte hier sind aus den lokalen <code>kubejs/</code> und offiziellen Allthemodium-Guides verifiziert.</p>
+
+      <h3>⛏️ Overworld Ore-Heights</h3>
+      <p>Strip-Mining-Sweet-Spot: <strong>Y = -16</strong> (Deepslate-Layer, hohe Dichte an fast allen tiefen Erzen).</p>
+      <table>
+        <tr><th>Erz</th><th>Min Y</th><th>Max Y</th><th>Optimal Y</th><th>Notiz</th></tr>
+        <tr><td><strong>Kohle</strong></td><td>0</td><td>320</td><td>~95</td><td>Überall, oberflächennah bevorzugt</td></tr>
+        <tr><td><strong>Eisen</strong></td><td>-63</td><td>256</td><td>~16 oder ~-24</td><td>Triangle — zwei Peaks</td></tr>
+        <tr><td><strong>Kupfer</strong></td><td>-16</td><td>112</td><td>~48</td><td>In Dripstone Caves deutlich mehr</td></tr>
+        <tr><td><strong>Tin</strong></td><td>-64</td><td>~100</td><td>~20</td><td>AllTheOres — ähnlich wie Eisen</td></tr>
+        <tr><td><strong>Aluminum</strong></td><td>-64</td><td>~120</td><td>~60</td><td>AllTheOres — oberflächennah</td></tr>
+        <tr><td><strong>Lead</strong></td><td>-64</td><td>~32</td><td>~-16</td><td>AllTheOres — Deepslate</td></tr>
+        <tr><td><strong>Gold</strong></td><td>-64</td><td>32</td><td>~-16</td><td>Badlands-Biome extra Gold</td></tr>
+        <tr><td><strong>Redstone</strong></td><td>-64</td><td>15</td><td><strong>-58</strong></td><td>Tiefer ist besser</td></tr>
+        <tr><td><strong>Lapis</strong></td><td>-64</td><td>64</td><td>~0</td><td>Peak um Y=0</td></tr>
+        <tr><td><strong>Silver</strong></td><td>-64</td><td>~30</td><td>~-16</td><td>AllTheOres — Deepslate</td></tr>
+        <tr><td><strong>Nickel</strong></td><td>-64</td><td>~64</td><td>~0</td><td>AllTheOres</td></tr>
+        <tr><td><strong>Diamant</strong></td><td>-64</td><td>16</td><td><strong>-58</strong></td><td>Tiefer ist besser, wie Vanilla</td></tr>
+        <tr><td><strong>Osmium</strong></td><td>-64</td><td>~64</td><td>~0</td><td>Mekanism — Deepslate-Layer</td></tr>
+        <tr><td><strong>Platinum</strong></td><td>-64</td><td>~10</td><td><strong>-32</strong></td><td>AllTheOres — selten, tief</td></tr>
+        <tr><td><strong>Zinc</strong></td><td>-64</td><td>~70</td><td>~0</td><td>AllTheOres</td></tr>
+        <tr><td><strong>Uranium</strong></td><td>-64</td><td>16</td><td><strong>-24</strong></td><td><em>ATMons-Override</em> (kubejs verifiziert)</td></tr>
+        <tr><td><strong>Iridium</strong></td><td>-64</td><td>32</td><td>-16</td><td><em>ATMons-Override</em> (kubejs verifiziert)</td></tr>
+        <tr><td><strong>Cinnabar</strong></td><td>-64</td><td>228</td><td>~82</td><td><em>ATMons-Override</em> (kubejs verifiziert)</td></tr>
+      </table>
+
+      <div class="info">
+        <strong>Best Overworld Strip-Mine: Y = -16</strong><br>
+        Bei Y=-16 erwischst du gleichzeitig: Eisen (Triangle), Gold, Lapis, Lead, Silver, Nickel, Osmium, Iridium, Uranium (Peak). Für Diamant/Redstone musst du nur ein paar Blöcke weiter runter auf Y -58.
+      </div>
+
+      <h3>🌌 Mining Dimension Ore-Heights</h3>
+      <p>Die Mining Dimension hat <strong>erweiterte Y-Bereiche</strong> und keine feindlichen Mobs — die <em>mit Abstand</em> beste Farm-Location. Die folgenden Werte stammen aus dem offiziellen Allthemodium-Guide für die Mining Dim.</p>
+      <table>
+        <tr><th>Erz</th><th>Min Y</th><th>Max Y</th><th>Optimal Y</th></tr>
+        <tr><td><strong>Allthemodium</strong></td><td>65</td><td>128</td><td>~95</td></tr>
+        <tr><td><strong>Osmium</strong></td><td>-62</td><td>64</td><td>~0</td></tr>
+        <tr><td><strong>Platinum</strong></td><td>-62</td><td>34</td><td>~-16</td></tr>
+        <tr><td><strong>Diamant</strong></td><td>93</td><td>174</td><td>~130</td></tr>
+        <tr><td><strong>Eisen / Kohle / Kupfer / Aluminum</strong></td><td>65</td><td>247</td><td>~150</td></tr>
+        <tr><td><strong>Gold</strong></td><td>65</td><td>155</td><td>~110</td></tr>
+        <tr><td><strong>Redstone</strong></td><td>65</td><td>205</td><td>~130</td></tr>
+        <tr><td><strong>Tin</strong></td><td>-62</td><td>181</td><td>~60</td></tr>
+        <tr><td><strong>Lead / Silver</strong></td><td>-62</td><td>34</td><td>~-16</td></tr>
+        <tr><td><strong>Nickel</strong></td><td>-62</td><td>64</td><td>~0</td></tr>
+        <tr><td><strong>Zinc</strong></td><td>-62</td><td>128</td><td>~30</td></tr>
+        <tr><td><strong>Uranium</strong></td><td>-62</td><td>157</td><td>~50</td></tr>
+        <tr><td><strong>Lapis</strong></td><td>-62</td><td>64</td><td>~0</td></tr>
+      </table>
+
+      <h3>🎯 Die 2 besten Strip-Mining-Spots in der Mining Dimension</h3>
+      <div class="info">
+        <strong>Spot 1 — Y = 0</strong> (Deep Run)<br>
+        Erwischt: <em>Osmium, Platinum, Lead, Silver, Nickel, Lapis, Zinc-Bottom, Uranium-Mid, Tin-Deep</em>.<br>
+        Perfekt für alle "tiefen" Erze in einer Fahrt.
+      </div>
+      <div class="info">
+        <strong>Spot 2 — Y = 95</strong> (High Run)<br>
+        Erwischt: <em>Allthemodium (Peak!), Diamant (Range beginnt), Eisen, Kohle, Kupfer, Gold-Peak, Redstone-Peak, Aluminum</em>.<br>
+        Der wichtigere der beiden Spots — hier ist das Allthemodium-Peak und das meiste Standard-Metall.
+      </div>
+      <p>Mit einer <strong>FTB Ultimine Tunnel Shape</strong> auf diesen beiden Y-Höhen bekommst du in der Mining Dim praktisch alles was du brauchst.</p>
+
+      <h3>🔥 Nether Ore-Heights</h3>
+      <table>
+        <tr><th>Erz</th><th>Min Y</th><th>Max Y</th><th>Optimal Y</th><th>Besonderheit</th></tr>
+        <tr><td><strong>Ancient Debris</strong></td><td>8</td><td>22</td><td><strong>15</strong></td><td>Vanilla</td></tr>
+        <tr><td><strong>Vibranium</strong></td><td>~64</td><td>~127</td><td>~95</td><td><em>Nur in Crimson Forest + Warped Forest!</em></td></tr>
+        <tr><td><strong>Nether Quartz</strong></td><td>10</td><td>117</td><td>~65</td><td>Überall im Nether</td></tr>
+      </table>
+      <div class="warn"><strong>Vibranium ist biome-beschränkt!</strong> ATMons konfiguriert per kubejs (<code>data/atm10/tags/worldgen/biome/vibranium_spawnable.json</code>): Vibranium spawnt <em>nur</em> in <strong>Crimson Forest</strong> und <strong>Warped Forest</strong>. Basalt Deltas und Nether Wastes = kein Vibranium. Such dir einen dieser beiden Forest-Biome bevor du zu graben anfängst.</div>
+
+      <h3>💎 End & Dimensions</h3>
+      <table>
+        <tr><th>Erz</th><th>Dimension</th><th>Biome</th><th>Notiz</th></tr>
+        <tr><td><strong>Unobtainium</strong></td><td>End</td><td><em>End Highlands nur!</em></td><td>kubejs <code>unobtainium_spawnable.json</code> verifiziert</td></tr>
+        <tr><td><strong>Unobtainium (Alternative)</strong></td><td>The Other</td><td>—</td><td>Über Allthemodium Teleport Pad erreichbar</td></tr>
+      </table>
+      <div class="warn"><strong>Unobtainium:</strong> Im Gegensatz zu vielen anderen ATM-Packs spawnt Unobtainium in ATMons <em>im End</em>, genauer gesagt <strong>nur im End Highlands Biom</strong> — nicht in The Other! Das ist per kubejs biome-tag verifiziert. Alternative: The Other Dimension via Allthemodium Teleport Pad.</div>
+
+      <h3>📊 Spezielle Mining-Dim-Zusatz-Erze (ATMons-Custom)</h3>
+      <p>Per <code>kubejs/server_scripts/modpack/miningDim.js</code> fügt ATMons zusätzliche Erze <em>nur in die Mining Dimension</em> hinzu:</p>
+      <ul>
+        <li><strong>Runic Stone, Arcane Crystal Ore</strong> (Forbidden Arcanus) — Y 65-250</li>
+        <li><strong>Uraninite</strong> (Powah) — Y 65-250</li>
+        <li><strong>Inferium / Prosperity Ore</strong> (Mystical Agriculture) — Y 65-250</li>
+        <li><strong>Soulium Ore</strong> — Y -63 bis 250</li>
+        <li><strong>Titanium (Sal Ammoniac)</strong>, <strong>Black Quartz</strong>, <strong>Dimensional Shard</strong> — Y 65-250</li>
+        <li><strong>Sulfur, Fluorite, Salt, Cinnabar</strong> (AllTheOres) — Y -63 bis 250</li>
+        <li><strong>Crimson Iron, Azure Silver</strong> (Silent Gear) — nur Netherrack/Endstone-Layer der Mining Dim</li>
+        <li><strong>Draconium</strong> — Y -63 bis 250</li>
+      </ul>
+      <p class="info">Viele dieser Erze sind in der normalen Overworld gar nicht verfügbar oder extrem selten. Die Mining Dim ist für Mystical Agriculture, Forbidden Arcanus und Powah praktisch die einzige vernünftige Quelle.</p>
+    `
+  },
+
   "mining-tiers": {
     icon: "⛏️",
     title: "Mining-Tier System (verifiziert)",
@@ -1210,22 +1310,7 @@ const GUIDES = {
         <li><strong>Silk Touch</strong> früh besorgen: Erz-Block → Mekanism Enrichment → 2× Output</li>
       </ul>
 
-      <h3>Ore Distribution (Mining Dimension)</h3>
-      <table>
-        <tr><th>Erz</th><th>Max Y</th><th>Min Y</th></tr>
-        <tr><td>Coal / Iron / Copper</td><td>247</td><td>65</td></tr>
-        <tr><td>Aluminum</td><td>247</td><td>-62</td></tr>
-        <tr><td>Redstone</td><td>205</td><td>65</td></tr>
-        <tr><td>Tin</td><td>181</td><td>-62</td></tr>
-        <tr><td>Diamond</td><td>174</td><td>93</td></tr>
-        <tr><td>Uranium</td><td>157</td><td>-62</td></tr>
-        <tr><td>Gold</td><td>155</td><td>65</td></tr>
-        <tr><td>Allthemodium</td><td>128</td><td>65</td></tr>
-        <tr><td>Zinc</td><td>128</td><td>-62</td></tr>
-        <tr><td>Osmium / Nickel</td><td>64</td><td>-62</td></tr>
-        <tr><td>Platinum / Lead / Silver</td><td>34</td><td>-62</td></tr>
-      </table>
-      <p class="info">Die Mining Dimension hat keine feindlichen Mobs und ist die beste Farm-Location für alle diese Erze.</p>
+      <div class="info">Für die <strong>konkreten Y-Höhen</strong> in Overworld und Mining Dimension gibt es einen eigenen Guide mit detaillierten Tabellen und Strip-Mining-Empfehlungen. Öffne dazu den <em>Ore-Heights Guide</em> aus Phase 3 (Item 3b, 3d oder 3e).</div>
     `
   },
 
@@ -1812,12 +1897,16 @@ function render() {
       <div class="info-box tier-box">
         <h3>
           <span>⛏️ Mining-Tiers (verifiziert)</span>
-          <button class="info-link" onclick="openGuide('mining-tiers')">Details →</button>
+          <span>
+            <button class="info-link" onclick="openGuide('mining-tiers')">Tiers →</button>
+            <button class="info-link" onclick="openGuide('ore-heights')">Y-Höhen →</button>
+          </span>
         </h3>
         <div class="tier-row"><span class="tier-label">Stein:</span> Kohle, Eisen, Kupfer, Tin, Aluminum, Lead</div>
         <div class="tier-row"><span class="tier-label">Eisen:</span> Gold, Redstone, Lapis, Silver, Nickel, Diamant</div>
         <div class="tier-row"><span class="tier-label">Diamant:</span> Platinum, Osmium, Zinc, Uranium, Obsidian</div>
         <div class="tier-row"><span class="tier-label">Netherite:</span> Allthemodium, Vibranium</div>
+        <div class="tier-row"><span class="tier-label">Allthemodium:</span> Unobtainium</div>
       </div>
     `;
   }
