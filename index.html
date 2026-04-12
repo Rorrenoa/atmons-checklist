@@ -79,19 +79,18 @@
     z-index: 1;
   }
 
-  /* Fixed Header-Bar */
-  .sticky-bar {
+  /* Fixed Quick-Links Bar (nur die Quick-Links-Leiste klebt oben) */
+  .sticky-ql {
     position: sticky;
     top: 0;
     z-index: 10;
     background: var(--bg);
-    padding-bottom: 4px;
+    padding: 8px 0 6px;
     margin: 0 -16px;
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 2px;
   }
-  .sticky-bar::after {
+  .sticky-ql::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1895,12 +1894,23 @@ const GUIDES = {
       <h3>3. Leader Misty (Lv 25–27)</h3>
       <p><strong>Thema:</strong> Water · <strong>Bag:</strong> 1× Super Potion</p>
       <ul>
-        <li><strong>Frogadier</strong> Lv25 Water — <em>Protean</em> (ändert Typ!), Ice Punch, Grass Knot, Eviolite</li>
-        <li><strong>Floatzel</strong> Lv25 Water — Technician, Water Pulse, Flip Turn</li>
-        <li><strong>Starmie</strong> Lv27 Water/Psychic — Analytic (+30% wenn langsamer), Scald, Psyshock, Recover</li>
-        <li><strong>Lanturn</strong> Lv25 Water/Electric — Volt Absorb (immun vs Electric!), Scald</li>
+        <li><strong>Frogadier</strong> Lv25 Water — <em>Protean</em> (ändert Typ!), Ice Punch, Rock Tomb, Flip Turn, Grass Knot, Eviolite</li>
+        <li><strong>Floatzel</strong> Lv25 Water — Technician, Water Pulse, Flip Turn, Icy Wind</li>
+        <li><strong>Starmie</strong> Lv27 Water/Psychic — Analytic (+30% wenn langsamer!), Scald, Psyshock, Recover, Sitrus Berry</li>
+        <li><strong>Lanturn</strong> Lv25 Water/Electric — Volt Absorb (heilt sich durch Electric!), Scald, Parabolic Charge</li>
       </ul>
-      <div class="warn"><strong>Schwer!</strong> Protean-Frogadier ändert seinen Typ mit jedem Move. Grass Knot killt Marshtomp. Starmie hat Recover. Lanturn absorbiert Electric.<br><strong>Strategie:</strong> Nuzleaf/Shiftry (Grass/Dark) ist hier MVP — Grass ×2 auf alle Water, Dark ×2 auf Starmies Psychic. Flaaffy/Ampharos gegen alles AUSSER Lanturn (Volt Absorb heilt es).</div>
+      <div class="warn"><strong>Vorbereitung PFLICHT:</strong>
+        <br>1) <strong>TM Meteor Beam → Marshtomp</strong> (ersetze Foresight) — 120 Power + Sp.Atk Boost!
+        <br>2) <strong>TR Bounce → Staravia</strong> (ersetze Tackle) — 85 Power Flying STAB
+        <br>3) <strong>TR Smack Down → Geodude</strong> (ersetze Rock Polish) — Rock STAB
+        <br>4) Team auf <strong>Lv 25+</strong> leveln — Nuzleaf lernt <strong>Razor Leaf bei Lv 24</strong> (Grass, 55 Power, High-Crit)!
+      </div>
+      <div class="info"><strong>Kampfplan:</strong>
+        <br><strong>1. Frogadier →</strong> Staravia (Wing Attack / Bounce). Protean macht Frogadier zum Typ seines Moves — Grass Knot? Wird Grass → Flying ×2! Ice Punch? Wird Ice → Wing Attack neutral aber Staravia tankt es.
+        <br><strong>2. Floatzel →</strong> Flaaffy (Thunder Shock ×2 + Cotton Spore für Speed-Drop). Schwach aber super effektiv.
+        <br><strong>3. Starmie →</strong> Nuzleaf mit Razor Leaf (Grass ×2) oder Arcanine mit Bite (Dark ×2 auf Psychic + Flinch-Chance!). Starmie hat Recover — musst du in 2 Turns killen!
+        <br><strong>4. Lanturn →</strong> NICHT Flaaffy (Volt Absorb heilt es!). Nuzleaf mit Razor Leaf (Grass ×2 auf Water) oder Marshtomp mit Bulldoze (Ground ×2 auf Electric).
+      </div>
 
       <h3>4. Leader Lt. Surge (Lv 32–34)</h3>
       <p><strong>Thema:</strong> Electric · <strong>Bag:</strong> 1× Super Potion</p>
@@ -1971,18 +1981,32 @@ const GUIDES = {
       <table>
         <tr><th>Upgrade</th><th>Was passiert</th></tr>
         <tr><td><strong>Mudkip → Marshtomp!</strong></td><td>Evolves Lv 16 → Water/<strong>Ground</strong>. Immun gegen Electric! DAS Upgrade.</td></tr>
-        <tr><td>Alle</td><td>Auf Lv 21 leveln (Capture-XP ×20 nutzen)</td></tr>
+        <tr><td>Alle</td><td>Auf Lv 21 leveln (Capture-XP ×20 = alles fangen was man sieht!)</td></tr>
       </table>
-      <div class="info"><strong>Archer-MVP:</strong> Arcanine vs Impidimp, Marshtomp vs Houndour (Ground immun vs Thunder Fang), Staravia/Arcanine vs Mightyena.</div>
+      <div class="info"><strong>Archer-MVP:</strong> Arcanine vs Impidimp (Tank Thunder Wave, Flame Wheel/Bite), Marshtomp vs Houndour (Ground immun vs Thunder Fang, Water Gun ×2), Staravia/Arcanine vs Mightyena (Vorsicht Ice Fang auf Marshtomp!).</div>
 
       <h3>Cap 27 → Misty besiegen</h3>
-      <p><strong>Empfohlene Änderung:</strong> Nuzleaf mit <strong>Leaf Stone → Shiftry</strong> evolvieren (wenn Leaf Stone verfügbar).</p>
+      <div class="warn"><strong>VOR dem Kampf — Pflicht-Upgrades:</strong>
+        <br>1) <strong>TM Meteor Beam → Marshtomp</strong> (ersetze Foresight — 120 Power!)
+        <br>2) <strong>TR Bounce → Staravia</strong> (ersetze Tackle — 85 Power Flying STAB!)
+        <br>3) <strong>TR Smack Down → Geodude</strong> (ersetze Rock Polish — Rock STAB)
+        <br>4) Alle auf <strong>Lv 25+</strong> leveln — Nuzleaf lernt <strong>Razor Leaf bei Lv 24</strong>!
+        <br>5) Geodude → <strong>Graveler</strong> bei Lv 25, Optional: Nuzleaf → <strong>Shiftry</strong> via Leaf Stone
+      </div>
       <table>
-        <tr><th>Upgrade</th><th>Was passiert</th></tr>
-        <tr><td><strong>Nuzleaf → Shiftry</strong></td><td>Leaf Stone → Grass/Dark, höhere Stats. MVP gegen Misty!</td></tr>
-        <tr><td>Geodude → Graveler</td><td>Lv 25, höhere Stats + Sturdy bleibt</td></tr>
+        <tr><th>Aktuelles Moveset-Problem</th><th>Fix</th></tr>
+        <tr><td>Marshtomp: Foresight ist nutzlos</td><td><strong>Meteor Beam</strong> (120 Power, +1 Sp.Atk)</td></tr>
+        <tr><td>Staravia: Tackle (40 Power) zu schwach</td><td><strong>Bounce</strong> (85 Power Flying STAB)</td></tr>
+        <tr><td>Nuzleaf: Absorb (20 Power!) ist katastrophal</td><td><strong>Razor Leaf</strong> lernt er bei Lv 24 automatisch (55 Power, High Crit)</td></tr>
+        <tr><td>Geodude: Rock Polish bringt nichts</td><td><strong>Smack Down</strong> (50 Power Rock STAB)</td></tr>
       </table>
-      <div class="info"><strong>Misty-MVP:</strong> Shiftry (Grass ×2 auf alle Water, Dark ×2 auf Starmies Psychic). Flaaffy gegen alles AUSSER Lanturn (Volt Absorb). <em>Vorsicht:</em> Protean-Frogadier + Grass Knot killt Marshtomp!</div>
+      <div class="info"><strong>Misty-Kampfplan:</strong>
+        <br>• Frogadier → <strong>Staravia</strong> (Wing Attack/Bounce — Protean macht Frogadier zu seinem Move-Typ → Flying kontert)
+        <br>• Floatzel → <strong>Flaaffy</strong> (Thunder Shock ×2 + Cotton Spore)
+        <br>• Starmie → <strong>Nuzleaf</strong> (Razor Leaf ×2) oder <strong>Arcanine</strong> (Bite ×2 auf Psychic + Flinch!)
+        <br>• Lanturn → <strong>NICHT Flaaffy!</strong> (Volt Absorb heilt es) → Nuzleaf (Razor Leaf) oder Marshtomp (Bulldoze ×2 auf Electric)
+        <br>• <em>Vorsicht:</em> Frogadier hat Grass Knot → NICHT Marshtomp gegen Frogadier!
+      </div>
 
       <h3>Cap 34 → Lt. Surge besiegen</h3>
       <p><strong>Empfohlene Änderung:</strong> Staravia leveln für Staraptor-Vorbereitung. Optional: Geodude tauschen für ein Fighting-Mon.</p>
@@ -3171,8 +3195,8 @@ function render() {
   const pathInfo = PATHS.find(p => p.id === state.path);
   let html = '';
 
-  // === STICKY BAR START ===
-  html = `<div class="sticky-bar">
+  // Header (scrollt mit)
+  html = `
     <div class="header">
       <span class="header-icon">📋</span>
       <div class="header-text">
@@ -3192,7 +3216,7 @@ function render() {
     </div>
   `;
 
-  // Profil-Selector
+  // Profil-Selector (scrollt mit)
   html += renderProfilePanel();
 
   // Path Filter
@@ -3219,8 +3243,8 @@ function render() {
     </div>
   `;
 
-  // Quick-Links Leiste (immer sichtbar)
-  html += `
+  // === STICKY Quick-Links START ===
+  html += `<div class="sticky-ql">
     <div class="quick-links">
       <button class="ql-btn" onclick="openGuide('mining-tiers')">⛏️ Mining-Tiers</button>
       <button class="ql-btn" onclick="openGuide('ore-heights')">📐 Y-Höhen</button>
@@ -3235,10 +3259,7 @@ function render() {
         <button class="ql-btn ql-highlight" onclick="openGuide('rr-teams')" style="border-color:rgba(74,222,128,0.4);color:var(--green);">🏆 Teams</button>
       ` : ''}
     </div>
-  `;
-
-  // === STICKY BAR END ===
-  html += `</div>`;
+  </div>`;
 
   // Phases
   if (phases.length === 0) {
