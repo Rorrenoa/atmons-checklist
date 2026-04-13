@@ -10,16 +10,23 @@ Die Checkliste führt neue Spieler strukturiert vom ersten Spawn bis zum Endgame
 - **Parallele Pfade**: Pokémon und Tech können gleichzeitig gespielt werden
 - **Pfad-Filter**: Alles · Basis · Pokémon · Tech · Endgame
 - **Live-Suche** über alle Items mit Treffer-Highlight
-- **6 ausführliche Guide-Panels** für komplexe Themen:
+- **9 ausführliche Guide-Panels** für komplexe Themen:
   - Mining-Tier System (mit Ore-Distribution-Tabelle)
+  - Ore-Heights Übersicht (Overworld + Mining Dimension getrennt)
   - Pokéball-Produktion via Create Sequenced Assembly
   - Level-Cap & Trainer-System (Radical Cobblemon Trainers)
   - Mekanism Ore-Processing Pipeline
   - Die 3 Alloy-Routen (Powah / Ars Nouveau / Industrial Foregoing)
   - ATM Star Endgame-Checkliste
+  - Radical Red Kampagne (24 Trainer mit Strategien)
+  - Team-Builder pro Level-Cap
+- **44 klickbare Glossar-Begriffe** mit Tooltip + Modal-Erklärung
+- **Interaktive Pokémon Typ-Tabelle** (18 Typen, klickbar mit Stärken/Schwächen)
+- **Multi-User Profile** (jeder Nutzer eigener Fortschritt via localStorage)
+- **Fixierte Quick-Links-Leiste** für schnellen Zugriff auf alle Guides
 - **Fortschritt-Persistenz** via `localStorage` (kein Account, kein Server)
 - **Mobile-first** — funktioniert auf dem Handy neben dem PC
-- **Dark Theme** inspiriert von Minecraft/Pokémon-Atmosphäre
+- **Dark Theme** inspiriert von Minecraft/Pokémon-Atmosphäre (Inter + Chakra Petch Fonts)
 
 ## Wichtige ATMons-Fakten
 
@@ -38,9 +45,27 @@ Alle Angaben sind aus der lokalen Instanz verifiziert (Configs, KubeJS-Skripte, 
 ## Tech-Stack
 
 - **Vanilla HTML/CSS/JS** — keine Frameworks, keine Build-Tools, keine npm-Dependencies
-- **Alles in einer Datei** ([index.html](index.html))
-- **Google Fonts**: Chakra Petch (Display) + IBM Plex Sans (Body)
+- **Modulare Struktur**: HTML-Skeleton + CSS + 5 JS-Dateien (Daten getrennt von Logik)
+- **Google Fonts**: Chakra Petch (Display) + Inter (Body)
 - **GitHub Pages** als Hosting
+
+## Dateistruktur
+
+```
+atmons-checklist/
+├── index.html              ← Schlankes HTML-Skeleton (~30 Zeilen)
+├── css/
+│   └── style.css           ← Alle Styles (Dark Theme, Responsive, Modals)
+├── js/
+│   ├── data-phases.js      ← 22 Phasen mit ~160 Checklist-Items
+│   ├── data-guides.js      ← 9 Guide-Modals (Mining, Pokébälle, Level-Cap, etc.)
+│   ├── data-terms.js       ← 44 Glossar-Begriffe mit Erklärungen
+│   ├── data-types.js       ← Pokémon Typ-Tabelle (18×18) + 8 Rezepte
+│   └── app.js              ← App-Logik (State, Render, Profile, Handler)
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
 ## Lokal öffnen
 
