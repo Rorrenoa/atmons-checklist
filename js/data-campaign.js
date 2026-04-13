@@ -131,18 +131,19 @@ const CAMPAIGN_HTML = `
     <br>Brendans Crawdaunt (Adaptability + Focus Sash) sweept das bisherige Team. <strong>0% Siegrate ohne Umbau!</strong>
     <br>
     <br>1) <strong>Shroomish fangen</strong> (Forest, COMMON, Lv 5–30) → Breloom bei Lv 23 (lernt Mach Punch!)
-    <br>2) <strong>Crabrawler fangen</strong> (Küste/Coast, COMMON, Lv 9–34) → <strong>Crabominable</strong> mit Ice Stone!
+    <br>2) <strong>Crabrawler fangen</strong> (Stony Shore / Beach, COMMON, Lv 9–34) → <strong>Crabominable</strong> mit Ice Stone!
     <br>3) <strong>Karrablast fangen</strong> (Swamp, COMMON, Lv 7–32) → <strong>Escavalier</strong> mit Shell Helmet Item!
   </div>
   <table>
     <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
     <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
     <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
-    <tr><td>⬆ <strong>Breloom (NEU)</strong></td><td><strong>Mach Punch (40, +1 Prio)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Spore (100% Sleep!)</strong></td><td><strong>Seed Bomb (80)</strong></td></tr>
-    <tr><td>⬆ <strong>Crabominable (NEU)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Ice Hammer (100)</strong></td><td><strong>Gunk Shot (120)</strong></td><td><strong>Avalanche (60)</strong></td></tr>
-    <tr><td>⬆ <strong>Escavalier (NEU)</strong></td><td><strong>Megahorn (120)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Iron Head (80)</strong></td><td><strong>Fell Stinger (50)</strong></td></tr>
+    <tr><td>⬆ <strong>Breloom (NEU)</strong></td><td><strong>Mach Punch (40, +1 Prio)</strong></td><td><strong>Sky Uppercut (85)</strong></td><td><strong>Spore (100% Sleep!)</strong></td><td><strong>Force Palm (60)</strong></td></tr>
+    <tr><td>⬆ <strong>Crabominable (NEU)</strong></td><td><strong>Ice Punch (75)</strong></td><td><strong>Brick Break (75)</strong></td><td><strong>Crabhammer (100!)</strong></td><td><strong>Avalanche (60)</strong></td></tr>
+    <tr><td>⬆ <strong>Escavalier (NEU)</strong></td><td><strong>Double-Edge (120)</strong></td><td><strong>Slash (70)</strong></td><td><strong>Fell Stinger (50)</strong></td><td><strong>Headbutt (70)</strong></td></tr>
     <tr><td><strong>Ludicolo</strong></td><td>Energy Ball (80)</td><td>Giga Drain (75)</td><td>Fake Out (40)</td><td>Knock Off (65)</td></tr>
   </table>
+  <p><em>Alle Moves sind Level-Up Moves (kostenlos relernbar!). Keine TMs nötig.</em></p>
 
   <h3 id="t5">🏆 #5 Trainer Brendan 1 (Lv 28–29) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Silk Scarf</strong> · Biome: Plains/Underground · Bag: 1× Super Potion</p>
@@ -153,13 +154,13 @@ const CAMPAIGN_HTML = `
     <tr><td>Crawdaunt</td><td>29</td><td>Water/Dark</td><td><strong>Adaptability!</strong> Aqua Jet (+1 Prio), Waterfall, Knock Off, X-Scissor. <strong>Focus Sash!</strong></td></tr>
     <tr><td>Grovyle</td><td>29</td><td>Grass</td><td>Leaf Blade (High Crit!), Power-Up Punch, Aerial Ace, Rock Tomb. Sitrus Berry</td></tr>
   </table>
-  <div class="info"><strong>Kampfplan (93% Siegrate, Simulator-verifiziert):</strong>
-    <br>• Loudred → <strong>Escavalier Slot 2</strong> Close Combat (Fighting ×2 auf Normal = OHKO!)
-    <br>• Lunatone → <strong>Ludicolo</strong> rein, Slot 1 Energy Ball (Grass ×2 auf Rock). 2 Hits = KO
+  <div class="info"><strong>Kampfplan (96% Siegrate, Simulator-verifiziert):</strong>
+    <br>• Loudred → <strong>Crabominable Slot 2</strong> Brick Break (Fighting ×2 auf Normal = OHKO mit 123%!)
+    <br>• Lunatone → Crabominable stirbt (Psyshock ×2) → <strong>Ludicolo</strong> rein, Slot 1 Energy Ball (Grass ×2 auf Rock). 2 Hits = KO
     <br>• Crawdaunt → <strong>DER Schlüsselkampf!</strong> → <strong>Breloom</strong> rein!
-    <br>&nbsp;&nbsp;Slot 3 <strong>Spore</strong> (100% Sleep!) → Slot 2 <strong>Close Combat</strong> (Focus Sash → 1 HP) → Slot 1 <strong>Mach Punch</strong> (+1 Prio, vor Aqua Jet!) = KO!
+    <br>&nbsp;&nbsp;Slot 3 <strong>Spore</strong> (100% Sleep!) → Slot 2 <strong>Sky Uppercut</strong> (Fighting ×2 auf Dark, 95-114%!) → Focus Sash rettet auf 1 HP → Slot 1 <strong>Mach Punch</strong> (+1 Prio, vor Aqua Jet!) = KO!
     <br>• Grovyle → <strong>Arcanine</strong> rein, Intimidate, Slot 1 <strong>Flare Blitz</strong> (Fire ×2 auf Grass = OHKO!)
-    <br>⚠️ Breloom NUR gegen Crawdaunt einsetzen! Backup: Crabominable (Close Combat + Ice Hammer)
+    <br>⚠️ Breloom NUR gegen Crawdaunt einsetzen! Backup: Escavalier + Marshtomp
   </div>
 
   <!-- ============ CAP 34 ============ -->
