@@ -472,6 +472,29 @@ const GUIDES = {
 
       <div class="warn"><strong>WICHTIG — Move Relearning!</strong> In Cobblemon kannst du im Party-Menü <em>kostenlos</em> alle Moves relearnen die dein Pokémon bis zu seinem aktuellen Level hätte lernen können. Das ist bei JEDEM neuen Cap der erste Schritt — Moves optimieren!</div>
 
+      <h3>Generelle Kampf-Tipps: Wenn der Gegner wechselt</h3>
+      <div class="info">
+        <p>RCT-Trainer wechseln <strong>aktiv</strong> ihre Pokémon, wenn sie im Typ-Nachteil sind! So reagierst du:</p>
+        <ul>
+          <li><strong>Gegner wechselt aus:</strong> Du bekommst einen <em>freien Zug</em>. Nutze ihn für:
+            <br>— <strong>Setup-Move</strong> (Growth, Cotton Spore, Charge, Swords Dance) → du wirst stärker/schneller
+            <br>— <strong>Eigener Wechsel</strong> → passenden Counter reinbringen für das neue Pokémon
+            <br>— <strong>Angriff</strong> → der eingewechselte Gegner nimmt den Hit beim Reinkommen (kein Protect möglich!)
+          </li>
+          <li><strong>Was kommt als nächstes?</strong> Schau auf die <em>Typ-Tabelle</em> (⚔️ Quick-Link oben). Wenn der Gegner sein Fire-Mon gegen dein Water-Mon tauscht, kommt wahrscheinlich ein Grass oder Electric rein.</li>
+          <li><strong>Predict den Switch:</strong> Wenn du <em>weißt</em> dass der Gegner wechseln wird (z.B. sein Fire-Mon steht gegen dein Marshtomp), nutze einen Move der das <em>einwechselnde</em> Mon trifft — z.B. <strong>Earthquake</strong> trifft das neue Electric-Mon beim Reinkommen super effektiv!</li>
+          <li><strong>Stealth Rock / Entry Hazards:</strong> Falls du Stealth Rock hast (Marshtomp/Graveler können es lernen!), setze es früh — jeder Wechsel des Gegners kostet ihn dann HP. Besonders stark gegen Teams die viel wechseln.</li>
+          <li><strong>Nuzleaf Fake Out:</strong> Nach einem eigenen Wechsel kannst du mit <strong>Nuzleaf Slot 1 Fake Out</strong> einen garantierten Flinch-Hit landen — perfekt um Initiative zurückzugewinnen.</li>
+          <li><strong>Arcanine Extreme Speed:</strong> Bei niedrigem HP des Gegner-Mons: <strong>Slot 2 Extreme Speed</strong> (+2 Priorität) trifft immer zuerst — egal ob der Gegner wechselt oder angreift.</li>
+        </ul>
+      </div>
+      <div class="warn"><strong>Faustregel für Wechsel-Situationen:</strong>
+        <br>1) Gegner wechselt? → <strong>Attacke weiter, treffe das neue Mon beim Reinkommen</strong>
+        <br>2) Du bist im Nachteil? → <strong>Selbst wechseln auf den passenden Counter</strong> (siehe Kampfplan-Tabellen)
+        <br>3) Unsicher was kommt? → <strong>Neutral-starken STAB-Move nutzen</strong> (Earthquake, Flare Blitz, Surf) — trifft fast alles gut
+        <br>4) Du hast einen freien Zug? → <strong>Setup!</strong> (Growth, Charge → nächster Hit doppelt stark)
+      </div>
+
       <h3>1. Leader Brock (Lv 12–14) ✅</h3>
       <p><strong>Thema:</strong> Rock · <strong>Bag:</strong> 1× Potion</p>
       <ul>
@@ -628,6 +651,10 @@ const GUIDES = {
         <br>• Impidimp → <strong>Arcanine Slot 4</strong> Play Rough (Fairy ×2 auf Dark!)
         <br>• Houndour → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2, immun vs Thunder Fang!)
         <br>• Mightyena → <strong>Arcanine Slot 4</strong> Play Rough (×2) → <strong>Slot 2</strong> Extreme Speed als Finisher. NICHT Marshtomp (Ice Fang!)
+        <br><em>⚠️ Wenn Archer wechselt:</em>
+        <br>• Archer tauscht Impidimp gegen Houndour? → <strong>Bleib bei Arcanine</strong>, Slot 1 Flare Blitz ist neutral auf Houndour (Fire resists Fire), aber du kannst auf Marshtomp wechseln
+        <br>• Archer tauscht gegen Mightyena? → <strong>Arcanine bleibt drin</strong> — Play Rough (Slot 4) trifft Mightyena ×2 beim Reinkommen!
+        <br>• Generell: Arcanine ist gegen alle 3 Archer-Mons brauchbar, du musst selten wechseln
       </div>
 
       <h3>Cap 27 → Misty besiegen</h3>
@@ -654,6 +681,11 @@ const GUIDES = {
         <br>• Floatzel → <strong>Flaaffy Slot 3</strong> Cotton Spore (Speed-Drop) → <strong>Slot 1</strong> Electro Ball (×2)
         <br>• Starmie → <strong>Arcanine Slot 3</strong> Crunch (Dark ×2 auf Psychic!) oder <strong>Nuzleaf Slot 3</strong> Feint Attack (Dark ×2). In 2 Turns KOen vor Recover!
         <br>• Lanturn → <strong>NICHT Flaaffy!</strong> (Volt Absorb!) → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2) oder <strong>Nuzleaf Slot 2</strong> Mega Drain (Grass ×2)
+        <br><em>⚠️ Wenn Misty wechselt:</em>
+        <br>• Misty bringt <strong>Lanturn</strong> gegen dein Flaaffy? → <strong>Sofort wechseln auf Marshtomp oder Nuzleaf!</strong> Volt Absorb heilt Lanturn durch Electric!
+        <br>• Misty bringt <strong>Frogadier</strong> gegen Marshtomp? → <strong>Sofort wechseln auf Staravia!</strong> Grass Knot (×4!) tötet Marshtomp sonst
+        <br>• Misty bringt <strong>Starmie</strong> unerwartet rein? → Wenn Arcanine draußen: <strong>Slot 3 Crunch sofort</strong> (Dark ×2 trifft beim Reinkommen). Wenn nicht: wechsel auf Arcanine
+        <br>• Frogadier nutzt <strong>Flip Turn</strong> (Hit + Rückzug)? → Du nimmst Schaden + Misty wechselt. Dein nächster Zug = freier Hit auf das neue Mon. <strong>Nicht panisch wechseln</strong>, stattdessen angreifen
       </div>
 
       <h3>Cap 34 → Lt. Surge besiegen</h3>
@@ -675,6 +707,10 @@ const GUIDES = {
       <div class="info"><strong>Surge-Kampfplan (Slot-Referenz):</strong>
         <br>• Pincurchin/Raichu/Manectric/Boltund → <strong>Marshtomp Slot 1</strong> Earthquake (Ground immun vs Electric, ×2!)
         <br>• Vikavolt (Levitate = immun vs Ground!) → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2 auf Bug!) — NICHT Marshtomp (Energy Ball ×4!)
+        <br><em>⚠️ Wenn Surge wechselt:</em>
+        <br>• Surge nutzt <strong>Volt Switch</strong> (Hit + Rückzug) auf fast allen Mons! Marshtomp ist immun → Volt Switch macht 0 Schaden + Surge verschwendet seinen Zug. <strong>Marshtomp bleibt einfach stehen und spammt Earthquake.</strong>
+        <br>• Surge bringt <strong>Vikavolt</strong> rein? → <strong>Sofort auf Arcanine wechseln!</strong> Vikavolt hat Energy Ball (×4 auf Marshtomp!) + Levitate (immun vs Earthquake). Arcanine Slot 1 Flare Blitz erledigt es.
+        <br>• Nach Vikavolt-KO: <strong>Zurück zu Marshtomp</strong> → Earthquake sweep weiter
       </div>
 
       <h3>Cap 44 → Erika besiegen</h3>
@@ -701,6 +737,11 @@ const GUIDES = {
         <br>• Venusaur (Sleep Powder!) → <strong>Arcanine Slot 2</strong> Extreme Speed (+2 Prio, schlägt vor Sleep Powder zu!)
         <br>• Rillaboom/Meganium → <strong>Staraptor Slot 1</strong> Brave Bird (Flying ×2 auf Grass)
         <br>• Electrode-Hisui (Explosion!) → <strong>Swampert Slot 4</strong> Protect um Explosion zu blocken, dann Slot 1 Earthquake
+        <br><em>⚠️ Wenn Erika wechselt:</em>
+        <br>• Erika bringt <strong>Serperior</strong> zurück nachdem du gewechselt hast? → <strong>SOFORT Arcanine rein + Slot 1 Flare Blitz!</strong> Serperior darf KEINEN Turn mit Leaf Storm bekommen (wird durch Contrary immer stärker!)
+        <br>• Erika tauscht gegen <strong>Venusaur</strong>? → <strong>NICHT wechseln wenn Arcanine draußen</strong>. Slot 1 Flare Blitz trifft Venusaur ×2 (Fire auf Grass) beim Reinkommen. Wenn Venusaur überlebt: Slot 2 Extreme Speed (+2 Prio) als Finisher VOR Sleep Powder.
+        <br>• Rillaboom nutzt <strong>U-Turn</strong> (Hit + Rückzug)? → Du nimmst Bug-Schaden (neutral). Nächstes Mon kommt rein. <strong>Nicht panisch wechseln</strong> — Arcanine/Staraptor treffen fast alles von Erika ×2 mit Fire/Flying.
+        <br>• <strong>Hauptregel bei Erika:</strong> Arcanine + Staraptor abwechselnd einsetzen. Beide haben ×2 Coverage auf ALLES in Erikas Team. Bei Wechseln einfach mit STAB-Move angreifen.
       </div>
 
       <h3>Cap 46+ → Giovanni 1 und weiter</h3>
