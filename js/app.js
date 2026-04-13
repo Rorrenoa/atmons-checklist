@@ -1,13 +1,21 @@
 /* ============================================================
    STATE & RENDERING
    ============================================================ */
-const PATHS = [
+const PATHS_BASE = [
   { id: "all",     label: "Alles",    icon: "📋" },
   { id: "base",    label: "Basis",    icon: "⚙️" },
   { id: "pokemon", label: "Pokémon",  icon: "🔴" },
   { id: "tech",    label: "Tech",     icon: "⚡" },
   { id: "endgame", label: "Endgame",  icon: "🌟" },
 ];
+// Kampagne-Tab nur für Profil "Mike" — dynamisch in getActivePaths()
+function getActivePaths() {
+  const paths = [...PATHS_BASE];
+  if (typeof state !== 'undefined' && state.currentProfile === 'Mike' && typeof CAMPAIGN_HTML !== 'undefined') {
+    paths.push({ id: "kampagne", label: "Kampagne", icon: "🎯" });
+  }
+  return paths;
+}
 
 /* ============================================================
    STATE — mit Profil-Support (Multi-User im selben Browser)
@@ -196,6 +204,7 @@ function highlightText(html, query) {
 }
 
 function filteredPhases() {
+  if (state.path === "kampagne") return []; // Kampagne-Tab zeigt keine Phasen
   return PHASES
     .filter(p => state.path === "all" || p.path === state.path)
     .map(p => ({
@@ -284,7 +293,7 @@ function render() {
   const phases = filteredPhases();
   const overall = getPathStats("all");
   const current = getPathStats(state.path);
-  const pathInfo = PATHS.find(p => p.id === state.path);
+  const pathInfo = getActivePaths().find(p => p.id === state.path) || getActivePaths()[0];
   let html = '';
 
   // Header (scrollt mit)
@@ -313,7 +322,7 @@ function render() {
 
   // Path Filter
   html += `<div class="path-filter">`;
-  PATHS.forEach(p => {
+  getActivePaths().forEach(p => {
     const s = getPathStats(p.id);
     html += `
       <button class="path-btn ${state.path === p.id ? 'active' : ''}" onclick="setPath('${p.id}')">
@@ -346,14 +355,24 @@ function render() {
       <button class="ql-btn" onclick="openGuide('mekanism-ore')">⚙️ Ore-Processing</button>
       <button class="ql-btn" onclick="openGuide('alloys')">🔨 Alloys</button>
       <button class="ql-btn" onclick="openGuide('atm-star')">🌟 ATM Star</button>
-      ${state.currentProfile === 'Mike' ? `
-        <button class="ql-btn ql-highlight" onclick="openGuide('rr-campaign')" style="border-color:rgba(244,114,182,0.4);color:var(--pink);">🎯 Kampagne</button>
-        <button class="ql-btn ql-highlight" onclick="openGuide('rr-teams')" style="border-color:rgba(74,222,128,0.4);color:var(--green);">🏆 Teams</button>
-      ` : ''}
     </div>
   </div>`;
 
-  // Phases
+  // Kampagne-Tab: zeigt den kompletten Walkthrough statt Phasen
+  if (state.path === "kampagne" && typeof CAMPAIGN_HTML !== 'undefined') {
+    html += CAMPAIGN_HTML;
+    html += `
+      <div class="reset-wrap">
+        <button class="reset-btn" onclick="setPath('all')">← Zurück zur Checkliste</button>
+      </div>
+      <div class="footer">ATMons Checkliste · Daten werden lokal im Browser gespeichert</div>
+    `;
+    app.innerHTML = html;
+    renderModal();
+    return;
+  }
+
+  // Phases (normale Checklisten-Ansicht)
   if (phases.length === 0) {
     html += `
       <div class="empty-state">

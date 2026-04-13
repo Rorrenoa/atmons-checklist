@@ -1058,6 +1058,71 @@
     color: var(--heading);
   }
 
+  /* Campaign Tab Content */
+  .campaign-content {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    padding-bottom: 40px;
+  }
+  .campaign-content h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--heading);
+    margin-bottom: 10px;
+  }
+  .campaign-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--accent2);
+    margin: 24px 0 10px;
+    padding: 8px 0 6px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 700;
+  }
+  .campaign-content p { margin-bottom: 10px; }
+  .campaign-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 16px;
+    font-size: 0.9375rem;
+  }
+  .campaign-content th, .campaign-content td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .campaign-content th {
+    font-family: var(--font-display);
+    color: var(--accent2);
+    font-weight: 600;
+    background: var(--surface2);
+    font-size: 0.875rem;
+  }
+  .campaign-content td { color: var(--text); }
+  .campaign-content .warn {
+    background: rgba(251, 191, 36, 0.1);
+    border-left: 3px solid var(--amber);
+    padding: 13px 17px;
+    border-radius: 7px;
+    margin: 14px 0;
+    color: var(--heading);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+  .campaign-content .info {
+    background: rgba(96, 165, 250, 0.08);
+    border-left: 3px solid var(--blue);
+    padding: 13px 17px;
+    border-radius: 7px;
+    margin: 14px 0;
+    color: var(--heading);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+  .campaign-content strong { color: var(--heading); }
+  .campaign-content em { color: var(--amber); font-style: normal; font-weight: 600; }
+
   /* Mobile-optimierungen — bleibt lesbar auf schmalen Screens */
   @media (max-width: 560px) {
     html { font-size: 15px; }   /* leicht reduziert, aber immer noch über Minimum */
