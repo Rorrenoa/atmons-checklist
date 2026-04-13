@@ -18,8 +18,9 @@ const CAMPAIGN_HTML = `
     <a href="#t3" class="toc-indent">🏆 #3 Rival Terry 1</a>
     <a href="#cap27">Cap 27 — Ludicolo Team-Umbau</a>
     <a href="#t4" class="toc-indent">🏆 #4 Leader Misty</a>
+    <a href="#brendan-umbau">Cap 27 — Breloom + Crabominable + Escavalier!</a>
     <a href="#t5" class="toc-indent">🏆 #5 Trainer Brendan 1</a>
-    <a href="#cap34">Cap 34 — Move-Upgrades</a>
+    <a href="#cap34">Cap 34 — Keine Änderungen</a>
     <a href="#t6" class="toc-indent">🏆 #6 Leader Lt. Surge</a>
     <a href="#cap44">Cap 44 — Evolutions!</a>
     <a href="#t7" class="toc-indent">🏆 #7 Leader Erika</a>
@@ -125,30 +126,45 @@ const CAMPAIGN_HTML = `
     <br>⚠️ Ludicolo bleibt IMMER drin! HP niedrig? Slot 2 Giga Drain heilt zurück.
   </div>
 
+  <h3 id="brendan-umbau">TEAM-UMBAU: Breloom + Crabominable + Escavalier! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
+  <div class="warn"><strong>Nuzleaf + Staravia + Flaaffy RAUS → Breloom + Crabominable + Escavalier REIN!</strong>
+    <br>Brendans Crawdaunt (Adaptability + Focus Sash) sweept das bisherige Team. <strong>0% Siegrate ohne Umbau!</strong>
+    <br>
+    <br>1) <strong>Shroomish fangen</strong> (Forest, COMMON, Lv 5–30) → Breloom bei Lv 23 (lernt Mach Punch!)
+    <br>2) <strong>Crabrawler fangen</strong> (Küste/Coast, COMMON, Lv 9–34) → <strong>Crabominable</strong> mit Ice Stone!
+    <br>3) <strong>Karrablast fangen</strong> (Swamp, COMMON, Lv 7–32) → <strong>Escavalier</strong> mit Shell Helmet Item!
+  </div>
+  <table>
+    <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
+    <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
+    <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
+    <tr><td>⬆ <strong>Breloom (NEU)</strong></td><td><strong>Mach Punch (40, +1 Prio)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Spore (100% Sleep!)</strong></td><td><strong>Seed Bomb (80)</strong></td></tr>
+    <tr><td>⬆ <strong>Crabominable (NEU)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Ice Hammer (100)</strong></td><td><strong>Gunk Shot (120)</strong></td><td><strong>Avalanche (60)</strong></td></tr>
+    <tr><td>⬆ <strong>Escavalier (NEU)</strong></td><td><strong>Megahorn (120)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Iron Head (80)</strong></td><td><strong>Fell Stinger (50)</strong></td></tr>
+    <tr><td><strong>Ludicolo</strong></td><td>Energy Ball (80)</td><td>Giga Drain (75)</td><td>Fake Out (40)</td><td>Knock Off (65)</td></tr>
+  </table>
+
   <h3 id="t5">🏆 #5 Trainer Brendan 1 (Lv 28–29) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
-  <p>Signature: <strong>Silk Scarf</strong> · Biome: Plains/Underground</p>
+  <p>Signature: <strong>Silk Scarf</strong> · Biome: Plains/Underground · Bag: 1× Super Potion</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Gefahr</th></tr>
-    <tr><td>Loudred</td><td>28</td><td>Normal</td><td>Hyper Voice, Brick Break, Ice Beam, Shadow Ball</td></tr>
-    <tr><td>Lunatone</td><td>28</td><td>Rock/Psychic</td><td>Psyshock, Hypnosis(!), Calm Mind</td></tr>
-    <tr><td>Crawdaunt</td><td>29</td><td>Water/Dark</td><td>Aqua Jet (Priority!), Knock Off, Focus Sash</td></tr>
-    <tr><td>Grovyle</td><td>29</td><td>Grass</td><td>Leaf Blade, Power-Up Punch, Aerial Ace</td></tr>
+    <tr><td>Loudred</td><td>28</td><td>Normal</td><td>Punk Rock! Hyper Voice, Brick Break, Ice Beam, Shadow Ball. Chople Berry</td></tr>
+    <tr><td>Lunatone</td><td>28</td><td>Rock/Psychic</td><td>Levitate! Psyshock, Power Gem, Hypnosis(!), Calm Mind. Colbur Berry</td></tr>
+    <tr><td>Crawdaunt</td><td>29</td><td>Water/Dark</td><td><strong>Adaptability!</strong> Aqua Jet (+1 Prio), Waterfall, Knock Off, X-Scissor. <strong>Focus Sash!</strong></td></tr>
+    <tr><td>Grovyle</td><td>29</td><td>Grass</td><td>Leaf Blade (High Crit!), Power-Up Punch, Aerial Ace, Rock Tomb. Sitrus Berry</td></tr>
   </table>
-  <div class="info"><strong>Kampfplan:</strong>
-    <br>• Loudred → <strong>Marshtomp Slot 1</strong> Earthquake (Fighting resists Normal? Nein, aber Marshtomp tankt neutral + Earthquake ist stark)
-    <br>• Lunatone → <strong>Arcanine Slot 3</strong> Crunch (Dark ×2 auf Psychic!) oder <strong>Nuzleaf Slot 3</strong> Feint Attack
-    <br>• Crawdaunt → <strong>Ludicolo Slot 1</strong> Energy Ball (Grass ×2 auf Water!). Aqua Jet macht ×0.25 auf Ludicolo!
-    <br>• Grovyle → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2 auf Grass!) — instant KO
-    <br>⚠️ Lunatone hat <strong>Hypnosis</strong> — schick ein schnelles Mon (Arcanine) und KO bevor es einsetzt!
+  <div class="info"><strong>Kampfplan (93% Siegrate, Simulator-verifiziert):</strong>
+    <br>• Loudred → <strong>Escavalier Slot 2</strong> Close Combat (Fighting ×2 auf Normal = OHKO!)
+    <br>• Lunatone → <strong>Ludicolo</strong> rein, Slot 1 Energy Ball (Grass ×2 auf Rock). 2 Hits = KO
+    <br>• Crawdaunt → <strong>DER Schlüsselkampf!</strong> → <strong>Breloom</strong> rein!
+    <br>&nbsp;&nbsp;Slot 3 <strong>Spore</strong> (100% Sleep!) → Slot 2 <strong>Close Combat</strong> (Focus Sash → 1 HP) → Slot 1 <strong>Mach Punch</strong> (+1 Prio, vor Aqua Jet!) = KO!
+    <br>• Grovyle → <strong>Arcanine</strong> rein, Intimidate, Slot 1 <strong>Flare Blitz</strong> (Fire ×2 auf Grass = OHKO!)
+    <br>⚠️ Breloom NUR gegen Crawdaunt einsetzen! Backup: Crabominable (Close Combat + Ice Hammer)
   </div>
 
   <!-- ============ CAP 34 ============ -->
   <h3 id="cap34">Cap 34 — Move-Upgrades <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
-  <div class="warn"><strong>Slot-Änderungen:</strong>
-    <br>• Staravia Slot 1: → <strong>Aerial Ace</strong> (Lv 28)
-    <br>• Flaaffy Slot 2: → <strong>Confuse Ray</strong> (Lv 29)
-    <br>• Nuzleaf Slot 4: → <strong>Synthesis</strong> (Lv 30)
-    <br>• Ludicolo: Moves bleiben — bereits optimal
+  <div class="warn"><strong>Keine Slot-Änderungen nötig.</strong> Breloom, Crabominable, Escavalier und Ludicolo sind bereits optimal. Alle Moves bleiben.
   </div>
 
   <h3 id="t6">🏆 #6 Leader Lt. Surge (Lv 32–34) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
@@ -170,9 +186,8 @@ const CAMPAIGN_HTML = `
   <!-- ============ CAP 44 ============ -->
   <h3 id="cap44">Cap 44 — Evolutions! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <div class="warn"><strong>Große Upgrades:</strong>
-    <br>• <strong>Staravia → Staraptor</strong> (Lv 34)! Slot 1: Brave Bird (120!), Slot 3: Close Combat (120!) — <strong>FLY-MOUNT!</strong>
-    <br>• <strong>Flaaffy → Ampharos</strong> (Lv 30)! Slot 1: Discharge (80), Slot 2: Power Gem (80)
     <br>• <strong>Marshtomp → Swampert</strong> (Lv 36)! Höhere Stats, Mega-fähig
+    <br>• Breloom, Crabominable, Escavalier: Moves bleiben — bereits optimal
   </div>
 
   <h3 id="t7">🏆 #7 Leader Erika (Lv 43–44) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
@@ -187,8 +202,8 @@ const CAMPAIGN_HTML = `
   </table>
   <div class="warn"><strong>Kampfplan:</strong>
     <br>• Serperior → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2) — <strong>SOFORT KOen!</strong> Contrary + Leaf Storm macht es sonst unkontrollierbar!
-    <br>• Venusaur → <strong>Arcanine Slot 2</strong> Extreme Speed (+2 Prio, schlägt VOR Sleep Powder!) dann Slot 1 Flare Blitz
-    <br>• Rillaboom/Meganium → <strong>Staraptor Slot 1</strong> Brave Bird (Flying ×2)
+    <br>• Venusaur → <strong>Arcanine Slot 2</strong> Extreme Speed (+2 Prio, schlägt VOR Sleep Powder!) dann Slot 1 Flare Blitz. Oder <strong>Breloom Slot 3</strong> Spore (100% Sleep) zuerst!
+    <br>• Rillaboom/Meganium → <strong>Crabominable Slot 2</strong> Ice Hammer (Ice ×2 auf Grass) oder <strong>Arcanine Slot 1</strong> Flare Blitz
     <br>• Electrode-Hisui → <strong>Swampert Slot 4</strong> Protect (blockt Explosion!) → dann Slot 1 Earthquake
     <br>⚠️ Ludicolo NICHT gegen Erika (Venusaur Sludge Bomb = Poison ×2 auf Grass!)
   </div>
