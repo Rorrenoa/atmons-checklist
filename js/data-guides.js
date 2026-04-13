@@ -614,55 +614,94 @@ const GUIDES = {
       <div class="info"><strong>Mount:</strong> Arcanine (Ground). <strong>Flug:</strong> noch nicht möglich. <strong>Brock-MVP:</strong> Geodude (Bulldoze ×4 vs Alolan Geodude) + Mudkip (Water Gun auf den Rest).</div>
 
       <h3>Cap 21 → Archer besiegen</h3>
-      <div class="warn"><strong>WICHTIG — Moves relearnen!</strong> In Cobblemon kannst du im Party-Menü <em>kostenlos</em> alle Level-Up-Moves relearnen. Bei Cap 21 sofort folgende Moves holen:</div>
+      <div class="warn"><strong>WICHTIG — Moves relearnen!</strong> In Cobblemon kannst du im Party-Menü <em>kostenlos</em> alle Level-Up-Moves relearnen. Slot-Nummern beachten — die bleiben über die Caps hinweg konsistent!</div>
       <table>
-        <tr><th>Pokémon</th><th>Optimales Moveset (Lv 21)</th><th>Woher</th></tr>
-        <tr><td><strong>Mudkip → Marshtomp</strong></td><td><strong>Earthquake</strong> (100!), <strong>Surf</strong> (90!), Mud Shot (55), Protect</td><td>Evo bei Lv 16 + Lv-1-Moves relearnen!</td></tr>
-        <tr><td><strong>Arcanine</strong></td><td><strong>Flare Blitz</strong> (120!), <strong>Extreme Speed</strong> (80, +2 Prio!), <strong>Crunch</strong> (80), <strong>Play Rough</strong> (90!)</td><td>Alles Lv-1-Moves, kostenlos relearnen!</td></tr>
-        <tr><td><strong>Nuzleaf</strong></td><td><strong>Fake Out</strong> (Prio-Flinch!), <strong>Mega Drain</strong> (40, heilt), <strong>Air Cutter</strong> (60), Growth</td><td>Fake Out + Air Cutter = Lv-1-Moves</td></tr>
-        <tr><td><strong>Staravia</strong></td><td>Wing Attack (60), Quick Attack (40, Prio), <strong>Endeavor</strong> (Clutch!), Double Team</td><td>Endeavor bei Lv 18</td></tr>
-        <tr><td><strong>Flaaffy</strong></td><td>Thunder Shock (40), <strong>Charge</strong> (verdoppelt nächsten Electric), Cotton Spore, Thunder Wave</td><td>Charge bei Lv 16</td></tr>
-        <tr><td><strong>Geodude</strong></td><td>Bulldoze (60), <strong>Smack Down</strong> (50), Magnitude, Rock Throw</td><td>Smack Down bei Lv 18</td></tr>
+        <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
+        <tr><td><strong>Marshtomp</strong></td><td><strong>Earthquake</strong> (100)</td><td><strong>Surf</strong> (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
+        <tr><td><strong>Arcanine</strong></td><td><strong>Flare Blitz</strong> (120)</td><td><strong>Extreme Speed</strong> (80)</td><td><strong>Crunch</strong> (80)</td><td><strong>Play Rough</strong> (90)</td></tr>
+        <tr><td><strong>Nuzleaf</strong></td><td><strong>Fake Out</strong> (40, Prio)</td><td><strong>Mega Drain</strong> (40)</td><td><strong>Air Cutter</strong> (60)</td><td>Growth</td></tr>
+        <tr><td><strong>Staravia</strong></td><td>Wing Attack (60)</td><td>Quick Attack (40)</td><td><strong>Endeavor</strong></td><td>Double Team</td></tr>
+        <tr><td><strong>Flaaffy</strong></td><td>Thunder Shock (40)</td><td><strong>Charge</strong></td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
+        <tr><td><strong>Geodude</strong></td><td>Bulldoze (60)</td><td><strong>Smack Down</strong> (50)</td><td>Magnitude</td><td>Rock Throw (50)</td></tr>
       </table>
-      <div class="info"><strong>Archer-MVP mit neuen Moves:</strong>
-        <br>• Impidimp → <strong>Arcanine Play Rough</strong> (Fairy ×2 auf Dark = möglicher OHKO!)
-        <br>• Houndour → <strong>Marshtomp Earthquake</strong> (100 Power + Ground ×2 auf Fire = instant KO, immun vs Thunder Fang)
-        <br>• Mightyena → <strong>Arcanine Play Rough</strong> (×2) + Extreme Speed als Priority-Finisher. NICHT Marshtomp (Ice Fang + Strong Jaw = tödlich!)
+      <div class="info"><strong>Archer-Kampfplan (Slot-Referenz):</strong>
+        <br>• Impidimp → <strong>Arcanine Slot 4</strong> Play Rough (Fairy ×2 auf Dark!)
+        <br>• Houndour → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2, immun vs Thunder Fang!)
+        <br>• Mightyena → <strong>Arcanine Slot 4</strong> Play Rough (×2) → <strong>Slot 2</strong> Extreme Speed als Finisher. NICHT Marshtomp (Ice Fang!)
       </div>
 
       <h3>Cap 27 → Misty besiegen</h3>
-      <div class="warn"><strong>VOR dem Kampf:</strong>
-        <br>1) Team auf <strong>Lv 25+</strong> leveln (Capture-XP ×20 nutzen!)
-        <br>2) Nuzleaf lernt <strong>Feint Attack bei Lv 24</strong> (Dark, 60 Power, trifft immer — Dark STAB!)
-        <br>3) Flaaffy lernt <strong>Electro Ball bei Lv 25</strong> (stärker als Thunder Shock bei Speed-Vorteil!)
-        <br>4) Geodude → <strong>Graveler</strong> bei Lv 25
-        <br>5) Optional: Nuzleaf → <strong>Shiftry</strong> via Leaf Stone (höhere Stats)
-        <br><em>Hinweis: TMs Meteor Beam, Bounce und Trick Room kann KEINES deiner Mons lernen. Aufheben für spätere Pokémon!</em>
+      <div class="warn"><strong>VOR dem Kampf — Slot-Änderungen:</strong>
+        <br>1) Team auf <strong>Lv 25+</strong> leveln
+        <br>2) <strong>Nuzleaf Slot 3:</strong> Air Cutter → <strong>Feint Attack</strong> (Dark, 60, Lv 24) — endlich Dark STAB!
+        <br>3) <strong>Flaaffy Slot 1:</strong> Thunder Shock → <strong>Electro Ball</strong> (Lv 25) — stärker bei Speed-Vorteil!
+        <br>4) Geodude → <strong>Graveler</strong> bei Lv 25 (Moves bleiben in gleichen Slots)
+        <br>5) Optional: Nuzleaf → <strong>Shiftry</strong> via Leaf Stone
+        <br><em>TMs Meteor Beam, Bounce, Trick Room: KEINES deiner Mons kann sie lernen. Aufheben!</em>
       </div>
-      <div class="info"><strong>Misty-Kampfplan:</strong>
-        <br>• Frogadier → <strong>Staravia</strong> (Wing Attack — Protean ändert Frogadiers Typ → Flying kontert vieles). NICHT Marshtomp (Grass Knot ×4!)
-        <br>• Floatzel → <strong>Flaaffy</strong> (Electro Ball/Charge+Thunder Shock ×2, Cotton Spore)
-        <br>• Starmie → <strong>Arcanine Crunch</strong> (Dark ×2 auf Psychic, 80 Power!) oder <strong>Nuzleaf Feint Attack</strong> (Dark ×2). In 2 Turns KOen vor Recover!
-        <br>• Lanturn → <strong>NICHT Flaaffy!</strong> (Volt Absorb heilt es!) → <strong>Marshtomp Earthquake</strong> (Ground ×2 auf Electric, 100 Power!) oder <strong>Nuzleaf Mega Drain</strong> (Grass ×2)
+      <p><strong>Movesets nach Änderung (Lv 25+):</strong></p>
+      <table>
+        <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
+        <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
+        <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
+        <tr><td><strong>Nuzleaf</strong></td><td>Fake Out (40)</td><td>Mega Drain (40)</td><td><strong>⬆ Feint Attack (60)</strong></td><td>Growth</td></tr>
+        <tr><td><strong>Staravia</strong></td><td>Wing Attack (60)</td><td>Quick Attack (40)</td><td>Endeavor</td><td>Double Team</td></tr>
+        <tr><td><strong>Flaaffy</strong></td><td><strong>⬆ Electro Ball</strong></td><td>Charge</td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
+        <tr><td><strong>Graveler</strong></td><td>Bulldoze (60)</td><td>Smack Down (50)</td><td>Magnitude</td><td>Rock Throw (50)</td></tr>
+      </table>
+      <div class="info"><strong>Misty-Kampfplan (Slot-Referenz):</strong>
+        <br>• Frogadier → <strong>Staravia Slot 1</strong> Wing Attack. NICHT Marshtomp (Grass Knot ×4!)
+        <br>• Floatzel → <strong>Flaaffy Slot 3</strong> Cotton Spore (Speed-Drop) → <strong>Slot 1</strong> Electro Ball (×2)
+        <br>• Starmie → <strong>Arcanine Slot 3</strong> Crunch (Dark ×2 auf Psychic!) oder <strong>Nuzleaf Slot 3</strong> Feint Attack (Dark ×2). In 2 Turns KOen vor Recover!
+        <br>• Lanturn → <strong>NICHT Flaaffy!</strong> (Volt Absorb!) → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2) oder <strong>Nuzleaf Slot 2</strong> Mega Drain (Grass ×2)
       </div>
 
       <h3>Cap 34 → Lt. Surge besiegen</h3>
-      <p><strong>Empfohlene Änderung:</strong> Staravia leveln für Staraptor-Vorbereitung. Optional: Geodude tauschen für ein Fighting-Mon.</p>
+      <div class="warn"><strong>Slot-Änderungen bei Lv 28+:</strong>
+        <br>• <strong>Staravia Slot 1:</strong> Wing Attack → <strong>Aerial Ace</strong> (Lv 28, 60, trifft immer!) — oder behalten
+        <br>• <strong>Flaaffy Slot 2:</strong> Charge → <strong>Confuse Ray</strong> (Lv 29) — Utility statt Boost
+        <br>• <strong>Nuzleaf Slot 4:</strong> Growth → <strong>Synthesis</strong> (Lv 30, Selbstheilung!) — falls Shiftry noch nicht evolved
+        <br>• Graveler/Geodude: Moves unverändert — Bulldoze (Slot 1) ist dein Surge-MVP
+      </div>
       <table>
-        <tr><th>Option</th><th>Pokémon</th><th>Warum</th></tr>
-        <tr><td>Keep</td><td>Geodude/Graveler</td><td>Ground immun vs Electric — perfekt für Surge</td></tr>
-        <tr><td>Swap</td><td><strong>Machop → Machoke</strong> (Lv 28)</td><td>Fighting Coverage für Giovanni, aber Hills/COMMON</td></tr>
+        <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
+        <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
+        <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
+        <tr><td><strong>Nuzleaf/Shiftry</strong></td><td>Fake Out (40)</td><td>Mega Drain (40)</td><td>Feint Attack (60)</td><td><strong>⬆ Synthesis</strong></td></tr>
+        <tr><td><strong>Staravia</strong></td><td><strong>⬆ Aerial Ace (60)</strong></td><td>Quick Attack (40)</td><td>Endeavor</td><td>Double Team</td></tr>
+        <tr><td><strong>Flaaffy</strong></td><td>Electro Ball</td><td><strong>⬆ Confuse Ray</strong></td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
+        <tr><td><strong>Graveler</strong></td><td>Bulldoze (60)</td><td>Smack Down (50)</td><td>Magnitude</td><td>Rock Throw (50)</td></tr>
       </table>
-      <div class="info"><strong>Surge-MVP:</strong> Marshtomp (Ground immun, Earthquake ×2). ABER: Vikavolt hat Levitate + Energy Ball → Arcanine/Staravia für Vikavolt. Rest = Marshtomp sweep.</div>
+      <div class="info"><strong>Surge-Kampfplan (Slot-Referenz):</strong>
+        <br>• Pincurchin/Raichu/Manectric/Boltund → <strong>Marshtomp Slot 1</strong> Earthquake (Ground immun vs Electric, ×2!)
+        <br>• Vikavolt (Levitate = immun vs Ground!) → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2 auf Bug!) — NICHT Marshtomp (Energy Ball ×4!)
+      </div>
 
       <h3>Cap 44 → Erika besiegen</h3>
-      <p><strong>Wichtig:</strong> Staravia → <strong>Staraptor</strong> (Lv 34) — endlich Fly-Mount + starker STAB!</p>
+      <div class="warn"><strong>Evolutions + Slot-Änderungen:</strong>
+        <br>• <strong>Staravia → Staraptor</strong> bei Lv 34! Neue Moves relearnen:
+        <br>&nbsp;&nbsp;Slot 1: Aerial Ace → <strong>Brave Bird</strong> (120, Flying STAB! Hat Recoil)
+        <br>&nbsp;&nbsp;Slot 3: Endeavor → <strong>Close Combat</strong> (120, Fighting! Senkt Def/SpDef)
+        <br>• <strong>Flaaffy → Ampharos</strong> bei Lv 30! Neue Moves:
+        <br>&nbsp;&nbsp;Slot 2: Confuse Ray → <strong>Power Gem</strong> (80, Rock Coverage! Lv 34)
+        <br>&nbsp;&nbsp;Slot 1: Electro Ball → <strong>Discharge</strong> (80, Lv 38)
+        <br>• <strong>Marshtomp → Swampert</strong> bei Lv 36! Moves bleiben, höhere Stats
+      </div>
       <table>
-        <tr><th>Upgrade</th><th>Was passiert</th></tr>
-        <tr><td><strong>Staravia → Staraptor!</strong></td><td>Lv 34 → Normal/Flying, Intimidate, <strong>Fly-Mount!</strong> Brave Bird!</td></tr>
-        <tr><td>Flaaffy → Ampharos</td><td>Lv 30 → stärkerer Sp.Attacker</td></tr>
+        <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
+        <tr><td><strong>Swampert</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
+        <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
+        <tr><td><strong>Shiftry/Nuzleaf</strong></td><td>Fake Out (40)</td><td>Mega Drain (40)</td><td>Feint Attack (60)</td><td>Synthesis</td></tr>
+        <tr><td><strong>Staraptor</strong></td><td><strong>⬆ Brave Bird (120)</strong></td><td>Quick Attack (40)</td><td><strong>⬆ Close Combat (120)</strong></td><td>Double Team</td></tr>
+        <tr><td><strong>Ampharos</strong></td><td><strong>⬆ Discharge (80)</strong></td><td><strong>⬆ Power Gem (80)</strong></td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
+        <tr><td><strong>Graveler</strong></td><td>Bulldoze (60)</td><td>Smack Down (50)</td><td>Magnitude</td><td>Rock Throw (50)</td></tr>
       </table>
-      <div class="warn"><strong>Erika ist brutal:</strong> Contrary Serperior (Leaf Storm boosted!), Mega Venusaur, Sleep Powder. <strong>Strategie:</strong> Arcanine + Staraptor als Fire/Flying Duo. Serperior SOFORT fokussieren bevor es boosted.</div>
+      <div class="warn"><strong>Erika-Kampfplan (Slot-Referenz):</strong>
+        <br>• Serperior (Contrary!) → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2) — SOFORT KOen bevor es mit Leaf Storm boosted!
+        <br>• Venusaur (Sleep Powder!) → <strong>Arcanine Slot 2</strong> Extreme Speed (+2 Prio, schlägt vor Sleep Powder zu!)
+        <br>• Rillaboom/Meganium → <strong>Staraptor Slot 1</strong> Brave Bird (Flying ×2 auf Grass)
+        <br>• Electrode-Hisui (Explosion!) → <strong>Swampert Slot 4</strong> Protect um Explosion zu blocken, dann Slot 1 Earthquake
+      </div>
 
       <h3>Cap 46+ → Giovanni 1 und weiter</h3>
       <p>Ab hier wird das Team-Building <strong>situativ</strong>. Du brauchst:</p>
