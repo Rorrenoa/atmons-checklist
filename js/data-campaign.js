@@ -20,7 +20,7 @@ const CAMPAIGN_HTML = `
     <a href="#t4" class="toc-indent">🏆 #4 Leader Misty</a>
     <a href="#brendan-umbau">Cap 27 — Breloom + Crabominable + Escavalier!</a>
     <a href="#t5" class="toc-indent">🏆 #5 Trainer Brendan 1</a>
-    <a href="#cap34">Cap 34 — Donphan + Hippowdon!</a>
+    <a href="#cap34">Cap 34 — Ground-Stack!</a>
     <a href="#t6" class="toc-indent">🏆 #6 Leader Lt. Surge</a>
     <a href="#cap44">Cap 44 — Evolutions!</a>
     <a href="#t7" class="toc-indent">🏆 #7 Leader Erika</a>
@@ -164,23 +164,26 @@ const CAMPAIGN_HTML = `
   </div>
 
   <!-- ============ CAP 34 ============ -->
-  <h3 id="cap34">Cap 34 — TEAM-UMBAU: Donphan + Hippowdon! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
-  <div class="warn"><strong>Ludicolo + Escavalier RAUS → Donphan + Hippowdon REIN!</strong>
-    <br>Lt. Surge hat 5 Electric-Mons — du brauchst massiv Ground-Coverage. Das bisherige Team hat nur 26% Siegrate!
+  <h3 id="cap34">Cap 34 — TEAM-UMBAU: Ground-Stack! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
+  <div class="warn"><strong>Ludicolo + Escavalier + Breloom + Crabominable RAUS → Donphan + Hippowdon + Camerupt + Excadrill + Ursaluna REIN!</strong>
+    <br>Lt. Surge hat 5 Electric-Mons + Mega-Manectric. Du brauchst massiv Ground-Coverage!
     <br>
     <br>1) <strong>Phanpy fangen</strong> (Badlands/Savanna, COMMON, Lv 8–33) → <strong>Donphan</strong> bei Lv 25
     <br>2) <strong>Hippopotas fangen</strong> (Desert, COMMON, Lv 8–33) → <strong>Hippowdon</strong> bei Lv 34
+    <br>3) <strong>Numel fangen</strong> (Badlands/Volcanic, COMMON, Lv 6–31) → <strong>Camerupt</strong> bei Lv 33
+    <br>4) <strong>Drilbur fangen</strong> (Overworld, COMMON!, Lv 8–33) → <strong>Excadrill</strong> bei Lv 31
+    <br>5) <strong>Teddiursa fangen</strong> (Forest/Mountain, COMMON, Lv 8–33) → Ursaring Lv 30 → <strong>Ursaluna</strong> (Vollmond + Nacht!)
   </div>
   <table>
     <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
-    <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
-    <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
-    <tr><td><strong>Breloom</strong></td><td>Mach Punch (40)</td><td>Sky Uppercut (85)</td><td>Spore</td><td>Force Palm (60)</td></tr>
-    <tr><td><strong>Crabominable</strong></td><td>Ice Punch (75)</td><td>Brick Break (75)</td><td>Crabhammer (100)</td><td>Avalanche (60)</td></tr>
+    <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Rock Slide (75)</td><td>Protect</td></tr>
     <tr><td>⬆ <strong>Donphan (NEU)</strong></td><td><strong>Stomping Tantrum (75)</strong></td><td><strong>Knock Off (65)</strong></td><td><strong>Slam (80)</strong></td><td><strong>Bulldoze (60)</strong></td></tr>
     <tr><td>⬆ <strong>Hippowdon (NEU)</strong></td><td><strong>Dig (80)</strong></td><td><strong>Crunch (80)</strong></td><td><strong>Take Down (90)</strong></td><td><strong>Fire Fang (65)</strong></td></tr>
+    <tr><td>⬆ <strong>Camerupt (NEU)</strong></td><td><strong>Eruption (150!)</strong></td><td><strong>Lava Plume (80)</strong></td><td><strong>Earth Power (90)</strong></td><td><strong>Rock Slide (75)</strong></td></tr>
+    <tr><td>⬆ <strong>Excadrill (NEU)</strong></td><td><strong>Earthquake (100)</strong></td><td><strong>Rock Slide (75)</strong></td><td><strong>Crush Claw (75)</strong></td><td><strong>Slash (70)</strong></td></tr>
+    <tr><td>⬆ <strong>Ursaluna (NEU)</strong></td><td><strong>Headlong Rush (120!)</strong></td><td><strong>Thrash (120)</strong></td><td><strong>Hammer Arm (100)</strong></td><td><strong>Play Rough (90)</strong></td></tr>
   </table>
-  <p><em>Alle Moves sind Level-Up Moves (kostenlos relernbar!). Keine TMs nötig.</em></p>
+  <p><em>Alle Moves sind Level-Up Moves (kostenlos relernbar!). Arcanine + Breloom + Crabominable aufbewahren — sie kommen für Erika zurück!</em></p>
 
   <h3 id="t6">🏆 #6 Leader Lt. Surge (Lv 32–34) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Magnet</strong> · Biome: Plains · Bag: 1× Super Potion</p>
@@ -192,13 +195,13 @@ const CAMPAIGN_HTML = `
     <tr><td>Manectric</td><td>34</td><td>Electric</td><td>Intimidate, Charge Beam (+SpA!), <strong>Flame Burst (Fire!)</strong></td></tr>
     <tr><td>Boltund</td><td>33</td><td>Electric</td><td>Strong Jaw! Thunder/Fire/Ice/Psychic Fang</td></tr>
   </table>
-  <div class="info"><strong>Kampfplan (99% Siegrate, Simulator-verifiziert):</strong>
+  <div class="info"><strong>Kampfplan (100% Siegrate, Simulator-verifiziert):</strong>
     <br>• Pincurchin → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2, immun vs Electric!) 2 Hits = KO
     <br>• Raichu → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2) = OHKO! Psyshock tut weh, aber Marshtomp überlebt
-    <br>• Vikavolt → <strong>SOFORT Arcanine!</strong> Slot 1 Flare Blitz (Fire ×2 auf Bug = OHKO!). NICHT Marshtomp (Energy Ball ×4!)
-    <br>• Manectric → <strong>Hippowdon!</strong> Slot 1 Dig (Ground ×2). Sand Stream macht Chip-Schaden. Volt Switch = immun!
-    <br>• Boltund → <strong>Hippowdon Slot 1</strong> Dig (Ground ×2) oder <strong>Donphan Slot 1</strong> Stomping Tantrum (Ground ×2)
-    <br>⚠️ Vikavolt hat <strong>Levitate</strong> — Ground-Moves treffen NICHT! Nur Arcanine Flare Blitz funktioniert!
+    <br>• Vikavolt → <strong>SOFORT Camerupt!</strong> Slot 2 Lava Plume (Fire ×2 auf Bug). NICHT Ground-Moves (Levitate = immun!)
+    <br>• Mega-Manectric → <strong>Hippowdon!</strong> Slot 1 Dig (Ground ×2). Sand Stream macht Chip-Schaden. Volt Switch = immun!
+    <br>• Boltund → <strong>Ursaluna Slot 1</strong> Headlong Rush (120! Ground ×2) oder <strong>Excadrill Slot 1</strong> Earthquake
+    <br>⚠️ Vikavolt hat <strong>Levitate</strong> — Ground-Moves treffen NICHT! Nur Fire-Moves (Camerupt/Arcanine) funktionieren!
   </div>
 
   <!-- ============ CAP 44 ============ -->
