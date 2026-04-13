@@ -27,3 +27,6 @@ $RECYCLE.BIN/
 # Node (falls später Tooling dazukommt)
 node_modules/
 package-lock.json
+
+# Battle Simulator (lokales Hilfs-Tool, nicht Teil der Website)
+tools/
