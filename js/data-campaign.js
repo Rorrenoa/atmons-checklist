@@ -20,7 +20,7 @@ const CAMPAIGN_HTML = `
     <a href="#t4" class="toc-indent">🏆 #4 Leader Misty</a>
     <a href="#brendan-umbau">Cap 27 — Breloom + Crabominable + Escavalier!</a>
     <a href="#t5" class="toc-indent">🏆 #5 Trainer Brendan 1</a>
-    <a href="#cap34">Cap 34 — Keine Änderungen</a>
+    <a href="#cap34">Cap 34 — Donphan + Hippowdon!</a>
     <a href="#t6" class="toc-indent">🏆 #6 Leader Lt. Surge</a>
     <a href="#cap44">Cap 44 — Evolutions!</a>
     <a href="#t7" class="toc-indent">🏆 #7 Leader Erika</a>
@@ -164,31 +164,48 @@ const CAMPAIGN_HTML = `
   </div>
 
   <!-- ============ CAP 34 ============ -->
-  <h3 id="cap34">Cap 34 — Move-Upgrades <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
-  <div class="warn"><strong>Keine Slot-Änderungen nötig.</strong> Breloom, Crabominable, Escavalier und Ludicolo sind bereits optimal. Alle Moves bleiben.
+  <h3 id="cap34">Cap 34 — TEAM-UMBAU: Donphan + Hippowdon! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
+  <div class="warn"><strong>Ludicolo + Escavalier RAUS → Donphan + Hippowdon REIN!</strong>
+    <br>Lt. Surge hat 5 Electric-Mons — du brauchst massiv Ground-Coverage. Das bisherige Team hat nur 26% Siegrate!
+    <br>
+    <br>1) <strong>Phanpy fangen</strong> (Badlands/Savanna, COMMON, Lv 8–33) → <strong>Donphan</strong> bei Lv 25
+    <br>2) <strong>Hippopotas fangen</strong> (Desert, COMMON, Lv 8–33) → <strong>Hippowdon</strong> bei Lv 34
   </div>
+  <table>
+    <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
+    <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
+    <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
+    <tr><td><strong>Breloom</strong></td><td>Mach Punch (40)</td><td>Sky Uppercut (85)</td><td>Spore</td><td>Force Palm (60)</td></tr>
+    <tr><td><strong>Crabominable</strong></td><td>Ice Punch (75)</td><td>Brick Break (75)</td><td>Crabhammer (100)</td><td>Avalanche (60)</td></tr>
+    <tr><td>⬆ <strong>Donphan (NEU)</strong></td><td><strong>Stomping Tantrum (75)</strong></td><td><strong>Knock Off (65)</strong></td><td><strong>Slam (80)</strong></td><td><strong>Bulldoze (60)</strong></td></tr>
+    <tr><td>⬆ <strong>Hippowdon (NEU)</strong></td><td><strong>Dig (80)</strong></td><td><strong>Crunch (80)</strong></td><td><strong>Take Down (90)</strong></td><td><strong>Fire Fang (65)</strong></td></tr>
+  </table>
+  <p><em>Alle Moves sind Level-Up Moves (kostenlos relernbar!). Keine TMs nötig.</em></p>
 
   <h3 id="t6">🏆 #6 Leader Lt. Surge (Lv 32–34) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
-  <p>Signature: <strong>Magnet</strong> · Biome: Plains</p>
+  <p>Signature: <strong>Magnet</strong> · Biome: Plains · Bag: 1× Super Potion</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Gefahr</th></tr>
-    <tr><td>Pincurchin</td><td>32</td><td>Electric</td><td>Electric Surge! <strong>Scald (Water!)</strong></td></tr>
-    <tr><td>Raichu-Alolan</td><td>33</td><td>Electric/Psychic</td><td>Surge Surfer = ×2 Speed im Terrain!</td></tr>
-    <tr><td>Vikavolt</td><td>33</td><td>Bug/Electric</td><td><strong>Levitate (immun vs Ground!)</strong> Energy Ball!</td></tr>
-    <tr><td>Manectric</td><td>34</td><td>Electric</td><td>Intimidate, <strong>kann Mega!</strong> Manectite</td></tr>
-    <tr><td>Boltund</td><td>33</td><td>Electric</td><td>Strong Jaw Fangs (Fire/Ice/Psychic)</td></tr>
+    <tr><td>Pincurchin</td><td>32</td><td>Electric</td><td>Electric Surge! Scald (Water!), Volt Switch, Hidden Power</td></tr>
+    <tr><td>Raichu-Alolan</td><td>33</td><td>Electric/Psychic</td><td>Surge Surfer (×2 Speed im Terrain!), Psyshock, Grass Knot</td></tr>
+    <tr><td>Vikavolt</td><td>33</td><td>Bug/Electric</td><td><strong>Levitate (immun vs Ground!)</strong> Bug Buzz, Energy Ball, Roost!</td></tr>
+    <tr><td>Manectric</td><td>34</td><td>Electric</td><td>Intimidate, Charge Beam (+SpA!), <strong>Flame Burst (Fire!)</strong></td></tr>
+    <tr><td>Boltund</td><td>33</td><td>Electric</td><td>Strong Jaw! Thunder/Fire/Ice/Psychic Fang</td></tr>
   </table>
-  <div class="info"><strong>Kampfplan:</strong>
-    <br>• Alles außer Vikavolt → <strong>Marshtomp Slot 1</strong> Earthquake (Ground immun vs Electric, ×2!) Volt Switch macht 0!
-    <br>• <strong>Vikavolt</strong> (Levitate!) → <strong>Sofort Arcanine!</strong> Slot 1 Flare Blitz (Fire ×2 auf Bug). NICHT Marshtomp (Energy Ball ×4!)
-    <br>• Pincurchin hat Scald → falls Marshtomp HP niedrig: <strong>Ludicolo</strong> (Water ×0.25 + Energy Ball ×2)
+  <div class="info"><strong>Kampfplan (99% Siegrate, Simulator-verifiziert):</strong>
+    <br>• Pincurchin → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2, immun vs Electric!) 2 Hits = KO
+    <br>• Raichu → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2) = OHKO! Psyshock tut weh, aber Marshtomp überlebt
+    <br>• Vikavolt → <strong>SOFORT Arcanine!</strong> Slot 1 Flare Blitz (Fire ×2 auf Bug = OHKO!). NICHT Marshtomp (Energy Ball ×4!)
+    <br>• Manectric → <strong>Hippowdon!</strong> Slot 1 Dig (Ground ×2). Sand Stream macht Chip-Schaden. Volt Switch = immun!
+    <br>• Boltund → <strong>Hippowdon Slot 1</strong> Dig (Ground ×2) oder <strong>Donphan Slot 1</strong> Stomping Tantrum (Ground ×2)
+    <br>⚠️ Vikavolt hat <strong>Levitate</strong> — Ground-Moves treffen NICHT! Nur Arcanine Flare Blitz funktioniert!
   </div>
 
   <!-- ============ CAP 44 ============ -->
   <h3 id="cap44">Cap 44 — Evolutions! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <div class="warn"><strong>Große Upgrades:</strong>
     <br>• <strong>Marshtomp → Swampert</strong> (Lv 36)! Höhere Stats, Mega-fähig
-    <br>• Breloom, Crabominable, Escavalier: Moves bleiben — bereits optimal
+    <br>• Breloom, Crabominable, Donphan, Hippowdon: Moves bleiben — bereits optimal
   </div>
 
   <h3 id="t7">🏆 #7 Leader Erika (Lv 43–44) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
@@ -204,9 +221,9 @@ const CAMPAIGN_HTML = `
   <div class="warn"><strong>Kampfplan:</strong>
     <br>• Serperior → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2) — <strong>SOFORT KOen!</strong> Contrary + Leaf Storm macht es sonst unkontrollierbar!
     <br>• Venusaur → <strong>Arcanine Slot 2</strong> Extreme Speed (+2 Prio, schlägt VOR Sleep Powder!) dann Slot 1 Flare Blitz. Oder <strong>Breloom Slot 3</strong> Spore (100% Sleep) zuerst!
-    <br>• Rillaboom/Meganium → <strong>Crabominable Slot 2</strong> Ice Hammer (Ice ×2 auf Grass) oder <strong>Arcanine Slot 1</strong> Flare Blitz
+    <br>• Rillaboom/Meganium → <strong>Crabominable Slot 1</strong> Ice Punch (Ice ×2 auf Grass) oder <strong>Arcanine Slot 1</strong> Flare Blitz
     <br>• Electrode-Hisui → <strong>Swampert Slot 4</strong> Protect (blockt Explosion!) → dann Slot 1 Earthquake
-    <br>⚠️ Ludicolo NICHT gegen Erika (Venusaur Sludge Bomb = Poison ×2 auf Grass!)
+    <br>⚠️ Hippowdon + Donphan haben keine Coverage gegen Grass — nutze Arcanine + Crabominable!
   </div>
 
   <h3 id="t8">🏆 #8 Boss Giovanni 1 (Lv 45–46) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
@@ -223,7 +240,7 @@ const CAMPAIGN_HTML = `
     <br>• Nidoking → <strong>Swampert Slot 1</strong> Earthquake (Ground ×2, immun vs Electric). NICHT Ludicolo (Sludge Bomb ×2)!
     <br>• Honchkrow → <strong>Ampharos</strong> Discharge (Electric ×2 auf Flying) oder Arcanine Play Rough (Fairy ×2 auf Dark)
     <br>• Infernape → <strong>Swampert Slot 2</strong> Surf (Water ×2 auf Fire)
-    <br>• Kangaskhan → <strong>Swampert Slot 1</strong> Earthquake oder Escavalier/Breloom Close Combat (Fighting ×2 auf Normal)
+    <br>• Kangaskhan → <strong>Swampert Slot 1</strong> Earthquake oder Breloom Sky Uppercut (Fighting ×2 auf Normal)
     <br>• Rotom-Frost → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2 auf Ice)
   </div>
 
