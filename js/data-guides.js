@@ -542,19 +542,23 @@ const GUIDES = {
         <li><strong>Starmie</strong> Lv27 Water/Psychic — Analytic (+30% wenn langsamer!), Scald, Psyshock, Recover, Sitrus Berry</li>
         <li><strong>Lanturn</strong> Lv25 Water/Electric — Volt Absorb (heilt sich durch Electric!), Scald, Parabolic Charge</li>
       </ul>
-      <div class="warn"><strong>VOR dem Kampf — Pflicht-Schritte:</strong>
-        <br>1) Team auf <strong>Lv 25+</strong> leveln — Nuzleaf lernt <strong>Feint Attack bei Lv 24</strong> (Dark, 60 Power, trifft immer!)
-        <br>2) <strong>Moves relearnen</strong> (kostenlos im Party-Menü) — Marshtomp hat Earthquake (100) + Surf (90) als Lv-1-Moves!
-        <br>3) Geodude → <strong>Graveler</strong> bei Lv 25
-        <br>4) Optional: Nuzleaf → <strong>Shiftry</strong> via Leaf Stone
-        <br>5) Flaaffy lernt <strong>Electro Ball</strong> bei Lv 25 — deutlich stärker als Thunder Shock!
-        <br><em>Hinweis: TMs Meteor Beam/Bounce/Trick Room kann KEINES deiner Mons lernen — aufheben für spätere Pokémon!</em>
+      <div class="warn"><strong>VOR dem Kampf — TEAM-UMBAU!</strong>
+        <br>1) <strong>Lotad fangen</strong> (Swamp-Biom, COMMON) → Lv 14 = Lombre → <strong>Water Stone = Ludicolo!</strong>
+        <br>2) <strong>Geodude/Graveler RAUS → Ludicolo REIN!</strong>
+        <br>3) Ludicolo Moves relearnen: Slot 1 Energy Ball (80), Slot 2 Giga Drain (75), Slot 3 Fake Out, Slot 4 Knock Off (65)
+        <br>4) Team auf Lv 25+ leveln
+        <br>5) Nuzleaf: Slot 3 → Feint Attack (Lv 24), Flaaffy: Slot 1 → Electro Ball (Lv 25)
       </div>
-      <div class="info"><strong>Kampfplan (mit Earthquake/Surf/Crunch):</strong>
-        <br><strong>1. Frogadier →</strong> <strong>Staravia</strong> (Wing Attack). Protean macht Frogadier zum Typ seines Moves → Flying kontert. NICHT Marshtomp (Grass Knot ×4!).
-        <br><strong>2. Floatzel →</strong> <strong>Flaaffy</strong> (Electro Ball/Thunder Shock ×2 + Cotton Spore). Oder Nuzleaf mit Mega Drain (×2).
-        <br><strong>3. Starmie →</strong> <strong>Arcanine</strong> mit <em>Crunch</em> (Dark ×2 auf Psychic, 80 Power!) oder <strong>Nuzleaf</strong> mit Feint Attack (Dark ×2). Starmie hat Recover — in 2 Turns KOen!
-        <br><strong>4. Lanturn →</strong> <strong>NICHT Flaaffy!</strong> (Volt Absorb heilt es!) → <strong>Marshtomp</strong> mit <em>Earthquake</em> (Ground ×2 auf Electric, 100 Power!) oder <strong>Nuzleaf</strong> mit Mega Drain (Grass ×2).
+      <div class="info"><strong>Kampfplan — Ludicolo Solo-Sweep:</strong>
+        <br><strong>Lead: Ludicolo!</strong> Resistiert Water ×0.25, kein Move von Misty trifft super effektiv.
+        <br>
+        <br><strong>1. Frogadier →</strong> Slot 3 Fake Out (Flinch!) → Slot 4 Knock Off (entfernt Eviolite!) → Slot 1 Energy Ball (Grass ×2 = KO!)
+        <br><strong>2. Floatzel →</strong> Slot 1 Energy Ball (×2). Floatzels Water Pulse = ×0.25 Schaden auf dich.
+        <br><strong>3. Starmie →</strong> Slot 4 Knock Off (entfernt Sitrus Berry, Dark ×2) → Slot 2 Giga Drain (Grass ×2 + heilt!)
+        <br><strong>4. Lanturn →</strong> Slot 1 Energy Ball (Grass ×2). Volt Absorb egal — wir nutzen Grass!
+        <br>
+        <br><em>⚠️ Ludicolo bleibt IMMER drin!</em> Bei niedrigem HP → Slot 2 Giga Drain heilt zurück.
+        <br>Backup: Arcanine Slot 3 Crunch (Dark ×2) gegen Starmie falls Ludicolo fällt.
       </div>
 
       <h3>5. Trainer Brendan 1 (~Lv 27)</h3>
@@ -658,15 +662,35 @@ const GUIDES = {
       </div>
 
       <h3>Cap 27 → Misty besiegen</h3>
-      <div class="warn"><strong>VOR dem Kampf — Slot-Änderungen:</strong>
-        <br>1) Team auf <strong>Lv 25+</strong> leveln
-        <br>2) <strong>Nuzleaf Slot 3:</strong> Air Cutter → <strong>Feint Attack</strong> (Dark, 60, Lv 24) — endlich Dark STAB!
-        <br>3) <strong>Flaaffy Slot 1:</strong> Thunder Shock → <strong>Electro Ball</strong> (Lv 25) — stärker bei Speed-Vorteil!
-        <br>4) Geodude → <strong>Graveler</strong> bei Lv 25 (Moves bleiben in gleichen Slots)
-        <br>5) Optional: Nuzleaf → <strong>Shiftry</strong> via Leaf Stone
-        <br><em>TMs Meteor Beam, Bounce, Trick Room: KEINES deiner Mons kann sie lernen. Aufheben!</em>
+      <div class="warn"><strong>TEAM-UMBAU PFLICHT!</strong> Misty ist der schwerste Early-Game-Kampf. Ihr Protean-Frogadier hat Coverage gegen fast alles. Die Lösung:
+        <br><br><strong>1) Lotad fangen → Ludicolo!</strong>
+        <br>• <strong>Lotad</strong> spawnt in <strong>Swamp-Biom</strong> (COMMON, Lv 1–22, am Wasser oder Angeln)
+        <br>• Nature's Compass → "Swamp" suchen
+        <br>• Lotad → <strong>Lombre</strong> bei Lv 14 → <strong>Ludicolo</strong> mit <strong>Water Stone</strong> (EMI: "water_stone")
+        <br><br><strong>2) Geodude/Graveler raus, Ludicolo rein!</strong>
+        <br><br><strong>3) Ludicolo Moves relearnen (alles Lv-1, kostenlos!):</strong>
+        <br>• Slot 1: <strong>Energy Ball</strong> (80, Grass STAB — ×2 auf alle Water!)
+        <br>• Slot 2: <strong>Giga Drain</strong> (75, Grass STAB + heilt 50%!)
+        <br>• Slot 3: <strong>Fake Out</strong> (40, Priority + Flinch!)
+        <br>• Slot 4: <strong>Knock Off</strong> (65, Dark — entfernt Eviolite/Sitrus Berry!)
+        <br><br><strong>4) Weitere Slot-Änderungen:</strong>
+        <br>• Nuzleaf Slot 3: Air Cutter → <strong>Feint Attack</strong> (Dark, 60, Lv 24)
+        <br>• Flaaffy Slot 1: Thunder Shock → <strong>Electro Ball</strong> (Lv 25)
       </div>
-      <p><strong>Movesets nach Änderung (Lv 25+):</strong></p>
+
+      <h3>Warum Ludicolo? (Water/Grass)</h3>
+      <table>
+        <tr><th>Mistys Move</th><th>Schaden auf Ludicolo</th></tr>
+        <tr><td>Alle Water-Moves (Scald, Flip Turn, Water Pulse)</td><td><strong>×0.25!</strong> (doppelt resisted!)</td></tr>
+        <tr><td>Ice Punch / Icy Wind</td><td>×1 (neutral)</td></tr>
+        <tr><td>Grass Knot</td><td>×1 (neutral)</td></tr>
+        <tr><td>Rock Tomb</td><td>×1 (neutral)</td></tr>
+        <tr><td>Psyshock</td><td>×1 (neutral)</td></tr>
+        <tr><td>Hidden Power Grass</td><td>×1 (neutral)</td></tr>
+      </table>
+      <p><em>Kein einziger Move von Misty trifft Ludicolo super effektiv! Water macht fast 0 Schaden.</em></p>
+
+      <p><strong>Team nach Umbau (Lv 25+):</strong></p>
       <table>
         <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
         <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
@@ -674,26 +698,30 @@ const GUIDES = {
         <tr><td><strong>Nuzleaf</strong></td><td>Fake Out (40)</td><td>Mega Drain (40)</td><td><strong>⬆ Feint Attack (60)</strong></td><td>Growth</td></tr>
         <tr><td><strong>Staravia</strong></td><td>Wing Attack (60)</td><td>Quick Attack (40)</td><td>Endeavor</td><td>Double Team</td></tr>
         <tr><td><strong>Flaaffy</strong></td><td><strong>⬆ Electro Ball</strong></td><td>Charge</td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
-        <tr><td><strong>Graveler</strong></td><td>Bulldoze (60)</td><td>Smack Down (50)</td><td>Magnitude</td><td>Rock Throw (50)</td></tr>
+        <tr><td><strong>⬆ Ludicolo (NEU!)</strong></td><td><strong>Energy Ball (80)</strong></td><td><strong>Giga Drain (75)</strong></td><td><strong>Fake Out (40)</strong></td><td><strong>Knock Off (65)</strong></td></tr>
       </table>
-      <div class="info"><strong>Misty-Kampfplan (Slot-Referenz):</strong>
-        <br>• Frogadier → <strong>Staravia Slot 1</strong> Wing Attack. NICHT Marshtomp (Grass Knot ×4!)
-        <br>• Floatzel → <strong>Flaaffy Slot 3</strong> Cotton Spore (Speed-Drop) → <strong>Slot 1</strong> Electro Ball (×2)
-        <br>• Starmie → <strong>Arcanine Slot 3</strong> Crunch (Dark ×2 auf Psychic!) oder <strong>Nuzleaf Slot 3</strong> Feint Attack (Dark ×2). In 2 Turns KOen vor Recover!
-        <br>• Lanturn → <strong>NICHT Flaaffy!</strong> (Volt Absorb!) → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2) oder <strong>Nuzleaf Slot 2</strong> Mega Drain (Grass ×2)
+
+      <div class="info"><strong>Misty-Kampfplan — Ludicolo Solo-Sweep:</strong>
+        <br><strong>Lead: Ludicolo</strong> gegen alles!
+        <br>
+        <br>• <strong>Frogadier →</strong> Slot 3 Fake Out (Flinch!) → Slot 4 Knock Off (entfernt Eviolite!) → Slot 1 Energy Ball (Grass ×2 = KO ohne Eviolite!)
+        <br>• <strong>Floatzel →</strong> Slot 1 Energy Ball (Grass ×2). Floatzels Water Pulse macht nur ×0.25 Schaden auf dich!
+        <br>• <strong>Starmie →</strong> Slot 4 Knock Off (entfernt Sitrus Berry + Dark ×2 auf Psychic!) → Slot 2 Giga Drain (Grass ×2 + heilt dich!)
+        <br>• <strong>Lanturn →</strong> Slot 1 Energy Ball (Grass ×2 auf Water!). Volt Absorb ist egal — wir nutzen Grass, nicht Electric!
+        <br>
         <br><em>⚠️ Wenn Misty wechselt:</em>
-        <br>• Misty bringt <strong>Lanturn</strong> gegen dein Flaaffy? → <strong>Sofort wechseln auf Marshtomp oder Nuzleaf!</strong> Volt Absorb heilt Lanturn durch Electric!
-        <br>• Misty bringt <strong>Frogadier</strong> gegen Marshtomp? → <strong>Sofort wechseln auf Staravia!</strong> Grass Knot (×4!) tötet Marshtomp sonst
-        <br>• Misty bringt <strong>Starmie</strong> unerwartet rein? → Wenn Arcanine draußen: <strong>Slot 3 Crunch sofort</strong> (Dark ×2 trifft beim Reinkommen). Wenn nicht: wechsel auf Arcanine
-        <br>• Frogadier nutzt <strong>Flip Turn</strong> (Hit + Rückzug)? → Du nimmst Schaden + Misty wechselt. Dein nächster Zug = freier Hit auf das neue Mon. <strong>Nicht panisch wechseln</strong>, stattdessen angreifen
+        <br>• <strong>Ludicolo bleibt IMMER drin!</strong> Gegen alle 4 Misty-Mons hat Ludicolo ×2 Grass STAB + nimmt minimalen Schaden
+        <br>• Frogadier nutzt Flip Turn? → ×0.25 Schaden auf Ludicolo, egal was reinkommt → Energy Ball/Giga Drain weiter
+        <br>• Ludicolo HP niedrig? → Slot 2 Giga Drain heilt 50% des angerichteten Schadens zurück!
+        <br>• <strong>Backup:</strong> Falls Ludicolo wider Erwarten fällt → Arcanine Slot 3 Crunch gegen Starmie, Marshtomp Slot 1 Earthquake gegen Lanturn
       </div>
 
       <h3>Cap 34 → Lt. Surge besiegen</h3>
       <div class="warn"><strong>Slot-Änderungen bei Lv 28+:</strong>
-        <br>• <strong>Staravia Slot 1:</strong> Wing Attack → <strong>Aerial Ace</strong> (Lv 28, 60, trifft immer!) — oder behalten
-        <br>• <strong>Flaaffy Slot 2:</strong> Charge → <strong>Confuse Ray</strong> (Lv 29) — Utility statt Boost
-        <br>• <strong>Nuzleaf Slot 4:</strong> Growth → <strong>Synthesis</strong> (Lv 30, Selbstheilung!) — falls Shiftry noch nicht evolved
-        <br>• Graveler/Geodude: Moves unverändert — Bulldoze (Slot 1) ist dein Surge-MVP
+        <br>• <strong>Staravia Slot 1:</strong> Wing Attack → <strong>Aerial Ace</strong> (Lv 28, 60, trifft immer!)
+        <br>• <strong>Flaaffy Slot 2:</strong> Charge → <strong>Confuse Ray</strong> (Lv 29)
+        <br>• <strong>Nuzleaf Slot 4:</strong> Growth → <strong>Synthesis</strong> (Lv 30, Selbstheilung!)
+        <br>• Ludicolo: Moves unverändert — bereits optimal
       </div>
       <table>
         <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
@@ -702,15 +730,16 @@ const GUIDES = {
         <tr><td><strong>Nuzleaf/Shiftry</strong></td><td>Fake Out (40)</td><td>Mega Drain (40)</td><td>Feint Attack (60)</td><td><strong>⬆ Synthesis</strong></td></tr>
         <tr><td><strong>Staravia</strong></td><td><strong>⬆ Aerial Ace (60)</strong></td><td>Quick Attack (40)</td><td>Endeavor</td><td>Double Team</td></tr>
         <tr><td><strong>Flaaffy</strong></td><td>Electro Ball</td><td><strong>⬆ Confuse Ray</strong></td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
-        <tr><td><strong>Graveler</strong></td><td>Bulldoze (60)</td><td>Smack Down (50)</td><td>Magnitude</td><td>Rock Throw (50)</td></tr>
+        <tr><td><strong>Ludicolo</strong></td><td>Energy Ball (80)</td><td>Giga Drain (75)</td><td>Fake Out (40)</td><td>Knock Off (65)</td></tr>
       </table>
       <div class="info"><strong>Surge-Kampfplan (Slot-Referenz):</strong>
         <br>• Pincurchin/Raichu/Manectric/Boltund → <strong>Marshtomp Slot 1</strong> Earthquake (Ground immun vs Electric, ×2!)
         <br>• Vikavolt (Levitate = immun vs Ground!) → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2 auf Bug!) — NICHT Marshtomp (Energy Ball ×4!)
+        <br>• Pincurchin hat <strong>Scald</strong> (Water!) → falls Marshtomp HP niedrig: <strong>Ludicolo</strong> einwechseln (Water ×0.25 + Energy Ball ×2)
         <br><em>⚠️ Wenn Surge wechselt:</em>
-        <br>• Surge nutzt <strong>Volt Switch</strong> (Hit + Rückzug) auf fast allen Mons! Marshtomp ist immun → Volt Switch macht 0 Schaden + Surge verschwendet seinen Zug. <strong>Marshtomp bleibt einfach stehen und spammt Earthquake.</strong>
-        <br>• Surge bringt <strong>Vikavolt</strong> rein? → <strong>Sofort auf Arcanine wechseln!</strong> Vikavolt hat Energy Ball (×4 auf Marshtomp!) + Levitate (immun vs Earthquake). Arcanine Slot 1 Flare Blitz erledigt es.
-        <br>• Nach Vikavolt-KO: <strong>Zurück zu Marshtomp</strong> → Earthquake sweep weiter
+        <br>• Surge nutzt <strong>Volt Switch</strong> überall! Marshtomp ist immun → 0 Schaden. <strong>Marshtomp bleibt stehen + Earthquake spam.</strong>
+        <br>• Surge bringt <strong>Vikavolt</strong>? → <strong>Sofort Arcanine!</strong> Flare Blitz (Fire ×2 auf Bug). NICHT Marshtomp (Energy Ball ×4)!
+        <br>• Nach Vikavolt-KO: <strong>Zurück zu Marshtomp</strong> → sweep weiter
       </div>
 
       <h3>Cap 44 → Erika besiegen</h3>
@@ -730,7 +759,7 @@ const GUIDES = {
         <tr><td><strong>Shiftry/Nuzleaf</strong></td><td>Fake Out (40)</td><td>Mega Drain (40)</td><td>Feint Attack (60)</td><td>Synthesis</td></tr>
         <tr><td><strong>Staraptor</strong></td><td><strong>⬆ Brave Bird (120)</strong></td><td>Quick Attack (40)</td><td><strong>⬆ Close Combat (120)</strong></td><td>Double Team</td></tr>
         <tr><td><strong>Ampharos</strong></td><td><strong>⬆ Discharge (80)</strong></td><td><strong>⬆ Power Gem (80)</strong></td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
-        <tr><td><strong>Graveler</strong></td><td>Bulldoze (60)</td><td>Smack Down (50)</td><td>Magnitude</td><td>Rock Throw (50)</td></tr>
+        <tr><td><strong>Ludicolo</strong></td><td>Energy Ball (80)</td><td>Giga Drain (75)</td><td>Fake Out (40)</td><td>Knock Off (65)</td></tr>
       </table>
       <div class="warn"><strong>Erika-Kampfplan (Slot-Referenz):</strong>
         <br>• Serperior (Contrary!) → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2) — SOFORT KOen bevor es mit Leaf Storm boosted!
