@@ -349,6 +349,7 @@ function render() {
     <div class="quick-links">
       <button class="ql-btn" onclick="openGuide('mining-tiers')">⛏️ Mining-Tiers</button>
       <button class="ql-btn" onclick="openGuide('ore-heights')">📐 Y-Höhen</button>
+      <button class="ql-btn" onclick="openGuide('gen-changes')">🕹️ Änderungen seit Gen 1</button>
       <button class="ql-btn ql-highlight" onclick="openTypeChart()">⚔️ Typ-Tabelle</button>
       <button class="ql-btn" onclick="openGuide('pokeball-create')">🎾 Pokébälle</button>
       <button class="ql-btn" onclick="openGuide('level-cap')">🎖️ Level-Cap</button>

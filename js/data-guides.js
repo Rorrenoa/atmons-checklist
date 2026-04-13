@@ -432,4 +432,205 @@ const GUIDES = {
       </div>
     `
   },
+
+  "gen-changes": {
+    icon: "🕹️",
+    title: "Änderungen seit Generation 1",
+    content: `
+      <p>Du hast zuletzt Gen 1 (Rot/Blau) gespielt? Keine Sorge — das Grundprinzip ist dasselbe: <strong>Rundenbasierte Kämpfe, Typenvorteile, Pokémon fangen &amp; entwickeln.</strong> Aber seit Gen 1 sind <em>viele</em> neue Systeme dazugekommen. Hier ist alles, was du wissen musst — und wie es in <strong>ATMons/Cobblemon</strong> umgesetzt ist.</p>
+
+      <div class="info"><strong>Cobblemon</strong> basiert auf <strong>Generation 9</strong> — dem aktuellsten Pokémon-Kampfsystem. Das bedeutet: alle dauerhaften Verbesserungen (neue Typen, Split, Fähigkeiten, etc.) sind aktiv. Temporäre Gimmicks einzelner Generationen (Z-Moves, Dynamax, Terakristallisierung) sind <em>nicht</em> implementiert.</div>
+
+      <h3>⚙️ Generation 2 — Gold / Silber / Kristall</h3>
+      <p>Der erste große Umbruch nach Gen 1. Praktisch alles, was hier eingeführt wurde, ist heute Standard.</p>
+
+      <h4>🆕 Zwei neue Typen: Unlicht &amp; Stahl</h4>
+      <p>In Gen 1 war Psycho dominant — fast nichts konnte es effektiv kontern. <strong>Unlicht</strong> (immun gegen Psycho, stark gegen Psycho/Geist) und <strong>Stahl</strong> (resistiert 10 Typen!) wurden als Gegengewicht eingeführt.</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv. Die Typ-Tabelle hat 18 Typen (inkl. Fee aus Gen 6). Du erkennst Unlicht- und Stahl-Pokémon z.B. an Umbreon, Murkrow, Skarmory, Steelix. Öffne die <em>Typ-Tabelle</em> in der Quick-Link-Leiste für alle Matchups.</div>
+
+      <h4>🔀 Spezial-Split: Sp. Angriff &amp; Sp. Verteidigung</h4>
+      <p>In Gen 1 gab es nur <em>einen</em> "Spezial"-Wert für Angriff und Verteidigung. Seit Gen 2 sind das <strong>zwei getrennte Werte</strong>. Ein Pokémon kann jetzt hohen Spezial-Angriff aber niedrige Spezial-Verteidigung haben (oder umgekehrt).</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv. Jedes Pokémon hat 6 Statuswerte: <em>KP, Angriff, Verteidigung, Sp. Angriff, Sp. Verteidigung, Initiative</em>. Sichtbar im Pokémon-Summary-Screen.</div>
+
+      <h4>🎒 Getragene Items (Held Items)</h4>
+      <p>Jedes Pokémon kann <strong>genau ein Item</strong> halten. Held Items wirken automatisch im Kampf — manche heilen (Sitrus Berry), manche verstärken Attacken (Mystic Water = +20% Wasser), manche haben strategische Effekte (Focus Sash = überlebt jeden OHKO mit 1 KP, Choice Band = +50% Atk aber nur ein Move nutzbar). Auch manche Entwicklungen brauchen Items (z.B. Onix + Metallmantel bei Tausch = Stahlos).</p>
+      <div class="info"><strong>In ATMons:</strong> Voll aktiv! Held Items sind <em>zentral</em> für Kampf-Strategien. Die RCT-Trainer nutzen Items aggressiv — du solltest das auch. Items findest du in Loot-Truhen, kaufst sie bei Villagers mit PokéTokens, oder bekommst sie als Quest-Belohnungen.</div>
+
+      <h4>🥚 Zucht &amp; Eier</h4>
+      <p>Seit Gen 2 können kompatible Pokémon zusammen Eier produzieren. Das Ei ergibt die Grundform der Mutter und kann Attacken vom Vater erben (<em>Egg Moves</em>). Zwei Pokémon können züchten wenn sie in der gleichen <em>Ei-Gruppe</em> sind.</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv! Zucht läuft über den <strong>Pasture</strong>-Block. Zwei kompatible Pokémon drin → nach einiger Zeit erscheint ein Ei. Brutzeit = 6000 Ticks × Pokémon-Level. <em>Redstone-Block unter dem Pasture stoppt Ei-Produktion.</em> Breeding-Cooldown: 10 Minuten.</div>
+
+      <h4>✨ Shinies</h4>
+      <p>Seit Gen 2 gibt es <strong>Shiny-Pokémon</strong> — extrem seltene Farbvarianten. Kein Stärkeunterschied, rein kosmetisch, aber ein beliebtes Sammelziel.</p>
+      <div class="info"><strong>In ATMons:</strong> Shiny-Rate = <strong>1:8192</strong> (Standard). Tipp: Link Cable an ein Elternteil beim Züchten = gilt als "Tausch" → <em>erhöhte Shiny-Chance</em> (Masuda-Methoden-Äquivalent).</div>
+
+      <h4>💕 Freundschaft</h4>
+      <p>Jedes Pokémon hat einen <strong>Freundschaftswert</strong> (0–255). Manche Pokémon entwickeln sich erst bei hoher Freundschaft (z.B. Pichu → Pikachu, Riolu → Lucario). Freundschaft steigt durch Kämpfe, Laufen, Heilen und sinkt durch Kampfunfähigkeit.</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv. Freundschaft wird über Kämpfe, Laufen und Interaktion aufgebaut. Sichtbar im Pokémon-Summary. Soothe Bell (Held Item) beschleunigt den Aufbau.</div>
+
+      <h4>♂♀ Geschlechter</h4>
+      <p>In Gen 1 waren alle Pokémon geschlechtslos. Seit Gen 2 haben die meisten Pokémon ein Geschlecht. Manche Entwicklungen sind geschlechtsabhängig (z.B. Kirlia → Gallade nur ♂, Combee → Vespiquen nur ♀).</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv. Geschlecht wird beim Spawn/Schlüpfen bestimmt und ist relevant für Zucht und bestimmte Entwicklungen.</div>
+
+      <h3>⚙️ Generation 3 — Rubin / Saphir / Smaragd</h3>
+      <p>Brachte die moderne Kampfstruktur. Jedes einzelne Pokémon ist jetzt durch <strong>Fähigkeit + Wesen</strong> individuell.</p>
+
+      <h4>🧬 Fähigkeiten (Abilities)</h4>
+      <p>Jedes Pokémon hat eine <strong>passive Fähigkeit</strong>, die permanent wirkt. Beispiele: <em>Intimidate</em> (senkt Angriff des Gegners beim Einwechseln), <em>Levitate</em> (immun gegen Boden-Attacken), <em>Flash Fire</em> (immun gegen Feuer, eigene Feuer-Moves werden stärker). Jede Art hat 1–2 normale Fähigkeiten + evtl. eine versteckte Fähigkeit.</p>
+      <div class="info"><strong>In ATMons:</strong> Voll aktiv! Fähigkeiten beeinflussen Kämpfe <em>massiv</em>. RCT-Trainer nutzen Abilities strategisch (z.B. Drought für Sonne, Intimidate zum Stat-Drop). Prüfe die Fähigkeit deiner Pokémon im Summary-Screen — manchmal ist ein "schlechtes" Pokémon mit der richtigen Ability besser als ein "gutes" mit der falschen.</div>
+
+      <h4>🎭 Wesen (Natures)</h4>
+      <p>Jedes Pokémon hat eines von <strong>25 Wesen</strong>. Die meisten geben <strong>+10% auf einen Wert</strong> und <strong>-10% auf einen anderen</strong>. Beispiel: <em>Adamant</em> = +Angriff/-Sp.Angriff (ideal für physische Angreifer). 5 Wesen sind neutral (keine Veränderung). Das Wesen wird beim Fangen/Schlüpfen zufällig bestimmt.</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv. Wesen sind im Summary sichtbar (rot = +10%, blau = -10%). Für schwere Kämpfe lohnt es sich, ein Pokémon mit passendem Wesen zu fangen. <em>Mints</em> zum Überschreiben gibt es in Cobblemon aktuell <strong>nicht</strong> — das richtige Wesen muss gefangen werden.</div>
+
+      <h4>💪 EVs &amp; IVs (versteckte Stärke-Systeme)</h4>
+      <p>Seit Gen 3 hat jedes Pokémon <strong>Individual Values (IVs)</strong> — angeborene Werte von 0–31 pro Stat, die die maximale Stärke bestimmen. Dazu kommen <strong>Effort Values (EVs)</strong> — Trainingspunkte die durch Kämpfe gesammelt werden (max. 252 pro Stat, 510 total). IVs + EVs zusammen können einen Stat um ~30% verändern.</p>
+      <div class="info"><strong>In ATMons:</strong> Beides aktiv! IVs sind beim Fang zufällig. EVs werden durch Kämpfe verdient. Die RCT-Trainer haben oft <strong>perfekte IVs und optimierte EVs</strong> — deine Pokémon nicht. Das erklärt, warum Trainerkämpfe so viel härter sind als Wildkämpfe. Tipp: Gegen viele Pokémon desselben Typs kämpfen = EVs in dem Stat den diese Art gibt.</div>
+
+      <h4>⛈️ Wetter im Kampf</h4>
+      <p>Bestimmte Moves und Abilities erzeugen Wetter-Effekte (Sonne, Regen, Sandsturm, Hagel). Sonne verstärkt Feuer +50% und schwächt Wasser -50%. Regen umgekehrt. Sandsturm gibt Gestein +50% Sp.Vrt. und Chip-Schaden. Hagel gibt Chip-Schaden an Nicht-Eis-Pokémon.</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv. Wetter wird von den RCT-Trainern <em>aggressiv</em> genutzt (z.B. Drought + Solar Beam, Sand Stream + Sand Rush). Dauer: 5 Runden (8 mit Heat Rock/Damp Rock etc.).</div>
+
+      <h3>⚙️ Generation 4 — Diamant / Perl / Platin</h3>
+      <p>Die wohl wichtigste einzelne Kampf-Änderung in der gesamten Pokémon-Geschichte.</p>
+
+      <h4>💥 Physisch / Speziell Split (pro Attacke!)</h4>
+      <p>In Gen 1–3 war die Kategorie an den <strong>Typ</strong> gebunden: alle Feuer-Attacken waren speziell, alle Kampf-Attacken physisch — egal wie die Attacke aussah. <strong>Seit Gen 4 hat jede einzelne Attacke ihre eigene Kategorie.</strong></p>
+      <p>Das bedeutet: <em>Fire Punch</em> ist jetzt <strong>physisch</strong> (nutzt Angriff), <em>Flamethrower</em> ist <strong>speziell</strong> (nutzt Sp.Angriff). Ein Pokémon mit hohem physischen Angriff kann endlich auch Feuer-Moves physisch nutzen!</p>
+      <div class="warn"><strong>Das ist RIESIG!</strong> Wenn du aus Gen 1 kommst, vergiss die alte Typ→Kategorie-Zuordnung komplett. Jeder Move zeigt im Summary an ob er physisch (💥) oder speziell (🌀) ist. Wähle Moves die zum <em>stärkeren Wert</em> deines Pokémon passen!</div>
+      <div class="info"><strong>In ATMons:</strong> Voll aktiv. Cobblemon zeigt bei jedem Move die Kategorie an. Physische Moves nutzen <em>Angriff vs. Verteidigung</em>, spezielle Moves nutzen <em>Sp.Angriff vs. Sp.Verteidigung</em>. Es gibt auch <em>Status-Moves</em> (weder physisch noch speziell — Effekte wie Schlaf, Stat-Boosts etc.).</div>
+
+      <h4>🔗 Neue Entwicklungen für alte Pokémon</h4>
+      <p>Gen 4 gab vielen Gen-1/2-Pokémon neue Entwicklungen: Electabuzz → <em>Electivire</em>, Magmar → <em>Magmortar</em>, Rhydon → <em>Rhyperior</em>, Togetic → <em>Togekiss</em>, etc. Manche brauchen spezielle Items beim Tausch.</p>
+      <div class="info"><strong>In ATMons:</strong> Alle verfügbar! "Tausch"-Entwicklungen funktionieren in Cobblemon über die <strong>Link Cable</strong> — ein Item das den Tausch simuliert. Kein echter Spieler-Tausch nötig!</div>
+
+      <h3>⚙️ Generation 5 — Schwarz / Weiß</h3>
+
+      <h4>🔓 Versteckte Fähigkeiten (Hidden Abilities)</h4>
+      <p>Jede Pokémon-Art hat neben ihren 1–2 normalen Fähigkeiten eine <strong>versteckte Fähigkeit</strong> — oft deutlich stärker. Beispiel: Blaziken mit <em>Speed Boost</em> (jede Runde +1 Initiative) statt Blaze.</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv. Versteckte Fähigkeiten sind seltener beim Fang. Ob dein Pokémon die normale oder versteckte Fähigkeit hat, siehst du im Summary. Ability Patches/Capsules zum Wechseln gibt es in Cobblemon <strong>noch nicht</strong>.</div>
+
+      <h4>♾️ Unbegrenzte TMs</h4>
+      <p>In Gen 1–4 waren TMs <strong>Einweg-Items</strong> — einmal benutzt, weg. Seit Gen 5 sind TMs <strong>unbegrenzt wiederverwendbar</strong>. Du kannst eine TM beliebig oft auf verschiedene Pokémon anwenden.</p>
+      <div class="info"><strong>In ATMons:</strong> TMs sind wiederverwendbar. Du findest sie in Loot-Truhen, bei Trainern und als Quest-Belohnungen. Wichtig: Nicht jedes Pokémon kann jede TM lernen — in Cobblemon ist die <em>Learnability pro Art festgelegt</em>.</div>
+
+      <h3>⚙️ Generation 6 — X / Y</h3>
+      <p>Zwei massive Neuerungen, die das Metagame komplett verändert haben.</p>
+
+      <h4>🧚 Neuer Typ: Fee (Fairy)</h4>
+      <p>Der <strong>18. und bisher letzte Typ</strong>. Eingeführt um Drache-Typen zu schwächen, die vorher fast unaufhaltsam waren. Fee ist:</p>
+      <ul>
+        <li><strong>Super effektiv gegen:</strong> Drache, Kampf, Unlicht</li>
+        <li><strong>Resistent gegen:</strong> Kampf, Käfer, Unlicht</li>
+        <li><strong>Immun gegen:</strong> Drache (!)</li>
+        <li><strong>Schwach gegen:</strong> Gift, Stahl</li>
+      </ul>
+      <p>Viele alte Pokémon wurden <strong>nachträglich</strong> zu Fee umgetypt: Clefairy-Linie (war Normal), Jigglypuff-Linie (war Normal), Mr. Mime (war Psycho → Psycho/Fee), Gardevoir (Psycho → Psycho/Fee).</p>
+      <div class="info"><strong>In ATMons:</strong> Voll aktiv. Fee ist einer der stärksten defensiven Typen. Nutze die <em>Typ-Tabelle</em> in der Quick-Link-Leiste — dort sind alle 18 Typen inkl. Fee abgebildet.</div>
+
+      <h4>🔮 Mega-Entwicklung</h4>
+      <p>Bestimmte Pokémon können sich <strong>im Kampf</strong> temporär "Mega-Entwickeln". Das verändert Aussehen, erhöht Statuswerte massiv und ändert manchmal Typ oder Fähigkeit. Voraussetzung: Das Pokémon hält seinen spezifischen <strong>Mega-Stein</strong> (z.B. Charizardite Y für Mega Charizard Y). Nur <strong>einmal pro Kampf</strong> möglich.</p>
+      <p>Beispiele: Charizard → Mega Charizard X (wird Feuer/<strong>Drache</strong>!), Gardevoir → Mega Gardevoir (Pixilate-Fähigkeit), Kangaskhan → Mega Kangaskhan (Parental Bond = jeder Move trifft 2×).</p>
+      <div class="warn"><strong>In ATMons: AKTIV und WICHTIG!</strong> Mega Evolution ist über die <strong>Mega Showdown</strong> Mod implementiert. Die RCT-Trainer nutzen Megas <em>aggressiv</em> — z.B. Mega Charizard Y mit Drought, Mega Kangaskhan mit Parental Bond, Mega Gardevoir mit Pixilate. Du brauchst den passenden Mega-Stein als Held Item. Mega-Steine findest du in Loot und als Belohnungen.</div>
+
+      <h4>📡 Team-weiter Exp. Share</h4>
+      <p>In Gen 1 bekam nur das aktiv kämpfende Pokémon Erfahrung. Seit Gen 6 teilt der <strong>Exp. Share</strong> Erfahrung mit dem <em>gesamten Team</em> — nicht mehr nur einem einzelnen Pokémon.</p>
+      <div class="info"><strong>In ATMons:</strong> Exp Share ist aktiv, gibt aber nur <strong>×0.5</strong> der Erfahrung an Nicht-Kämpfer weiter. Das aktiv kämpfende Pokémon bekommt immer die vollen XP. Fazit: Aktiv kämpfen lohnt sich deutlich mehr als passiv mitleveln! Battle-XP ist generell <strong>×2.0</strong> (doppelt) und Fang-XP sogar <strong>×20</strong>.</div>
+
+      <h3>⚙️ Generation 7 — Sonne / Mond</h3>
+
+      <h4>💎 Z-Moves</h4>
+      <p>Einmal pro Kampf kann ein Pokémon eine Super-Attacke auslösen, wenn es einen passenden <strong>Z-Kristall</strong> hält und der Trainer einen Z-Ring trägt. Z-Moves verwandeln einen normalen Move in eine übermächtige Version mit hohem Schaden oder starkem Effekt.</p>
+      <div class="warn"><strong>In ATMons: NICHT vorhanden.</strong> Z-Moves sind ein gen-spezifisches Feature das in Cobblemon nicht implementiert ist. Kein Z-Ring, keine Z-Kristalle.</div>
+
+      <h4>🌴 Regionale Formen (Alola-Formen)</h4>
+      <p>Bekannte Gen-1-Pokémon haben in der Alola-Region <strong>komplett andere Typen und Designs</strong>: Vulpix/Ninetales = Eis statt Feuer, Sandshrew/Sandslash = Eis/Stahl, Raichu = Elektro/Psycho, Marowak = Feuer/Geist. Später kamen Galar-Formen (Gen 8), Hisui-Formen und Paldea-Formen (Gen 9) dazu.</p>
+      <div class="info"><strong>In ATMons:</strong> Regionale Formen sind verfügbar! Du kannst z.B. Alola-Vulpix (Eis), Galar-Zigzagoon (Unlicht/Normal) oder Hisui-Growlithe (Feuer/Gestein) in der Wildnis finden. Jede regionale Form ist ein eigenständiges Pokémon mit eigenen Typen, Stats und Moves.</div>
+
+      <h3>⚙️ Generation 8 — Schwert / Schild</h3>
+
+      <h4>🦖 Dynamax &amp; Gigantamax</h4>
+      <p>In den Hauptspielen wird ein Pokémon für <strong>3 Züge riesig</strong> — KP verdoppelt, Moves werden zu starken "Max-Attacken" mit Nebeneffekten (Wetter setzen, Stats boosten etc.). Gigantamax ist die Sonderform mit exklusiven G-Max-Moves. Kein Held Item nötig — Item-Slot bleibt frei.</p>
+      <div class="warn"><strong>In ATMons: NICHT vorhanden.</strong> Dynamax/Gigantamax existiert in Cobblemon nicht. Raid Dens in ATMons funktionieren anders als in Schwert/Schild.</div>
+
+      <h4>🍬 Nature Mints &amp; Hyper Training</h4>
+      <p>In den Hauptspielen seit Gen 8: <strong>Mints</strong> überschreiben den Stat-Effekt eines Wesens (das Wesen selbst bleibt, aber die Werte ändern sich). <strong>Hyper Training</strong> mit Bottle Caps setzt IVs auf Maximum.</p>
+      <div class="warn"><strong>In ATMons: NICHT vorhanden.</strong> Weder Mints noch Hyper Training/Bottle Caps sind in Cobblemon implementiert. Du musst das passende Wesen <em>beim Fangen</em> erwischen. Für IVs hilft nur Zucht.</div>
+
+      <h3>⚙️ Generation 9 — Karmesin / Purpur</h3>
+
+      <h4>💠 Terakristallisierung</h4>
+      <p>In den Hauptspielen bekommt jedes Pokémon einen <strong>Tera-Typ</strong>. Beim Terakristallisieren wird dieser Typ aktiv — Pokémon ändert seine Typ-Schwächen/Resistenzen und bekommt STAB auf den Tera-Typ. Extrem flexibel: Ein Wasser-Pokémon mit Tera-Typ Pflanze kann plötzlich seine Elektro-Schwäche verlieren.</p>
+      <div class="warn"><strong>In ATMons: NICHT vorhanden.</strong> Terakristallisierung ist nicht in Cobblemon implementiert. Kein Tera-Typ, kein Terakristallisieren.</div>
+
+      <h3>📋 Weitere wichtige Änderungen über alle Generationen</h3>
+
+      <h4>🔄 STAB (Same Type Attack Bonus)</h4>
+      <p>Seit Gen 1 existiert, aber erst seit Gen 3+ wirklich relevant: Wenn ein Pokémon eine Attacke nutzt <strong>die seinem eigenen Typ entspricht</strong>, macht diese <strong>×1.5 Schaden</strong>. Beispiel: Ein Wasser-Pokémon das Surf nutzt → ×1.5 Bonus. Deshalb sollten Moves zum Typ des Pokémon passen.</p>
+      <div class="info"><strong>In ATMons:</strong> Aktiv. STAB ist einer der wichtigsten Faktoren bei der Move-Auswahl. Ein Pokémon mit zwei Typen bekommt STAB auf <em>beide</em> Typen.</div>
+
+      <h4>📊 Typ-Tabellen-Änderungen seit Gen 1</h4>
+      <p>Die Typ-Tabelle hat sich seit Gen 1 mehrfach geändert:</p>
+      <ul>
+        <li><strong>Gen 2:</strong> Stahl und Unlicht hinzugefügt. Gift war in Gen 1 super effektiv gegen Käfer — jetzt ×1. Käfer war super effektiv gegen Gift — jetzt ×0.5.</li>
+        <li><strong>Gen 2:</strong> Geist-Attacken treffen Psycho jetzt <strong>super effektiv</strong> (in Gen 1 war das wegen eines Programmierfehlers wirkungslos — obwohl es laut Spielanleitung super effektiv sein sollte!)</li>
+        <li><strong>Gen 6:</strong> Fee-Typ hinzugefügt. Stahl verlor seine Resistenz gegen Geist und Unlicht (vorher ×0.5, jetzt ×1).</li>
+        <li><strong>Gen 6:</strong> Elektro-Pokémon sind <strong>immun gegen Paralyse</strong>. Pflanzen-Pokémon sind <strong>immun gegen Puder/Sporen-Moves</strong> (Schlafpuder, Stachelspore etc.).</li>
+      </ul>
+      <div class="info"><strong>In ATMons:</strong> Die aktuelle Gen-9-Typ-Tabelle mit allen 18 Typen ist aktiv. Die <em>Typ-Tabelle</em> in der Quick-Link-Leiste zeigt die korrekten Matchups.</div>
+
+      <h4>❄️ Schnee statt Hagel (Gen 9)</h4>
+      <p>In Gen 9 wurde <strong>Hagel durch Schnee</strong> ersetzt. Statt nur Chip-Schaden an Nicht-Eis-Pokémon zu machen, erhöht Schnee jetzt die <strong>Verteidigung von Eis-Pokémon um 50%</strong> — ein deutlicher Buff für Eis-Teams.</p>
+      <div class="info"><strong>In ATMons:</strong> Cobblemon nutzt das Gen-9-Wettersystem. Eis-Pokémon profitieren defensiv von Schnee deutlich mehr als vom alten Hagel.</div>
+
+      <h4>🏃 Initiative (Speed) bestimmt die Reihenfolge</h4>
+      <p>Das war in Gen 1 auch schon so, aber seitdem gibt es viel mehr Möglichkeiten die Initiative zu manipulieren: <em>Priority-Moves</em> (gehen immer zuerst, z.B. Quick Attack, Fake Out, Extreme Speed), <em>Trick Room</em> (dreht Speed-Reihenfolge um für 5 Runden), <em>Choice Scarf</em> (Held Item: +50% Speed aber nur ein Move), <em>Tailwind</em> (+100% Team-Speed für 4 Runden), <em>Paralysis</em> (halbiert Speed).</p>
+      <div class="info"><strong>In ATMons:</strong> Alles aktiv. Speed-Control ist in RCT-Kämpfen <em>entscheidend</em>. Trick Room wird von Gegnern wie Sabrina genutzt. Choice Scarf ist eines der stärksten Items im Spiel.</div>
+
+      <h4>🎯 Move-Relearning</h4>
+      <p>In Gen 1 war ein vergessener Move für immer verloren. Seit mehreren Generationen gibt es den <strong>Move Relearner</strong> — in Cobblemon noch einfacher: Alle <em>Level-Up-Moves bis zum aktuellen Level</em> können direkt im <strong>Party-Menü</strong> jederzeit kostenlos neu gelernt werden.</p>
+      <div class="info"><strong>In ATMons:</strong> Level-Up-Moves können jederzeit über das Party-Menü relearned werden — komplett kostenlos! TM-Moves können allerdings <strong>nicht</strong> relearned werden; dafür brauchst du das TM-Item erneut.</div>
+
+      <h4>🔄 Entwicklungs-Methoden</h4>
+      <p>In Gen 1 gab es nur Level-Up und Steine. Heute gibt es <em>viele</em> Methoden:</p>
+      <ul>
+        <li><strong>Level-Up</strong> — klassisch, bei bestimmtem Level</li>
+        <li><strong>Steine</strong> — Feuerstein, Wasserstein, Blattstein, etc.</li>
+        <li><strong>Tausch</strong> — in ATMons via <strong>Link Cable</strong> statt echtem Tausch</li>
+        <li><strong>Tausch + Item</strong> — z.B. Onix + Metallmantel + Link Cable = Stahlos</li>
+        <li><strong>Freundschaft</strong> — hohe Freundschaft + Level-Up (Pichu→Pikachu, Riolu→Lucario)</li>
+        <li><strong>Tageszeit</strong> — manche entwickeln sich nur Tags oder Nachts</li>
+        <li><strong>Bestimmter Move</strong> — z.B. Tangela mit Ancient Power gelernt</li>
+        <li><strong>Bestimmte Location</strong> — z.B. Magneton in der Nähe eines speziellen Blocks</li>
+        <li><strong>Geschlecht</strong> — z.B. Combee → Vespiquen nur wenn ♀</li>
+      </ul>
+      <div class="info"><strong>In ATMons:</strong> Alle Methoden aktiv. Besonders wichtig: <strong>Link Cable</strong> ersetzt den Tausch. Steine findest du in der Wildnis, in Loot-Truhen und bei bestimmten Pokémon als Drop.</div>
+
+      <h3>🎮 Zusammenfassung: Was ist in ATMons aktiv?</h3>
+      <table>
+        <tr><th>Feature</th><th>Status</th><th>Seit Gen</th></tr>
+        <tr><td>18 Typen (inkl. Unlicht, Stahl, Fee)</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>2 / 6</td></tr>
+        <tr><td>Sp.Angriff / Sp.Verteidigung getrennt</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>2</td></tr>
+        <tr><td>Held Items</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>2</td></tr>
+        <tr><td>Zucht &amp; Eier</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>2</td></tr>
+        <tr><td>Shinies (1:8192)</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>2</td></tr>
+        <tr><td>Freundschaft &amp; Geschlechter</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>2</td></tr>
+        <tr><td>Fähigkeiten (Abilities)</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>3</td></tr>
+        <tr><td>Wesen (Natures, ±10%)</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>3</td></tr>
+        <tr><td>EVs &amp; IVs</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>3</td></tr>
+        <tr><td>Wetter &amp; Terrain</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>3 / 7</td></tr>
+        <tr><td>Physisch/Speziell-Split pro Move</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>4</td></tr>
+        <tr><td>Versteckte Fähigkeiten</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>5</td></tr>
+        <tr><td>Unbegrenzte TMs</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>5</td></tr>
+        <tr><td>Regionale Formen</td><td><strong style="color:var(--green)">✓ Aktiv</strong></td><td>7+</td></tr>
+        <tr><td>Mega-Entwicklung</td><td><strong style="color:var(--green)">✓ Aktiv</strong> (Mega Showdown Mod)</td><td>6</td></tr>
+        <tr><td>Z-Moves</td><td><strong style="color:var(--red)">✗ Nicht vorhanden</strong></td><td>7</td></tr>
+        <tr><td>Dynamax / Gigantamax</td><td><strong style="color:var(--red)">✗ Nicht vorhanden</strong></td><td>8</td></tr>
+        <tr><td>Nature Mints / Hyper Training</td><td><strong style="color:var(--red)">✗ Nicht vorhanden</strong></td><td>8</td></tr>
+        <tr><td>Terakristallisierung</td><td><strong style="color:var(--red)">✗ Nicht vorhanden</strong></td><td>9</td></tr>
+      </table>
+
+      <div class="info"><strong>Fazit:</strong> Cobblemon/ATMons nutzt das <strong>Gen-9-Kampfsystem</strong> mit allen dauerhaften Verbesserungen. Die "Gimmick-Mechaniken" einzelner Generationen (Z-Moves, Dynamax, Tera) fehlen — nur <strong>Mega-Evolution</strong> ist über eine Addon-Mod aktiv. Für Gen-1-Veteranen heißt das: Gewöhne dich vor allem an <em>Held Items</em>, <em>Fähigkeiten</em>, <em>Wesen</em> und den <em>Physisch/Speziell-Split</em> — das sind die vier größten Umstellungen im Alltag.</div>
+    `
+  },
 };
