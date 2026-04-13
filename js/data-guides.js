@@ -574,26 +574,32 @@ const GUIDES = {
         <br>• <strong>Shroomish</strong> spawnt in <strong>Forest</strong> (COMMON, Lv 5–30)
         <br>• Shroomish → <strong>Breloom</strong> bei Lv 23 (lernt <strong>Mach Punch</strong> bei Evolution!)
         <br>• Breloom Moves relearnen: Slot 1 <strong>Mach Punch</strong> (40, Fighting +1 Prio), Slot 2 <strong>Close Combat</strong> (120, Fighting), Slot 3 <strong>Spore</strong> (100% Sleep!), Slot 4 <strong>Seed Bomb</strong> (80, Grass)
-        <br><br><strong>2) Heracross fangen!</strong>
-        <br>• <strong>Heracross</strong> spawnt in <strong>Forest</strong> (RARE, 5× bei Dämmerung!) und <strong>Jungle</strong> (UNCOMMON), Lv 25–50
-        <br>• Heracross Moves relearnen: Slot 1 <strong>Close Combat</strong> (120, Fighting), Slot 2 <strong>Megahorn</strong> (120, Bug), Slot 3 <strong>Knock Off</strong> (65, Dark), Slot 4 <strong>Aerial Ace</strong> (60, Flying)
-        <br><br><strong>3) Nuzleaf + Staravia RAUS → Breloom + Heracross REIN!</strong>
-        <br>Flaaffy bleibt als Backup, wird aber gegen Brendan nicht eingesetzt.
+        <br><br><strong>2) Crabrawler fangen → Crabominable!</strong>
+        <br>• <strong>Crabrawler</strong> spawnt an <strong>Küste/Coast</strong> (COMMON, Lv 9–34)
+        <br>• Evolution: <strong>Ice Stone</strong> benutzen (Rezept in EMI)
+        <br>• Crabominable Moves relearnen: Slot 1 <strong>Close Combat</strong> (120, Fighting), Slot 2 <strong>Ice Hammer</strong> (100, Ice), Slot 3 <strong>Gunk Shot</strong> (120, Poison), Slot 4 <strong>Avalanche</strong> (60, Ice — ×2 wenn zuletzt getroffen)
+        <br><br><strong>3) Karrablast fangen → Escavalier!</strong>
+        <br>• <strong>Karrablast</strong> spawnt in <strong>Swamp</strong> (COMMON, Lv 7–32) — gleiches Biom wie Lotad!
+        <br>• Evolution: <strong>Shell Helmet</strong> Item benutzen (Rezept in EMI) oder Trade mit Shelmet
+        <br>• Escavalier Moves relearnen: Slot 1 <strong>Megahorn</strong> (120, Bug), Slot 2 <strong>Close Combat</strong> (120, Fighting), Slot 3 <strong>Iron Head</strong> (80, Steel), Slot 4 <strong>Fell Stinger</strong> (50, Bug — +3 Atk bei KO!)
+        <br>• Escavalier ist Bug/Steel → <strong>resistiert Crawdaunts Knock Off</strong> (Dark ×0.5) und X-Scissor (×1)!
+        <br><br><strong>4) Nuzleaf + Staravia + Flaaffy RAUS → Breloom + Crabominable + Escavalier REIN!</strong>
       </div>
-      <div class="info"><strong>Brendan-Kampfplan (Simulator-verifiziert, 86% Siegrate):</strong>
-        <br><strong>Lead: Heracross</strong>
+      <div class="info"><strong>Brendan-Kampfplan (Simulator-verifiziert, 93% Siegrate):</strong>
+        <br><strong>Lead: Escavalier</strong> (Bug/Steel = resistiert fast alles von Brendan!)
         <br>
-        <br><strong>1. Loudred →</strong> <strong>Heracross Slot 1</strong> Close Combat (Fighting ×2 auf Normal = OHKO trotz Chople Berry!)
-        <br><strong>2. Lunatone →</strong> Heracross stirbt (Psyshock ×4 auf Bug/Fighting!). → <strong>Ludicolo</strong> rein, Slot 1 Energy Ball (Grass ×2 auf Rock + ×2 auf Water-Anteil von Rock/Psychic). 2 Hits = KO.
+        <br><strong>1. Loudred →</strong> <strong>Escavalier Slot 2</strong> Close Combat (Fighting ×2 auf Normal = OHKO!)
+        <br><strong>2. Lunatone →</strong> <strong>Ludicolo</strong> rein, Slot 1 Energy Ball (Grass ×2 auf Rock). 2 Hits = KO. (Escavalier schwach vs Power Gem!)
         <br><strong>3. Crawdaunt →</strong> <strong>DER Schlüsselkampf!</strong> Ludicolo raus → <strong>Breloom</strong> rein!
         <br>&nbsp;&nbsp;• Slot 3 <strong>Spore</strong> (100% Sleep!) → Crawdaunt schläft ein
         <br>&nbsp;&nbsp;• Slot 2 <strong>Close Combat</strong> (Fighting ×2 auf Dark = 114%+ Schaden!) → Focus Sash rettet auf 1 HP
         <br>&nbsp;&nbsp;• Slot 1 <strong>Mach Punch</strong> (+1 Priorität, geht VOR Aqua Jet!) → finisht Crawdaunt bei 1 HP!
-        <br><strong>4. Grovyle →</strong> Breloom stirbt (Aerial Ace ×4 auf Grass/Fighting). → <strong>Arcanine</strong> rein, Intimidate senkt Angriff, Slot 1 <strong>Flare Blitz</strong> (Fire ×2 auf Grass = OHKO!)
+        <br><strong>4. Grovyle →</strong> <strong>Arcanine</strong> rein, Intimidate senkt Angriff, Slot 1 <strong>Flare Blitz</strong> (Fire ×2 auf Grass = OHKO!)
         <br>
         <br><em>⚠️ Wenn Brendan wechselt:</em>
         <br>• Brendan bringt <strong>Crawdaunt</strong> früh? → <strong>Sofort Breloom!</strong> Spore + Close Combat + Mach Punch
         <br>• Brendan bringt <strong>Grovyle</strong> gegen Ludicolo? → <strong>Arcanine</strong> einwechseln (Flare Blitz ×2)
+        <br>• <strong>Backup:</strong> Crabominable hat Close Combat + Ice Hammer gegen alles was durchkommt
         <br>• <strong>Hauptregel:</strong> Breloom NUR gegen Crawdaunt einsetzen, nicht vorher verschwenden!
       </div>
 
@@ -606,7 +612,7 @@ const GUIDES = {
         <li><strong>Manectric</strong> Lv34 Electric — Intimidate, kann Mega-Evolvieren! Manectite</li>
         <li><strong>Boltund</strong> Lv33 Electric — Strong Jaw Fangs (Fire/Ice/Psychic Fang)</li>
       </ul>
-      <div class="info"><strong>Strategie:</strong> Marshtomp/Swampert mit <em>Earthquake</em> (100 Power, Ground STAB) ist MVP — immun gegen alle Electric. ABER: Vikavolt hat Levitate (immun vs Ground!) + Energy Ball (Grass ×4 auf Marshtomp!). Vikavolt mit <em>Arcanine Flare Blitz</em> (Fire ×2 auf Bug) oder Heracross Aerial Ace besiegen. Rest = Marshtomp Earthquake sweep.</div>
+      <div class="info"><strong>Strategie:</strong> Marshtomp/Swampert mit <em>Earthquake</em> (100 Power, Ground STAB) ist MVP — immun gegen alle Electric. ABER: Vikavolt hat Levitate (immun vs Ground!) + Energy Ball (Grass ×4 auf Marshtomp!). Vikavolt mit <em>Arcanine Flare Blitz</em> (Fire ×2 auf Bug) oder Escavalier Iron Head besiegen. Rest = Marshtomp Earthquake sweep.</div>
 
       <h3>7. Leader Erika (Lv 43–44)</h3>
       <p><strong>Thema:</strong> Grass · <strong>Bag:</strong> 2× Hyper Potion · <strong>Signature:</strong> Miracle Seed · <strong>Biome:</strong> Dense Vegetation/Lush</p>
@@ -617,7 +623,7 @@ const GUIDES = {
         <li><strong>Meganium</strong> Lv44 Grass — Triage (Heilmoves haben Priorität)</li>
         <li><strong>Electrode-Hisui</strong> Lv44 Electric/Grass — Explosion!</li>
       </ul>
-      <div class="warn"><strong>Brutal!</strong> Contrary Serperior wird mit jedem Leaf Storm STÄRKER. Venusaur kann Mega + Sleep Powder. Rillaboom hat Prioritäts-Grass-STAB.<br><strong>Strategie:</strong> <em>Arcanine Flare Blitz</em> (120, Fire ×2 auf Grass) + Heracross <em>Aerial Ace</em> (Flying ×2 auf Grass) + <em>Close Combat</em> (Fighting ×2 auf Grass) als Duo. Serperior SOFORT KOen bevor es boosted. Venusaur: <em>Extreme Speed</em> auf Arcanine als Priority um Sleep Powder zuvorzukommen. Breloom <em>Spore</em> kann gefährliche Mons einschläfern!</div>
+      <div class="warn"><strong>Brutal!</strong> Contrary Serperior wird mit jedem Leaf Storm STÄRKER. Venusaur kann Mega + Sleep Powder. Rillaboom hat Prioritäts-Grass-STAB.<br><strong>Strategie:</strong> <em>Arcanine Flare Blitz</em> (120, Fire ×2 auf Grass) + Crabominable <em>Ice Hammer</em> (100, Ice ×2 auf Grass) als Duo. Serperior SOFORT KOen bevor es boosted. Venusaur: <em>Extreme Speed</em> auf Arcanine als Priority um Sleep Powder zuvorzukommen. Breloom <em>Spore</em> kann gefährliche Mons einschläfern!</div>
 
       <h3>8. Boss Giovanni 1 (Lv 45–46)</h3>
       <p><strong>Bag:</strong> 2× Hyper Potion · <strong>Signature:</strong> Upgrade · <strong>Biome:</strong> Badlands/Savanna</p>
@@ -752,37 +758,35 @@ const GUIDES = {
       <div class="warn"><strong>TEAM-UMBAU PFLICHT!</strong> Brendans Crawdaunt (Adaptability + Focus Sash) sweept dein bisheriges Team ohne Fighting-Coverage. <strong>0% Siegrate ohne Umbau!</strong>
         <br><br><strong>Änderungen:</strong>
         <br>• <strong>Nuzleaf RAUS → Breloom REIN!</strong> (Shroomish fangen in Forest, COMMON, Evo Lv 23)
-        <br>• <strong>Staravia RAUS → Heracross REIN!</strong> (Forest RARE, 5× bei Dämmerung! Oder Jungle UNCOMMON, Lv 25–50)
-        <br>• Flaaffy bleibt als Backup, wird gegen Brendan aber nicht eingesetzt
+        <br>• <strong>Staravia RAUS → Crabominable REIN!</strong> (Crabrawler an Küste COMMON, Ice Stone für Evo)
+        <br>• <strong>Flaaffy RAUS → Escavalier REIN!</strong> (Karrablast in Swamp COMMON, Shell Helmet Item für Evo)
       </div>
       <table>
         <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
         <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
         <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
         <tr><td><strong>⬆ Breloom (NEU!)</strong></td><td><strong>Mach Punch (40, +1 Prio)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Spore (100% Sleep!)</strong></td><td><strong>Seed Bomb (80)</strong></td></tr>
-        <tr><td><strong>⬆ Heracross (NEU!)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Megahorn (120)</strong></td><td><strong>Knock Off (65)</strong></td><td><strong>Aerial Ace (60)</strong></td></tr>
-        <tr><td><strong>Flaaffy</strong></td><td>Electro Ball</td><td>Charge</td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
+        <tr><td><strong>⬆ Crabominable (NEU!)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Ice Hammer (100)</strong></td><td><strong>Gunk Shot (120)</strong></td><td><strong>Avalanche (60)</strong></td></tr>
+        <tr><td><strong>⬆ Escavalier (NEU!)</strong></td><td><strong>Megahorn (120)</strong></td><td><strong>Close Combat (120)</strong></td><td><strong>Iron Head (80)</strong></td><td><strong>Fell Stinger (50)</strong></td></tr>
         <tr><td><strong>Ludicolo</strong></td><td>Energy Ball (80)</td><td>Giga Drain (75)</td><td>Fake Out (40)</td><td>Knock Off (65)</td></tr>
       </table>
-      <div class="info"><strong>Brendan-Kampfplan (86% Siegrate, Simulator-verifiziert):</strong>
-        <br>• <strong>Loudred →</strong> Heracross Slot 1 Close Combat (OHKO!)
-        <br>• <strong>Lunatone →</strong> Heracross stirbt (Psyshock ×4) → Ludicolo Slot 1 Energy Ball (2× = KO)
+      <div class="info"><strong>Brendan-Kampfplan (93% Siegrate, Simulator-verifiziert):</strong>
+        <br>• <strong>Loudred →</strong> Escavalier Slot 2 Close Combat (OHKO!)
+        <br>• <strong>Lunatone →</strong> Ludicolo Slot 1 Energy Ball (2× = KO)
         <br>• <strong>Crawdaunt →</strong> Breloom! Slot 3 Spore → Slot 2 Close Combat (Focus Sash → 1 HP) → Slot 1 Mach Punch (Priority-Finish!)
         <br>• <strong>Grovyle →</strong> Arcanine Slot 1 Flare Blitz (OHKO!)
+        <br>• <strong>Backup:</strong> Crabominable hat Close Combat + Ice Hammer gegen alles was durchkommt
       </div>
 
       <h3>Cap 34 → Lt. Surge besiegen</h3>
-      <div class="warn"><strong>Slot-Änderungen bei Lv 28+:</strong>
-        <br>• <strong>Flaaffy Slot 2:</strong> Charge → <strong>Confuse Ray</strong> (Lv 29)
-        <br>• Breloom + Heracross + Ludicolo: Moves unverändert — bereits optimal
-      </div>
+      <div class="warn"><strong>Keine Slot-Änderungen nötig.</strong> Breloom, Crabominable, Escavalier und Ludicolo sind bereits optimal. Alle Moves bleiben.</div>
       <table>
         <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
         <tr><td><strong>Marshtomp</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
         <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
         <tr><td><strong>Breloom</strong></td><td>Mach Punch (40)</td><td>Close Combat (120)</td><td>Spore</td><td>Seed Bomb (80)</td></tr>
-        <tr><td><strong>Heracross</strong></td><td>Close Combat (120)</td><td>Megahorn (120)</td><td>Knock Off (65)</td><td>Aerial Ace (60)</td></tr>
-        <tr><td><strong>Flaaffy</strong></td><td>Electro Ball</td><td><strong>⬆ Confuse Ray</strong></td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
+        <tr><td><strong>Crabominable</strong></td><td>Close Combat (120)</td><td>Ice Hammer (100)</td><td>Gunk Shot (120)</td><td>Avalanche (60)</td></tr>
+        <tr><td><strong>Escavalier</strong></td><td>Megahorn (120)</td><td>Close Combat (120)</td><td>Iron Head (80)</td><td>Fell Stinger (50)</td></tr>
         <tr><td><strong>Ludicolo</strong></td><td>Energy Ball (80)</td><td>Giga Drain (75)</td><td>Fake Out (40)</td><td>Knock Off (65)</td></tr>
       </table>
       <div class="info"><strong>Surge-Kampfplan (Slot-Referenz):</strong>
@@ -801,27 +805,28 @@ const GUIDES = {
         <br>&nbsp;&nbsp;Slot 2: Confuse Ray → <strong>Power Gem</strong> (80, Rock Coverage! Lv 34)
         <br>&nbsp;&nbsp;Slot 1: Electro Ball → <strong>Discharge</strong> (80, Lv 38)
         <br>• <strong>Marshtomp → Swampert</strong> bei Lv 36! Moves bleiben, höhere Stats
-        <br>• Breloom + Heracross: Moves unverändert — bereits optimal, beide haben ×2 Fighting auf Grass!
+        <br>• Breloom, Crabominable, Escavalier: Moves unverändert — bereits optimal
+        <br>• <strong>Marshtomp → Swampert</strong> bei Lv 36! Moves bleiben, höhere Stats
       </div>
       <table>
         <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
         <tr><td><strong>Swampert</strong></td><td>Earthquake (100)</td><td>Surf (90)</td><td>Mud Shot (55)</td><td>Protect</td></tr>
         <tr><td><strong>Arcanine</strong></td><td>Flare Blitz (120)</td><td>Extreme Speed (80)</td><td>Crunch (80)</td><td>Play Rough (90)</td></tr>
         <tr><td><strong>Breloom</strong></td><td>Mach Punch (40)</td><td>Close Combat (120)</td><td>Spore</td><td>Seed Bomb (80)</td></tr>
-        <tr><td><strong>Heracross</strong></td><td>Close Combat (120)</td><td>Megahorn (120)</td><td>Knock Off (65)</td><td>Aerial Ace (60)</td></tr>
-        <tr><td><strong>Ampharos</strong></td><td><strong>⬆ Discharge (80)</strong></td><td><strong>⬆ Power Gem (80)</strong></td><td>Cotton Spore</td><td>Thunder Wave</td></tr>
+        <tr><td><strong>Crabominable</strong></td><td>Close Combat (120)</td><td>Ice Hammer (100)</td><td>Gunk Shot (120)</td><td>Avalanche (60)</td></tr>
+        <tr><td><strong>Escavalier</strong></td><td>Megahorn (120)</td><td>Close Combat (120)</td><td>Iron Head (80)</td><td>Fell Stinger (50)</td></tr>
         <tr><td><strong>Ludicolo</strong></td><td>Energy Ball (80)</td><td>Giga Drain (75)</td><td>Fake Out (40)</td><td>Knock Off (65)</td></tr>
       </table>
       <div class="warn"><strong>Erika-Kampfplan (Slot-Referenz):</strong>
         <br>• Serperior (Contrary!) → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2) — SOFORT KOen bevor es mit Leaf Storm boosted!
         <br>• Venusaur (Sleep Powder!) → <strong>Arcanine Slot 2</strong> Extreme Speed (+2 Prio, schlägt vor Sleep Powder zu!)
-        <br>• Rillaboom/Meganium → <strong>Heracross Slot 4</strong> Aerial Ace (Flying ×2 auf Grass) oder <strong>Arcanine Slot 1</strong> Flare Blitz
+        <br>• Rillaboom/Meganium → <strong>Crabominable Slot 2</strong> Ice Hammer (Ice ×2 auf Grass) oder <strong>Arcanine Slot 1</strong> Flare Blitz
         <br>• Electrode-Hisui (Explosion!) → <strong>Swampert Slot 4</strong> Protect um Explosion zu blocken, dann Slot 1 Earthquake
         <br><em>⚠️ Wenn Erika wechselt:</em>
         <br>• Erika bringt <strong>Serperior</strong> zurück? → <strong>SOFORT Arcanine rein + Slot 1 Flare Blitz!</strong> Serperior darf KEINEN Turn mit Leaf Storm bekommen (wird durch Contrary immer stärker!)
         <br>• Erika tauscht gegen <strong>Venusaur</strong>? → <strong>NICHT wechseln wenn Arcanine draußen</strong>. Slot 1 Flare Blitz trifft Venusaur ×2 beim Reinkommen. Wenn Venusaur überlebt: Slot 2 Extreme Speed (+2 Prio) als Finisher VOR Sleep Powder.
-        <br>• Rillaboom nutzt <strong>U-Turn</strong> (Hit + Rückzug)? → Du nimmst Bug-Schaden (neutral). Nächstes Mon kommt rein. <strong>Nicht panisch wechseln</strong> — Arcanine/Heracross treffen fast alles von Erika ×2 mit Fire/Flying/Fighting.
-        <br>• <strong>Hauptregel bei Erika:</strong> Arcanine + Heracross abwechselnd einsetzen. Arcanine hat Fire ×2, Heracross hat Fighting ×2 + Aerial Ace (Flying ×2) auf ALLES in Erikas Team.
+        <br>• Rillaboom nutzt <strong>U-Turn</strong> (Hit + Rückzug)? → Du nimmst Bug-Schaden (neutral). Nächstes Mon kommt rein. <strong>Nicht panisch wechseln</strong> — Arcanine/Crabominable treffen fast alles von Erika ×2 mit Fire/Ice.
+        <br>• <strong>Hauptregel bei Erika:</strong> Arcanine + Crabominable abwechselnd einsetzen. Arcanine hat Fire ×2, Crabominable hat Ice Hammer (×2 auf Grass) + Close Combat auf ALLES in Erikas Team.
       </div>
 
       <h3>Cap 46+ → Giovanni 1 und weiter</h3>
@@ -837,8 +842,8 @@ const GUIDES = {
         <tr><th>Slot</th><th>Empfehlung</th><th>Typ</th><th>Warum</th></tr>
         <tr><td>1</td><td><strong>Swampert</strong> (Mega)</td><td>Water/Ground</td><td>Swift Swim + Mega = Allrounder</td></tr>
         <tr><td>2</td><td><strong>Arcanine</strong></td><td>Fire</td><td>Intimidate, Ground Mount</td></tr>
-        <tr><td>3</td><td><strong>Heracross</strong></td><td>Bug/Fighting</td><td>Moxie, Close Combat + Megahorn (je 120!)</td></tr>
-        <tr><td>4</td><td><strong>Breloom</strong></td><td>Grass/Fighting</td><td>Spore (100% Sleep!), Mach Punch Priority</td></tr>
+        <tr><td>3</td><td><strong>Escavalier</strong></td><td>Bug/Steel</td><td>135 Atk, Megahorn + Close Combat, massive Bulk</td></tr>
+        <tr><td>4</td><td><strong>Breloom/Crabominable</strong></td><td>Fighting</td><td>Spore + Mach Punch / Ice Hammer + Close Combat</td></tr>
         <tr><td>5</td><td><strong>Gardevoir/Togekiss</strong></td><td>Fairy</td><td>Fairy ×2 auf Dark/Dragon + Psychic STAB</td></tr>
         <tr><td>6</td><td><strong>Lucario/Machamp</strong></td><td>Fighting</td><td>Fighting Coverage für Normal/Dark/Steel</td></tr>
       </table>
