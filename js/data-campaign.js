@@ -3,11 +3,29 @@
    Wird als Tab im Hauptbereich angezeigt (nur für Profil "Mike")
    ============================================================ */
 const CAMPAIGN_HTML = `
-<div class="campaign-content">
+<div class="campaign-content" id="campaign-top">
 
   <h2>Radical Red — Kompletter Walkthrough</h2>
   <p>Kombiniert: Team-Aufbau, Move-Slots und Kampf-Strategien für alle 24 Trainer der Radical Red Serie.<br>
   <em>Signature Item = Item im Trainer Spawner Block zum gezielten Beschwören.</em></p>
+
+  <div class="campaign-toc">
+    <h3>📑 Inhaltsverzeichnis</h3>
+    <a href="#cap15">Cap 15 — Start-Team aufbauen</a>
+    <a href="#t1" class="toc-indent">🏆 #1 Leader Brock</a>
+    <a href="#cap21">Cap 21 — Moves relearnen</a>
+    <a href="#t2" class="toc-indent">🏆 #2 Rocket Admin Archer</a>
+    <a href="#t3" class="toc-indent">🏆 #3 Rival Terry 1</a>
+    <a href="#cap27">Cap 27 — Ludicolo Team-Umbau</a>
+    <a href="#t4" class="toc-indent">🏆 #4 Leader Misty</a>
+    <a href="#t5" class="toc-indent">🏆 #5 Trainer Brendan 1</a>
+    <a href="#cap34">Cap 34 — Move-Upgrades</a>
+    <a href="#t6" class="toc-indent">🏆 #6 Leader Lt. Surge</a>
+    <a href="#cap44">Cap 44 — Evolutions!</a>
+    <a href="#t7" class="toc-indent">🏆 #7 Leader Erika</a>
+    <a href="#t8" class="toc-indent">🏆 #8 Boss Giovanni 1</a>
+    <a href="#late">Spätere Kämpfe (Lv 54–85)</a>
+  </div>
 
   <div class="warn"><strong>Grundregeln:</strong>
     <br>• <strong>Move Relearning:</strong> Im Party-Menü kannst du <em>kostenlos</em> alle Level-Up-Moves relearnen — bei JEDEM neuen Cap als erstes Moves optimieren!
@@ -16,7 +34,7 @@ const CAMPAIGN_HTML = `
   </div>
 
   <!-- ============ CAP 15 ============ -->
-  <h3>Cap 15 — Start-Team aufbauen</h3>
+  <h3 id="cap15">Cap 15 — Start-Team aufbauen</h3>
   <table>
     <tr><th>#</th><th>Pokémon</th><th>Typ</th><th>Fangen/Evo</th><th>Wo (Biom)</th></tr>
     <tr><td>1</td><td><strong>Mudkip</strong></td><td>Water</td><td>Starter</td><td>—</td></tr>
@@ -27,7 +45,7 @@ const CAMPAIGN_HTML = `
     <tr><td>6</td><td><strong>Geodude</strong></td><td>Rock/Ground</td><td>—</td><td>Höhlen + Berge, COMMON</td></tr>
   </table>
 
-  <h3>🏆 #1 Leader Brock (Lv 12–14) ✅</h3>
+  <h3 id="t1">🏆 #1 Leader Brock (Lv 12–14) ✅ <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Hard Stone</strong> · Biome: Cave/Mountain/Hill</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Ability</th><th>Gefahr</th></tr>
@@ -39,7 +57,7 @@ const CAMPAIGN_HTML = `
   <div class="info"><strong>Strategie:</strong> Geodude Lead → Bulldoze (×4 auf Alolan Geodude, immun vs Spark). Dann Mudkip Water Gun auf den Rest (×2/×4).</div>
 
   <!-- ============ CAP 21 ============ -->
-  <h3>Cap 21 — Moves relearnen!</h3>
+  <h3 id="cap21">Cap 21 — Moves relearnen! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <div class="warn"><strong>Sofort Moves optimieren!</strong> Mudkip evolves bei Lv 16 → Marshtomp!</div>
   <table>
     <tr><th>Pokémon</th><th>Slot 1</th><th>Slot 2</th><th>Slot 3</th><th>Slot 4</th></tr>
@@ -51,7 +69,7 @@ const CAMPAIGN_HTML = `
     <tr><td><strong>Geodude</strong></td><td>Bulldoze (60)</td><td>Smack Down (50)</td><td>Magnitude</td><td>Rock Throw (50)</td></tr>
   </table>
 
-  <h3>🏆 #2 Rocket Admin Archer (Lv 18–21) ✅</h3>
+  <h3 id="t2">🏆 #2 Rocket Admin Archer (Lv 18–21) ✅ <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Black Tumblestone</strong> · Biome: Underground/Badlands/Savanna</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Ability</th><th>Gefahr</th></tr>
@@ -65,13 +83,13 @@ const CAMPAIGN_HTML = `
     <br>• Mightyena → <strong>Arcanine Slot 4</strong> Play Rough → <strong>Slot 2</strong> Extreme Speed Finisher. NICHT Marshtomp (Ice Fang!)
   </div>
 
-  <h3>🏆 #3 Rival Terry 1 (Lv 18–21)</h3>
+  <h3 id="t3">🏆 #3 Rival Terry 1 (Lv 18–21) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Gold Nugget</strong> · Biome: Plains</p>
   <p>3 Varianten (starter-abhängig): Kirlia + Staravia + Rockruff + <strong>Wartortle/Ivysaur/Charmeleon</strong> Lv21</p>
   <div class="info"><strong>Strategie:</strong> Arcanine Crunch vs Kirlia (Dark ×2). Marshtomp Earthquake vs Rockruff (Ground ×2). Starter-Counter: Wartortle → Flaaffy, Ivysaur → Arcanine, Charmeleon → Marshtomp.</div>
 
   <!-- ============ CAP 27 ============ -->
-  <h3>Cap 27 — TEAM-UMBAU: Ludicolo!</h3>
+  <h3 id="cap27">Cap 27 — TEAM-UMBAU: Ludicolo! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <div class="warn"><strong>Geodude/Graveler RAUS → Ludicolo REIN!</strong>
     <br>1) <strong>Lotad fangen</strong> (Swamp-Biom, COMMON, am Wasser)
     <br>2) Lotad → Lombre (Lv 14) → <strong>Ludicolo</strong> (Water Stone!)
@@ -89,7 +107,7 @@ const CAMPAIGN_HTML = `
     <tr><td>⬆ <strong>Ludicolo (NEU)</strong></td><td><strong>Energy Ball (80)</strong></td><td><strong>Giga Drain (75)</strong></td><td><strong>Fake Out (40)</strong></td><td><strong>Knock Off (65)</strong></td></tr>
   </table>
 
-  <h3>🏆 #4 Leader Misty (Lv 25–27)</h3>
+  <h3 id="t4">🏆 #4 Leader Misty (Lv 25–27) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Mystic Water</strong> · Biome: Wet/Water/River/Beach</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Ability</th><th>Gefahr</th></tr>
@@ -107,7 +125,7 @@ const CAMPAIGN_HTML = `
     <br>⚠️ Ludicolo bleibt IMMER drin! HP niedrig? Slot 2 Giga Drain heilt zurück.
   </div>
 
-  <h3>🏆 #5 Trainer Brendan 1 (Lv 28–29)</h3>
+  <h3 id="t5">🏆 #5 Trainer Brendan 1 (Lv 28–29) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Silk Scarf</strong> · Biome: Plains/Underground</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Gefahr</th></tr>
@@ -125,7 +143,7 @@ const CAMPAIGN_HTML = `
   </div>
 
   <!-- ============ CAP 34 ============ -->
-  <h3>Cap 34 — Move-Upgrades</h3>
+  <h3 id="cap34">Cap 34 — Move-Upgrades <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <div class="warn"><strong>Slot-Änderungen:</strong>
     <br>• Staravia Slot 1: → <strong>Aerial Ace</strong> (Lv 28)
     <br>• Flaaffy Slot 2: → <strong>Confuse Ray</strong> (Lv 29)
@@ -133,7 +151,7 @@ const CAMPAIGN_HTML = `
     <br>• Ludicolo: Moves bleiben — bereits optimal
   </div>
 
-  <h3>🏆 #6 Leader Lt. Surge (Lv 32–34)</h3>
+  <h3 id="t6">🏆 #6 Leader Lt. Surge (Lv 32–34) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Magnet</strong> · Biome: Plains</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Gefahr</th></tr>
@@ -150,14 +168,14 @@ const CAMPAIGN_HTML = `
   </div>
 
   <!-- ============ CAP 44 ============ -->
-  <h3>Cap 44 — Evolutions!</h3>
+  <h3 id="cap44">Cap 44 — Evolutions! <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <div class="warn"><strong>Große Upgrades:</strong>
     <br>• <strong>Staravia → Staraptor</strong> (Lv 34)! Slot 1: Brave Bird (120!), Slot 3: Close Combat (120!) — <strong>FLY-MOUNT!</strong>
     <br>• <strong>Flaaffy → Ampharos</strong> (Lv 30)! Slot 1: Discharge (80), Slot 2: Power Gem (80)
     <br>• <strong>Marshtomp → Swampert</strong> (Lv 36)! Höhere Stats, Mega-fähig
   </div>
 
-  <h3>🏆 #7 Leader Erika (Lv 43–44)</h3>
+  <h3 id="t7">🏆 #7 Leader Erika (Lv 43–44) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Miracle Seed</strong> · Biome: Dense Vegetation/Lush</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Gefahr</th></tr>
@@ -175,7 +193,7 @@ const CAMPAIGN_HTML = `
     <br>⚠️ Ludicolo NICHT gegen Erika (Venusaur Sludge Bomb = Poison ×2 auf Grass!)
   </div>
 
-  <h3>🏆 #8 Boss Giovanni 1 (Lv 45–46)</h3>
+  <h3 id="t8">🏆 #8 Boss Giovanni 1 (Lv 45–46) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Signature: <strong>Upgrade</strong> · Biome: Badlands/Savanna</p>
   <table>
     <tr><th>Gegner</th><th>Lv</th><th>Typ</th><th>Gefahr</th></tr>
@@ -194,7 +212,7 @@ const CAMPAIGN_HTML = `
   </div>
 
   <!-- ============ SPÄTERE KÄMPFE (KOMPAKT) ============ -->
-  <h3>Spätere Kämpfe (Lv 54–85)</h3>
+  <h3 id="late">Spätere Kämpfe (Lv 54–85) <a href="#campaign-top" class="back-to-top">↑ Oben</a></h3>
   <p>Ab hier wird die Serie <strong>extrem schwer</strong>. Die Gegner haben Legendäre, Mega-Evolutionen und perfekte IVs/EVs. Du brauchst ein komplett neues Late-Game-Team.</p>
 
   <table>
