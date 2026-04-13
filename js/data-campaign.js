@@ -222,7 +222,7 @@ const CAMPAIGN_HTML = `
     <br>• Nidoking → <strong>Swampert Slot 1</strong> Earthquake (Ground ×2, immun vs Electric). NICHT Ludicolo (Sludge Bomb ×2)!
     <br>• Honchkrow → <strong>Ampharos</strong> Discharge (Electric ×2 auf Flying) oder Arcanine Play Rough (Fairy ×2 auf Dark)
     <br>• Infernape → <strong>Swampert Slot 2</strong> Surf (Water ×2 auf Fire)
-    <br>• Kangaskhan → <strong>Swampert Slot 1</strong> Earthquake oder Staraptor Close Combat (Fighting ×2 auf Normal)
+    <br>• Kangaskhan → <strong>Swampert Slot 1</strong> Earthquake oder Escavalier/Breloom Close Combat (Fighting ×2 auf Normal)
     <br>• Rotom-Frost → <strong>Arcanine Slot 1</strong> Flare Blitz (Fire ×2 auf Ice)
   </div>
 
