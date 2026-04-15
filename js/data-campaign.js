@@ -181,8 +181,8 @@ const CAMPAIGN_HTML = `
     <tr><td>⬆ <strong>Donphan (NEU)</strong></td><td><strong>Stomping Tantrum (75)</strong></td><td><strong>Knock Off (65)</strong></td><td><strong>Slam (80)</strong></td><td><strong>Bulldoze (60)</strong></td></tr>
     <tr><td>⬆ <strong>Hippowdon (NEU)</strong></td><td><strong>Dig (80)</strong></td><td><strong>Crunch (80)</strong></td><td><strong>Take Down (90)</strong></td><td><strong>Fire Fang (65)</strong></td></tr>
     <tr><td>⬆ <strong>Camerupt (NEU)</strong></td><td><strong>Eruption (150!)</strong></td><td><strong>Lava Plume (80)</strong></td><td><strong>Earth Power (90)</strong></td><td><strong>Rock Slide (75)</strong></td></tr>
-    <tr><td>⬆ <strong>Excadrill (NEU)</strong></td><td><strong>Earthquake (100)</strong></td><td><strong>Rock Slide (75)</strong></td><td><strong>Crush Claw (75)</strong></td><td><strong>Slash (70)</strong></td></tr>
-    <tr><td>⬆ <strong>Ursaluna (NEU)</strong></td><td><strong>Headlong Rush (120!)</strong></td><td><strong>Thrash (120)</strong></td><td><strong>Hammer Arm (100)</strong></td><td><strong>Play Rough (90)</strong></td></tr>
+    <tr><td>⬆ <strong>Excadrill (NEU)</strong></td><td><strong>Rock Slide (75)</strong></td><td><strong>Crush Claw (75)</strong></td><td><strong>Dig (80)</strong></td><td><strong>Slash (70)</strong></td></tr>
+    <tr><td>⬆ <strong>Ursaluna (NEU)</strong></td><td><strong>Headlong Rush (120!)</strong></td><td><strong>Slash (70)</strong></td><td><strong>Play Rough (90)</strong></td><td><strong>Feint Attack (60)</strong></td></tr>
   </table>
   <p><em>Alle Moves sind Level-Up Moves (kostenlos relernbar!). Arcanine + Breloom + Crabominable aufbewahren — sie kommen für Erika zurück!</em></p>
 
@@ -196,13 +196,13 @@ const CAMPAIGN_HTML = `
     <tr><td>Manectric</td><td>34</td><td>Electric</td><td>Intimidate, Charge Beam (+SpA!), <strong>Flame Burst (Fire!)</strong></td></tr>
     <tr><td>Boltund</td><td>33</td><td>Electric</td><td>Strong Jaw! Thunder/Fire/Ice/Psychic Fang</td></tr>
   </table>
-  <div class="info"><strong>Kampfplan (100% Siegrate, Simulator-verifiziert):</strong>
+  <div class="info"><strong>Kampfplan (91% Siegrate, Simulator-verifiziert mit Level-Up-Moves):</strong>
     <br>• Pincurchin → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2, immun vs Electric!) 2 Hits = KO
     <br>• Raichu → <strong>Marshtomp Slot 1</strong> Earthquake (Ground ×2) = OHKO! Psyshock tut weh, aber Marshtomp überlebt
     <br>• Vikavolt → <strong>SOFORT Camerupt!</strong> Slot 2 Lava Plume (Fire ×2 auf Bug). NICHT Ground-Moves (Levitate = immun!)
     <br>• Mega-Manectric → <strong>Hippowdon!</strong> Slot 1 Dig (Ground ×2). Sand Stream macht Chip-Schaden. Volt Switch = immun!
-    <br>• Boltund → <strong>Ursaluna Slot 1</strong> Headlong Rush (120! Ground ×2) oder <strong>Excadrill Slot 1</strong> Earthquake
-    <br>⚠️ Vikavolt hat <strong>Levitate</strong> — Ground-Moves treffen NICHT! Nur Fire-Moves (Camerupt/Arcanine) funktionieren!
+    <br>• Boltund → <strong>Ursaluna Slot 1</strong> Headlong Rush (120! Ground ×2) oder <strong>Donphan Slot 1</strong> Stomping Tantrum
+    <br>⚠️ Vikavolt hat <strong>Levitate</strong> — Ground-Moves treffen NICHT! Nur Fire-Moves (Camerupt) funktionieren!
   </div>
 
   <!-- ============ CAP 44 ============ -->
