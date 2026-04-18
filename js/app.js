@@ -8,11 +8,16 @@ const PATHS_BASE = [
   { id: "tech",    label: "Tech",     icon: "⚡" },
   { id: "endgame", label: "Endgame",  icon: "🌟" },
 ];
-// Kampagne-Tab nur für Profil "Mike" — dynamisch in getActivePaths()
+// Kampagne- und MA-Tab nur für Profil "Mike" — dynamisch in getActivePaths()
 function getActivePaths() {
   const paths = [...PATHS_BASE];
-  if (typeof state !== 'undefined' && state.currentProfile === 'Mike' && typeof CAMPAIGN_HTML !== 'undefined') {
-    paths.push({ id: "kampagne", label: "Kampagne", icon: "🎯" });
+  if (typeof state !== 'undefined' && state.currentProfile === 'Mike') {
+    if (typeof CAMPAIGN_HTML !== 'undefined') {
+      paths.push({ id: "kampagne", label: "Kampagne", icon: "🎯" });
+    }
+    if (typeof MA_HTML !== 'undefined') {
+      paths.push({ id: "ma", label: "Mystical Agri", icon: "🌱" });
+    }
   }
   return paths;
 }
@@ -205,6 +210,7 @@ function highlightText(html, query) {
 
 function filteredPhases() {
   if (state.path === "kampagne") return []; // Kampagne-Tab zeigt keine Phasen
+  if (state.path === "ma") return []; // MA-Tab zeigt keine Phasen
   return PHASES
     .filter(p => state.path === "all" || p.path === state.path)
     .map(p => ({
@@ -362,6 +368,20 @@ function render() {
   // Kampagne-Tab: zeigt den kompletten Walkthrough statt Phasen
   if (state.path === "kampagne" && typeof CAMPAIGN_HTML !== 'undefined') {
     html += CAMPAIGN_HTML;
+    html += `
+      <div class="reset-wrap">
+        <button class="reset-btn" onclick="setPath('all')">← Zurück zur Checkliste</button>
+      </div>
+      <div class="footer">ATMons Checkliste · Daten werden lokal im Browser gespeichert</div>
+    `;
+    app.innerHTML = html;
+    renderModal();
+    return;
+  }
+
+  // Mystical Agriculture-Tab: zeigt den MA-Guide statt Phasen
+  if (state.path === "ma" && typeof MA_HTML !== 'undefined') {
+    html += MA_HTML;
     html += `
       <div class="reset-wrap">
         <button class="reset-btn" onclick="setPath('all')">← Zurück zur Checkliste</button>
