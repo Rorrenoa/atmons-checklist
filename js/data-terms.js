@@ -651,6 +651,214 @@ const TERMS = {
       <p>Ohne diese Presses kein Inscriber → kein AE2. Mehrere Meteoriten abklappern gibt Backup-Presses + viel <em>Sky Stone</em> zum Bauen.</p>
     `
   },
+  "powah-uraninite": {
+    name: "Uraninite (Powah)",
+    short: "Powahs radioaktives Erz. Brennstoff für alle Powah-Reaktoren. Spawnt tief (Y -64 bis 20) in 3 Varianten: poor, regular, dense.",
+    long: `
+      <h3>Was ist Uraninite?</h3>
+      <p><strong>Uraninite</strong> ist Powahs eigener Brennstoff — unabhängig von Mekanism-Uranium. Das Erz spawnt in 3 Varianten:</p>
+      <ul>
+        <li><strong>Uraninite Ore Poor</strong> (Y -64 bis 0): droppt 1× Uraninite Raw</li>
+        <li><strong>Uraninite Ore</strong> (Y -64 bis 20): droppt regular Raw → 5× Uraninite via Energizing</li>
+        <li><strong>Uraninite Ore Dense</strong> (Y -64 bis 0, selten): droppt 10× Uraninite via Energizing</li>
+      </ul>
+      <h3>Verarbeitung</h3>
+      <p>Roh-Uraninite wird im <em>Energizing Orb</em> veredelt (2.000–100.000 FE je nach Stufe). Das Item <strong>Uraninite</strong> ist was du in den Reactor füllst.</p>
+      <h3>Alternative</h3>
+      <p>Mekanism-Uranium-Ingots funktionieren auch: 1 Uranium-Ingot + 30.000 FE Energizing = 1 Uraninite. Via <em>Mystical Agriculture Uran-Seeds</em> komplett automatisierbar.</p>
+    `
+  },
+  "powah-dielectric-paste": {
+    name: "Dielectric Paste",
+    short: "Powah-Grundmaterial. Rezept: 3× Coal + 2× Clay + 1× Lava Bucket → 24× Paste. Wird in fast jedem Powah-Rezept gebraucht.",
+    long: `
+      <h3>Rezept (shapeless)</h3>
+      <p>3× <strong>Coal</strong> (oder Charcoal) + 2× <strong>Clay Ball</strong> + 1× <strong>Lava Bucket</strong> → <strong>24× Dielectric Paste</strong></p>
+      <h3>Wofür?</h3>
+      <p>Dielectric Paste ist die Basis für:</p>
+      <ul>
+        <li>Capacitors aller Stufen (8× Paste pro Capacitor-Crafting)</li>
+        <li>Dielectric Rods (für Casings)</li>
+        <li>Dielectric Casings (für Energizing Rods)</li>
+      </ul>
+      <p>Gesamtbedarf bis Nitro Reactor: geschätzt <strong>300+ Paste</strong> — früh eine Lava-Pipeline (Industrial Foregoing Pump oder Mekanism) einrichten lohnt sich.</p>
+    `
+  },
+  "powah-energized-steel": {
+    name: "Energized Steel",
+    short: "Powahs Grundmetall. 1× Iron + 1× Gold im Energizing Orb (10.000 FE) → 2× Energized Steel. Wird für Rods und Hardened-Tier gebraucht.",
+    long: `
+      <h3>Energizing-Rezept</h3>
+      <p>1× <strong>Iron Ingot</strong> + 1× <strong>Gold Ingot</strong> + <strong>10.000 FE</strong> im Energizing Orb → 2× <strong>Energized Steel</strong></p>
+      <h3>Wofür?</h3>
+      <ul>
+        <li><strong>Energizing Rod Starter/Basic</strong> (eigenes Multiblock-Teil)</li>
+        <li><strong>Capacitor Hardened</strong> (8× Energized Steel als b-Slot)</li>
+        <li><strong>Energized Steel Block</strong> (9× für kompakten Storage)</li>
+      </ul>
+      <p><em>Das ist der kritische Bootstrap:</em> du brauchst den Energizing Orb, um Energized Steel zu machen, aber Energized Steel ist nicht nötig für den ersten Orb. Die minimale Orb-Version ist bereits mit Iron + Blaze Powder + Redstone baubar.</p>
+    `
+  },
+  "powah-energizing-orb": {
+    name: "Energizing Orb",
+    short: "Powahs Multi-Block: 1× Orb (Kern) + 1–8 Energizing Rods rundherum. Lädt Items unter FE-Verbrauch auf. Für Kristalle, Uraninite und Crossmod-Crafts.",
+    long: `
+      <h3>Aufbau</h3>
+      <p>1× <strong>Energizing Orb</strong> (Kern-Block) als Mittelpunkt. Rundherum (bis zu 8 Blöcke, in 9×9-Reichweite) werden <strong>Energizing Rods</strong> platziert.</p>
+      <h3>Funktion</h3>
+      <p>Du wirfst Items auf den Orb (per Hopper/Funnel/Trichter oder per Hand), lieferst FE an die Rods → Orb wandelt via Energizing-Rezept das Item um. Jede Rod liefert mehr Durchsatz.</p>
+      <h3>Rod-Stufen</h3>
+      <table>
+        <tr><th>Rod-Typ</th><th>Kern-Zutat</th></tr>
+        <tr><td>Starter</td><td>Redstone + Dielectric Paste</td></tr>
+        <tr><td>Basic</td><td>Basic Capacitor</td></tr>
+        <tr><td>Hardened</td><td>Hardened Capacitor</td></tr>
+        <tr><td>Blazing</td><td>Blazing Capacitor</td></tr>
+        <tr><td>Niotic</td><td>Niotic Capacitor</td></tr>
+        <tr><td>Spirited</td><td>Spirited Capacitor</td></tr>
+        <tr><td>Nitro</td><td>Nitro Capacitor</td></tr>
+      </table>
+      <p><strong>Wichtig:</strong> Je höher die Rod-Stufe, desto mehr FE/t kann der Orb verarbeiten. Für Nitro Crystal (20M FE pro Craft) brauchst du mindestens 4–8 hochstufige Rods, sonst dauert 1 Kristall Stunden.</p>
+    `
+  },
+  "powah-crystal-chain": {
+    name: "Powah Crystal-Kette",
+    short: "Blazing → Niotic → Spirited → Nitro. Jeder Kristall wird im Energizing Orb aus der vorherigen Stufe + Zutaten geschmiedet. Nitro ist der Endgame-Crystal (20M FE pro Craft, 16× Output).",
+    long: `
+      <h3>Die 4 Kristall-Stufen</h3>
+      <table>
+        <tr><th>Kristall</th><th>Rezept</th><th>Energie</th><th>Output</th></tr>
+        <tr><td><strong>Blazing</strong></td><td>1× Blaze Rod (oder 4× Blaze Powder)</td><td>120.000 FE</td><td>1</td></tr>
+        <tr><td><strong>Niotic</strong></td><td>1× Diamond</td><td>300.000 FE</td><td>1</td></tr>
+        <tr><td><strong>Spirited</strong></td><td>1× Emerald</td><td>1.000.000 FE</td><td>1</td></tr>
+        <tr><td><strong>Nitro</strong></td><td>1× Nether Star + 2× Redstone Block + 1× Blazing Crystal Block</td><td>20.000.000 FE</td><td><strong>16!</strong></td></tr>
+      </table>
+      <h3>Nitro ist günstiger als es scheint</h3>
+      <p>1 Craft = 16 Nitro Crystals, aber 1 Blazing Crystal Block = 9 Blazing Crystals. Effektiv pro Nitro: ~0,56 Blazing Crystals + 0,125 Redstone Blocks + 0,0625 Nether Stars. Der Bottleneck ist Nether Stars → <em>Wither-Farm via Apotheosis Spawner</em> ist Pflicht.</p>
+    `
+  },
+  "powah-reactor-fuel": {
+    name: "Reactor-Brennstoff (Powah)",
+    short: "Powah-Reaktoren brauchen 3 Dinge: Uraninite (Fuel), Carbon (Heat-Source), optional Redstone (Accelerator).",
+    long: `
+      <h3>Die 3 Inputs</h3>
+      <table>
+        <tr><th>Input</th><th>Was?</th><th>Wirkung</th></tr>
+        <tr><td><strong>Uraninite</strong></td><td>Item-Slot</td><td>Haupt-Brennstoff. Wird langsam verbraucht.</td></tr>
+        <tr><td><strong>Carbon</strong></td><td>Item-Slot (Coal/Charcoal/Coal Block)</td><td>Erhöht <em>Carbon-Temp</em> → mehr Output.</td></tr>
+        <tr><td><strong>Redstone</strong></td><td>Redstone-Dust Slot</td><td>Erhöht <em>Redstone-Temp</em> → schnellerer Uranium-Burn.</td></tr>
+        <tr><td><strong>Solid Coolant</strong></td><td>Coolant-Slot (Ice/Packed Ice/Blue Ice)</td><td>Senkt Temp, verhindert Meltdown (es gibt keinen Meltdown, aber Overheating reduziert Output).</td></tr>
+        <tr><td><strong>Fluid</strong></td><td>Fluid-Input</td><td>Optional Water/Lava → zusätzliche Kühlung/Heat. Wichtig für Max-Output.</td></tr>
+      </table>
+      <h3>Wichtig</h3>
+      <p>Anders als Mekanism Fission gibt es <strong>keinen Meltdown</strong>. Der Reactor regelt sich selbst — bei zu hoher Temp drosselt er Output. Aber unter optimalen Bedingungen (hohe Carbon+Redstone-Temp, ausreichend Kühlung) läuft er auf maximalem FE/t.</p>
+    `
+  },
+  "powah-reactor-nitro": {
+    name: "Nitro Reactor (Multiblock)",
+    short: "Powahs bester Generator. 500.000 FE/t default. Multiblock (3×4×5). Rezept: 4× Nitro Capacitor + 4× Spirited Reactor + 1× Uraninite → 4× Nitro Reactor.",
+    long: `
+      <h3>Output</h3>
+      <p><strong>500.000 FE/t</strong> bei Vollauslastung (verifiziert in <code>powah.json5</code>). Speicher: <strong>500 MFE</strong>, Transfer: <strong>2 MFE/t</strong>.</p>
+      <h3>Crafting</h3>
+      <p>Pattern <code>rlr / lul / rlr</code> wie bei allen Powah-Reactor-Upgrades:</p>
+      <ul>
+        <li><strong>r</strong>: 4× Reactor (vorherige Stufe: Spirited)</li>
+        <li><strong>l</strong>: 4× Nitro Capacitor</li>
+        <li><strong>u</strong>: 1× Uraninite (Zentrum)</li>
+      </ul>
+      <p>Ergibt <strong>4× Nitro Reactor Parts</strong>. Die Parts werden dann als Multiblock zusammengesetzt.</p>
+      <h3>Multiblock-Aufbau</h3>
+      <p>Powah-Reaktoren brauchen ein festes Muster — am besten JEI/EMI mit "Nitro Reactor" öffnen und Pattern ansehen. Grob: Sockel-Schicht + Core-Schicht + Top-Schicht. Beim Rechtsklick mit <em>Reactor Core</em> aktiviert sich der Multiblock.</p>
+      <h3>Skalierung</h3>
+      <p>Baue 2–4 Nitro Reactors nebeneinander → 1–2 Millionen FE/t. Verbinde alles mit <em>Flux Networks</em> für wireless Distribution.</p>
+    `
+  },
+  "powah-thermo-generator": {
+    name: "Thermo Generator (Powah)",
+    short: "Passiver Wärme-Generator. Braucht heißen Block (z.B. Lava) unter sich und kalten darüber. Nitro-Variante: 1.750 FE/t. Gut als Bootstrap, nicht als Endgame.",
+    long: `
+      <h3>Wie funktioniert das?</h3>
+      <p>Ein <strong>Thermo Generator</strong> misst den Temperatur-Unterschied zwischen dem Block <em>unter</em> und <em>über</em> ihm. Je größer die Differenz, desto mehr FE/t.</p>
+      <h3>Output-Raten (aus <code>powah.json5</code>)</h3>
+      <table>
+        <tr><th>Stufe</th><th>FE/t (max)</th></tr>
+        <tr><td>Starter</td><td>20</td></tr>
+        <tr><td>Basic</td><td>40</td></tr>
+        <tr><td>Hardened</td><td>75</td></tr>
+        <tr><td>Blazing</td><td>150</td></tr>
+        <tr><td>Niotic</td><td>300</td></tr>
+        <tr><td>Spirited</td><td>750</td></tr>
+        <tr><td>Nitro</td><td>1.750</td></tr>
+      </table>
+      <h3>Bootstrap-Empfehlung</h3>
+      <p>Für die ersten Energizing-Schritte reicht <strong>ein Thermo Generator Basic/Hardened</strong> auf Lava. Nach 1–2h hast du genug FE für Niotic/Spirited Kristalle. Später überflüssig.</p>
+    `
+  },
+  "powah-magmator": {
+    name: "Magmator (Powah)",
+    short: "Verbrennt Lava direkt für FE. Schnellerer Bootstrap als Thermo-Generator, weil man direkt einen Lava-Bucket reinkippen kann.",
+    long: `
+      <h3>Wie funktioniert das?</h3>
+      <p>Der <strong>Magmator</strong> ist ein Lava-zu-FE Generator — du schüttest Lava in den Fluid-Tank, er verbrennt sie und produziert FE.</p>
+      <h3>Vorteil gegenüber Thermo-Generator</h3>
+      <p>Keine komplizierte Hot/Cold-Platzierung. Einfach Lava-Bucket rein → Power raus. Ideal für die ersten 30 Minuten bis der Energizing-Loop läuft.</p>
+      <h3>Late-Game irrelevant</h3>
+      <p>Output liegt bei einigen hundert FE/t (Nitro-Magmator). Nicht mit Nitro-Reactor vergleichbar. Nur als Bootstrap interessant.</p>
+    `
+  },
+  "powah-capacitor": {
+    name: "Capacitor (Powah)",
+    short: "Powah-Interner Speicher. Jede Stufe braucht die vorherige + Kristall + Dielectric Paste. Basic → Hardened → Blazing → Niotic → Spirited → Nitro.",
+    long: `
+      <h3>Capacitor-Hierarchie</h3>
+      <p>Capacitoren sind das Puffer-Element in Rods, Reactors und Energy Cells. Progression:</p>
+      <table>
+        <tr><th>Stufe</th><th>Zentrum-Zutat</th><th>Output</th></tr>
+        <tr><td>Basic</td><td>Redstone Block</td><td>4</td></tr>
+        <tr><td>Basic Large</td><td>2× Basic</td><td>1</td></tr>
+        <tr><td>Hardened</td><td>Energized Steel + Basic Large</td><td>2</td></tr>
+        <tr><td>Blazing</td><td>Blazing Crystal + Basic Large</td><td>2</td></tr>
+        <tr><td>Niotic</td><td>Niotic Crystal + Basic Large</td><td>1</td></tr>
+        <tr><td>Spirited</td><td>Spirited Crystal + Basic Large</td><td>1</td></tr>
+        <tr><td>Nitro</td><td>Nitro Crystal + Basic Large</td><td>1</td></tr>
+      </table>
+      <p>Für 1 Nitro Reactor brauchst du 4 Nitro Capacitors → 4 Nitro Crystals + 4 Basic Large Capacitors + 8 Dielectric Paste.</p>
+    `
+  },
+  "powah-flux-network": {
+    name: "Flux Networks",
+    short: "Wireless FE-Transport über beliebige Entfernungen. Flux Plug zieht Power aus Generatoren, Flux Point liefert es irgendwo anders ab — ohne Kabel.",
+    long: `
+      <h3>Warum Flux Networks?</h3>
+      <p>Bei Nitro-Reactor-Farmen mit mehreren Generatoren wird Kabel-Layout chaotisch. <strong>Flux Networks</strong> überspringt das komplett:</p>
+      <ul>
+        <li><strong>Flux Plug</strong>: saugt Power aus Reactor/Energy Cell</li>
+        <li><strong>Flux Point</strong>: gibt Power wo du willst (Factory, AE2, Mekasuit Charger)</li>
+        <li><strong>Flux Controller</strong>: zentrale Überwachung (nicht zwingend nötig)</li>
+      </ul>
+      <h3>Skalierung</h3>
+      <p>Ein Flux-Netzwerk hat keine praktischen Limits. 10 Nitro Reactors auf der einen Seite, 30 Maschinen auf der anderen → funktioniert. Im ATMons-Pack zusätzlich <em>Applied Flux</em> installiert, das Flux direkt in AE2 Energy-Acceptors einspeisen kann.</p>
+    `
+  },
+  "powah-wither-farm": {
+    name: "Wither-Farm (Apotheosis)",
+    short: "Pflicht für Nitro Crystals. Via Apotheosis Spawner + Mob Duplicator + Killing Setup: 1 Nether Star = 1/16 Nitro Crystal.",
+    long: `
+      <h3>Wofür?</h3>
+      <p>Nitro Crystals brauchen <strong>Nether Stars</strong> (aus Wither-Kills). Manuell Wither spawnen = einmal alle paar Minuten. Zum Skalieren brauchst du eine Farm.</p>
+      <h3>ATMons-Variante</h3>
+      <p>Das Pack hat <em>Apothic Spawners</em> (aus Apotheosis) aktiviert. Vorgehen:</p>
+      <ol>
+        <li><strong>Apothic Spawner</strong> craften/finden, mit Wither-Skeleton-Skull + Soul Shards konfigurieren</li>
+        <li><strong>Mob Duplicator</strong> (Industrial Foregoing) → spawnt konfigurierte Mobs</li>
+        <li>Wither-Skeletons farmen → 3 Skulls + 4 Soul Sand → Wither spawnt via Deployer (Create) in geschlossenem Raum</li>
+        <li>Wither-Damage-Setup (Mekanism Antiprotons-Laser oder Draconic) killt Wither automatisch</li>
+        <li>Nether Star droppt → Vacuum Hopper → Storage</li>
+      </ol>
+      <p>Alternative: <strong>Mystical Agriculture Nether Star Seeds</strong> (Tier 5, benötigt Stardust Essence). Sicherer und vollautomatisch, aber langsamer.</p>
+    `
+  },
 };
 
 /* ============================================================

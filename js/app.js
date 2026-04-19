@@ -18,6 +18,9 @@ function getActivePaths() {
     if (typeof MA_HTML !== 'undefined') {
       paths.push({ id: "ma", label: "Mystical Agri", icon: "🌱" });
     }
+    if (typeof POWAH_HTML !== 'undefined') {
+      paths.push({ id: "powah", label: "Powah", icon: "⚡" });
+    }
   }
   return paths;
 }
@@ -382,6 +385,20 @@ function render() {
   // Mystical Agriculture-Tab: zeigt den MA-Guide statt Phasen
   if (state.path === "ma" && typeof MA_HTML !== 'undefined') {
     html += MA_HTML;
+    html += `
+      <div class="reset-wrap">
+        <button class="reset-btn" onclick="setPath('all')">← Zurück zur Checkliste</button>
+      </div>
+      <div class="footer">ATMons Checkliste · Daten werden lokal im Browser gespeichert</div>
+    `;
+    app.innerHTML = html;
+    renderModal();
+    return;
+  }
+
+  // Powah-Tab: zeigt den Powah-Guide mit Tooltip-Support via transformTerms
+  if (state.path === "powah" && typeof POWAH_HTML !== 'undefined') {
+    html += transformTerms(POWAH_HTML);
     html += `
       <div class="reset-wrap">
         <button class="reset-btn" onclick="setPath('all')">← Zurück zur Checkliste</button>
